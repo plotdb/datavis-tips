@@ -1,0 +1,97 @@
+doctype html
+//- basic libraries: jquery(1.10.2), d3js(3.5.4), angularjs(1.3.15), bootstrap(3.0)/semantic-ui(0.9.3/0.9.5)
+//-                  fontawesome(4.4.0), reactjs(0.14.0)
+- var use = { cdn: false, og: false, favicon: true }
+- var lib = { jquery: true, d3js: true, angular: true, bootstrap: true, semantic: false, fontawesome: true, reactjs: false, revealjs: false }
+- var assets = "assets"
+- var favicon = "thumbnail.png"
+- var title = "template"
+- var og = {}
+- og.title = title
+- og.twitter = {type: "summary_large_image", site: "@zbryikt", creator: "@zbryikt"}
+- og.domain = "zbryikt.github.io"
+- og.url = ""
+- og.thumbnail = {width: 200, height: 200, type: "image/png"}
+- og.thumbnail.url = "thumbnail.png"
+- og.author = "zbryikt"
+- og.section = "Taiwan"
+- og.keyword = "zbryikt,template"
+- og.description = ""
+html(lang="en")
+  head(prefix="og: http://ogp.me/ns#")
+    meta(charset="utf-8")
+    meta(name='viewport', content='width=device-width, initial-scale=1.0')
+    title= title
+    // libraries
+    include library.jade
+    // custom files
+    link(rel="stylesheet",type="text/css",href="lib/plotdb.css")
+    link(rel="stylesheet",type="text/css",href="static/css/dev.css")
+    link(rel="stylesheet",type="text/css",href="static/css/index.css")
+    script(type="text/javascript",src="lib/plotdb.js")
+    script(type="text/javascript",src="lib/plotd3.js")
+  body
+    #root
+      .panel.panel-default(style="width:800px;margin:auto")
+        .preview(style="position:relative;z-index:1")
+          #blah
+          #choices.choices(style="position:absolute;")
+            .choice.active(data-idx="1")
+            .choice(data-idx="2")
+            .choice(data-idx="3")
+        div(style="position:relative;z-index:2")
+          .avatar(style="background:url(icon/scatter-plot.svg) #fff")
+          .btn.btn-success(style="position:absolute;margin:-54px 0 0 156px") online editor
+          .similar.text-right
+            label similar charts
+            br
+            .chartico.connected-scatter-plot.sm
+            .chartico.paired-scatter-plot.sm
+            .chartico.animated-scatter-plot.sm
+            .chartico.ternary-plot.sm
+
+        .panel-body.content
+          .title Scatter Plot #[small / scattergram, scatter graph or scatter chart]
+          p typical scatter plot uses data as coordinates of points over a two-dimensional plane. higher dimension is also possible. due to the characteristics of scatter plot, it is often used to display correlation between two data series, which is better than simply calculating the correlation coefficient especially when observing non-linear relationship. scatter plot can be extended by changing colors, size, connection and dynamics of points to visualize more data series in a single chart. 
+          br
+          label Visual Encoding #[small / 2 ~ 4 dimension]
+          .labels
+            .label.label-primary Numeral / x
+            .label.label-primary Numeral / y
+            .label.label-default Nominal / color
+            .label.label-default Numeral / size
+          br
+
+          label Common Practice
+          ul
+            li Show correlation between two data series
+          br
+
+          label Classic Example
+          ul 
+            li Gapminder / Hans Rosling
+            li one of "seven basic tools of quality"
+          br
+
+          label Media Usage
+          ul
+            li Mike Bostock, "OECD Oil Price in last 20 Years", New York Times, 2014.
+          br
+
+          .row
+            .col-sm-6
+              label Pros
+              p Can be used to easily identify correlation and even trend. more dimensions can be made to visual encoding as we expected, such as size, shape, color and order.
+            .col-sm-6
+              label Cons
+              p Nominal / discrete data will overlap each other ( especially with a small range of data extent ) in scatter plot. One can change opacity or draw points with stroke only to alleviate this issue.
+          br
+
+          label Variants
+          p
+            .chartico.connected-scatter-plot.text.sm
+            .chartico.paired-scatter-plot.text.sm
+            .chartico.animated-scatter-plot.text.sm
+            .chartico.ternary-plot.text.sm
+            .chartico.bcg-matrix.text.sm
+    script(type="text/javascript",src="index.js")

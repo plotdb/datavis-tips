@@ -1,0 +1,82 @@
+name: Scatter Plot
+
+alias:
+  - scattergram
+  - scatter graph
+  - scatter chart
+
+plotdb: 1025
+
+description: >
+  typical scatter plot uses data as coordinates of points over a two-dimensional plane. higher dimension is also possible. due to the characteristics of scatter plot, it is often used to display correlation between two data series, which is better than simply calculating the correlation coefficient especially when observing non-linear relationship. scatter plot can be extended by changing colors, size, connection and dynamics of points to visualize more data series in a single chart.
+
+pros: >
+  Can be used to easily identify correlation and even trend. more dimensions can be made to visual encoding as we expected, such as size, shape, color and order.
+
+cons: >
+  Nominal / discrete data will overlap each other ( especially with a small range of data extent ) in scatter plot. One can change opacity or draw points with stroke only to alleviate this issue.
+
+category:
+  - distrubtion
+  - correlation 
+
+dimension:
+  - [x, required, Numeral]
+  - [y, required, Numeral]
+  - [color, optional, Any]
+  - [size, optional, Numeral]
+
+visualEncoding:
+  - position
+  - area
+  - color
+
+commonPractice:
+  - Show correlation between two data series
+
+classicExample:
+  - Gapminder / Hans Rosling
+  - one of "seven basic tools of quality"
+
+mediaUsage:
+  - author: Alicia Parlapiano
+    title: Where Income Is Higher, Life Spans Are Longer
+    media: New York Times
+    year: 2014
+    link: http://www.nytimes.com/interactive/2014/03/15/business/higher-income-longer-lives.html
+
+variant:
+  - connected scatter plot
+  - paired scatter plot
+  - animated scatter plot
+  - ternary plot
+
+bannerConfig:
+  [{
+    margin: 10, background: "#aaa", gridBackground: "#aaa",
+    palette: {colors: [{hex: "#444"},{hex: "#666"},{hex: "#999"}]},
+    bubbleSizeMax: 15,
+    bubbleStrokeWidth: 0,
+    fontSize: 12,
+    gridStrokeWidth: 1,
+    textFill: "#eee"
+  },{
+    margin: 10, background: "#942", gridBackground: "#942",
+    palette: {colors: [{hex: "#fff"},{hex: "#ffd"},{hex: "#fdf"}]},
+    bubbleSizeMax: 18,
+    bubbleStroke: "#000",
+    bubbleStrokeWidth: 1,
+    fontSize: 14,
+    gridStrokeWidth: 1,
+    textFill: "#ffe"
+  },{
+    margin: 10, background: "#eee", gridBackground: "#eee",
+    palette: {colors: [{hex: "#e96"},{hex: "#ae5"},{hex: "#48d"},{hex: "#999"}]},
+    bubbleSizeMax: 22,
+    fontSize: 14,
+    textFill: "#444",
+    bubbleStrokeWidth: 0,
+    xAxisTickSizeInner: 0,
+    yAxisTickSizeInner: 0,
+    gridStrokeWidth: 0
+  }]

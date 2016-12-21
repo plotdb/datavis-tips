@@ -1,0 +1,40 @@
+charts = (
+  animated-scatter-plot scatter-plot paired-scatter-plot connected-scatter-plot BCG-matrix ternary-plot connected-ternary-plot line-chart step-chart cycle-plot pie-chart donut-chart fan-chart 3d-pie-chart bar-chart stacked-bar-chart grouped-bar-chart 100%-stacked-bar-chart marimekko-chart length-chart population-pyramid bullet-chart curved-bar-chart gantt-diagram waterfall-chart
+)
+
+.chartico
+  &:before
+    content: " "
+    display: block
+    width: 128px
+    height: 128px
+    background: #eee
+    border: 5px solid #fff
+    border-radius: 50%
+    margin: auto
+.chartico.sm
+  &:before
+    width: 64px
+    height: 64px
+    border-width: 4px
+  margin: 0 5px
+  display: inline-block
+.chartico.text
+  &:before
+    background: #fff
+    background-position: center center
+    background-repeat: no-repeat
+  margin: 0 10px
+  width: auto!important
+  &:after
+    color: #444
+    font-weight: 400
+    font-size: 12px
+    display: block
+
+for chart in charts
+  .chartico.{chart}:before
+    background-image: unquote("url(/icon/" + chart + ".svg)")
+  .chartico.{chart}.text
+    &:after
+      content: replace("-"," ","" + chart)
