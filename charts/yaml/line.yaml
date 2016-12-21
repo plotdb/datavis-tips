@@ -1,0 +1,48 @@
+name: Line Chart
+
+alias:
+  - line graph
+
+plotdb: 1025
+
+description: >
+  Line chart connects data points in a Cartesian coordinate system including two axes (namely X axis and Y axis). The connection hints readers the order and direction of data ( usually from left to right ) thus is quite good at showing trends in data series, yet is not suitable for unordered data. Works better than bar/column chart when scaling or zooming since unlike data, there is no connection between axes and data points, but still to be careful when truncating axis.
+
+pros: >
+  Great tool to visualize data trends. still legible with many lines when trends are similar.
+
+cons: >
+  Counter-intuitive with unordered data. Work poorly with periodical dataset. Become too complicated when too many lines with different trends all together.
+
+category:
+  - trend
+
+dimension:
+  - [x, required, numeral]
+  - [y, required, numeral, multiple]
+
+visualEncoding:
+  - position
+  - direction
+
+commonPractice:
+  - Visualize data trends.
+
+classicExample:
+  - N/A
+
+mediaUsage:
+  - author: Jeremy Ashkenas, Alicia Parlapiano
+    title: How the Recession Reshaped the Economy, in 255 Charts
+    media: New York Times
+    year: 2014
+    link: http://www.nytimes.com/interactive/2014/06/05/upshot/how-the-recession-reshaped-the-economy-in-255-charts.html
+
+variant:
+  - parallel coordinates
+  - connected scatter plot
+  - step plot
+  - cycle plot
+  - bump chart
+  - continuous error bar plot
+  - combo chart

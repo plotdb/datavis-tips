@@ -40,15 +40,13 @@ html(lang="en")
             .choice(data-idx="2")
             .choice(data-idx="3")
         div(style="position:relative;z-index:2")
-          .avatar(style="background:url(/icon/" + id + ".svg) #fff")
+          .avatar(style="background:url(/icon/chart/" + id + ".svg) #fff")
           .btn.btn-success(style="position:absolute;margin:-54px 0 0 156px") online editor
           .similar.text-right
-            label similar charts
+            label category
             br
-            .chartico.connected-scatter-plot.sm
-            .chartico.paired-scatter-plot.sm
-            .chartico.animated-scatter-plot.sm
-            .chartico.ternary-plot.sm
+            each item in category
+              .catico.sm(class=item)
 
         .panel-body.content
           .title

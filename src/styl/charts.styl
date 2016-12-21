@@ -1,8 +1,12 @@
 charts = (
-  animated-scatter-plot scatter-plot paired-scatter-plot connected-scatter-plot BCG-matrix ternary-plot connected-ternary-plot line-chart step-chart cycle-plot pie-chart donut-chart fan-chart 3d-pie-chart bar-chart stacked-bar-chart grouped-bar-chart 100%-stacked-bar-chart marimekko-chart length-chart population-pyramid bullet-chart curved-bar-chart gantt-diagram waterfall-chart
+  animated-scatter-plot scatter-plot paired-scatter-plot connected-scatter-plot BCG-matrix ternary-plot connected-ternary-plot line-chart step-plot cycle-plot pie-chart donut-chart fan-chart 3d-pie-chart bar-chart stacked-bar-chart grouped-bar-chart 100%-stacked-bar-chart marimekko-chart length-chart population-pyramid bullet-chart curved-bar-chart gantt-diagram waterfall-chart parallel-coordinates bump-chart combo-chart continuous-error-bar-plot
 )
 
-.chartico
+categorys = (
+  distribution correlation trend change comparison proportion geography temporal hierarchy
+)
+
+.chartico, .catico
   &:before
     content: " "
     display: block
@@ -12,14 +16,14 @@ charts = (
     border: 5px solid #fff
     border-radius: 50%
     margin: auto
-.chartico.sm
+.chartico.sm, .catico.sm
   &:before
     width: 64px
     height: 64px
     border-width: 4px
   margin: 0 5px
   display: inline-block
-.chartico.text
+.chartico.text, .catico.text
   &:before
     background: #fff
     background-position: center center
@@ -34,7 +38,14 @@ charts = (
 
 for chart in charts
   .chartico.{chart}:before
-    background-image: unquote("url(/icon/" + chart + ".svg)")
+    background-image: unquote("url(/icon/chart/" + chart + ".svg)")
   .chartico.{chart}.text
     &:after
       content: replace("-"," ","" + chart)
+
+for category in categorys
+  .catico.{category}:before
+    background-image: unquote("url(/icon/cat/" + chart + ".svg)")
+  .catico.{category}.text
+    &:after
+      content: replace("-"," ","" + category)

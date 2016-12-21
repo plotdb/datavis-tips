@@ -21,10 +21,10 @@ category:
   - correlation 
 
 dimension:
-  - [x, required, Numeral]
-  - [y, required, Numeral]
-  - [color, optional, Any]
-  - [size, optional, Numeral]
+  - [x, required, numeral]
+  - [y, required, numeral]
+  - [color, optional, any]
+  - [size, optional, numeral]
 
 visualEncoding:
   - position
