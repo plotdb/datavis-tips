@@ -55,28 +55,34 @@ bannerConfig:
   [{
     margin: 10, background: "#aaa", gridBackground: "#aaa",
     palette: {colors: [{hex: "#444"},{hex: "#666"},{hex: "#999"}]},
+    legendShow: false,
     bubbleSizeMax: 15,
     bubbleStrokeWidth: 0,
     fontSize: 12,
     gridStrokeWidth: 1,
+    gridFrameStrokeWidth: 0,
     textFill: "#eee"
   },{
     margin: 10, background: "#942", gridBackground: "#942",
     palette: {colors: [{hex: "#fff"},{hex: "#ffd"},{hex: "#fdf"}]},
+    legendShow: false,
     bubbleSizeMax: 18,
     bubbleStroke: "#000",
     bubbleStrokeWidth: 1,
     fontSize: 14,
     gridStrokeWidth: 1,
+    gridFrameStrokeWidth: 0,
     textFill: "#ffe"
   },{
     margin: 10, background: "#eee", gridBackground: "#eee",
     palette: {colors: [{hex: "#e96"},{hex: "#ae5"},{hex: "#48d"},{hex: "#999"}]},
+    legendShow: false,
     bubbleSizeMax: 22,
     fontSize: 14,
     textFill: "#444",
     bubbleStrokeWidth: 0,
     xAxisTickSizeInner: 0,
     yAxisTickSizeInner: 0,
-    gridStrokeWidth: 0
+    gridStrokeWidth: 0,
+    gridFrameStrokeWidth: 0,
   }]

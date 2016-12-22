@@ -34,14 +34,15 @@ html(lang="en")
     #root
       .panel.panel-default(style="width:800px;margin:auto")
         .preview(style="position:relative;z-index:1")
-          #blah
-          #choices.choices(style="position:absolute;")
+          #chart-sample
+          #choices.choices(style="position:absolute;z-index:100;top:0")
             .choice.active(data-idx="1")
             .choice(data-idx="2")
             .choice(data-idx="3")
         div(style="position:relative;z-index:2")
           .avatar(style="background:url(/icon/chart/" + id + ".svg) #fff")
-          .btn.btn-success(style="position:absolute;margin:-54px 0 0 156px") online editor
+          a.btn.btn-success(href="https://plotdb.com/chart/"+plotdb,
+          style="position:absolute;margin:-54px 0 0 156px",target="_blank") online editor
           .similar.text-right
             label category
             br
@@ -112,7 +113,10 @@ html(lang="en")
           label Media Usage
           ul
             each item in mediaUsage
-              li #[span= item.author], "#[a(href=item.link,target="_blank")= item.title]", #[span= item.media], #[span= item.year].
+              if item == "N/A"
+                li N/A
+              else
+                li #[span= item.author], "#[a(href=item.link,target="_blank")= item.title]", #[span= item.media], #[span= item.year].
                 
           br
 
@@ -120,5 +124,24 @@ html(lang="en")
           p
             each item in variant
               .chartico.text.sm(class=item.toLowerCase().replace(/ /g,"-"))
-
-    script(type="text/javascript",src="/index.js")
+  script(type="text/javascript")= "var chartid=" + plotdb + ";"
+  if bannerConfig
+    script(type="text/javascript").
+      var chartconfig = !{JSON.stringify(bannerConfig)};
+  script.
+    var curChart = null;
+    plotdb.load(chartid,function(chart) {
+      var root = document.getElementById("chart-sample");
+      if(typeof(chartconfig)!="undefined") chart.config(chartconfig[0]);
+      chart.attach(root);
+      curChart = chart;
+    });
+    document.getElementById("choices").addEventListener("click",function(it) {
+      idx = +it.target.getAttribute("data-idx");
+      console.log(chartconfig[idx - 1]);
+      curChart.config(chartconfig[idx - 1]);
+      curChart.parse();
+      curChart.resize();
+      curChart.bind();
+      curChart.render();
+    });

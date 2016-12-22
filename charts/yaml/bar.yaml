@@ -1,0 +1,48 @@
+name: Bar Chart
+
+alias:
+  - bar graph
+
+plotdb: 1069
+
+description: >
+  Bar chart uses length of colored rectangle in the horizontal direction to visualize data, which is usually used to compare one dimensional data. Generally speaking bars in bar chart are aligned to the left and sorted descendingly from top to bottom; it can also align to bottom and sorted from left to right, in this case it is called Column Chart.
+
+  Best used with small dataset to precisely compare data along the axis, yet comparing to line chart there is no connection between bars so data can be sorted to give readers better information about the ranks.
+
+  Bars implicate the absolute size of data, so it is sometimes misleading when zooming into details which make the axis not starting from zero.
+
+pros: >
+  Works great in comparing between data precisely and accurately.
+
+cons: >
+  Less intuitive at temporal ( especially periodical ) data. Works poorly with large dataset ( degrade to area chart ). Works very bad with extreme data and small change between values.
+
+category:
+  - comparison
+
+dimension:
+  - [x, required, any]
+  - [y, required, numeral]
+
+visualEncoding:
+  - position
+  - length
+
+commonPractice:
+  - For comparing between data and finding the max/min entry.
+
+classicExample:
+  - N/A
+
+mediaUsage:
+  - N/A
+
+variant:
+  - grouped bar chart
+  - stacked bar chart
+  - column chart
+  - span chart
+  - bullet chart
+  - full stacked bar chart
+  - marimekko chart

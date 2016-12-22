@@ -3,7 +3,7 @@ name: Line Chart
 alias:
   - line graph
 
-plotdb: 1025
+plotdb: 953
 
 description: >
   Line chart connects data points in a Cartesian coordinate system including two axes (namely X axis and Y axis). The connection hints readers the order and direction of data ( usually from left to right ) thus is quite good at showing trends in data series, yet is not suitable for unordered data. Works better than bar/column chart when scaling or zooming since unlike data, there is no connection between axes and data points, but still to be careful when truncating axis.
@@ -41,7 +41,7 @@ mediaUsage:
 variant:
   - parallel coordinates
   - connected scatter plot
-  - step plot
+  - step chart
   - cycle plot
   - bump chart
   - continuous error bar plot

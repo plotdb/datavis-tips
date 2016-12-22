@@ -1,0 +1,48 @@
+name: Ternary Plot
+
+alias:
+  - simplex plot
+  - triangle plot
+  - ternary diagram
+
+plotdb: 2013
+
+description: >
+  Variation of scatter plot which contains three variables summing to a fixed value. usually, this can be the proportions between 3 variables ( which have the summation of 100% ).
+
+  Most use in mineralogy to visualize components of materials, in this case chart is divided into several areas to identify the proportion range of different materials.
+
+pros: >
+  Works great in showing proportion, correlation with exactly three variables.
+
+cons: >
+  the fact that needing exactly three variables makes it less useful in most situation.
+
+category:
+  - correlation
+
+dimension:
+  - [x, required, numeral]
+  - [y, required, numeral]
+  - [z, required, numeral]
+  - [color, optional, any]
+  - [size, optional, numeral]
+
+visualEncoding:
+  - position
+
+commonPractice:
+  - Visualize the composition of rocks or minerals
+
+classicExample:
+  - Colors for Ag / Au / Cu composition 
+
+mediaUsage:
+  - author: Jeremy Ashkenas, Larry Buchanan
+    title: "The Yen, Won and Renminbi: A Triangular Guide to the East Asian Currency Wars"
+    media: New York Times
+    year: 2015
+    link: http://www.nytimes.com/interactive/2015/08/13/business/international/the-yen-won-and-renminbi-a-triangular-guide-to-the-east-asian-currency-wars.html
+
+variant:
+  - connected ternary plot
