@@ -86,11 +86,11 @@
 .chartico.line-chart.text:after {
   content: 'line chart';
 }
-.chartico.step-plot:before {
-  background-image: url(/icon/chart/step-plot.svg);
+.chartico.step-chart:before {
+  background-image: url(/icon/chart/step-chart.svg);
 }
-.chartico.step-plot.text:after {
-  content: 'step plot';
+.chartico.step-chart.text:after {
+  content: 'step chart';
 }
 .chartico.cycle-plot:before {
   background-image: url(/icon/chart/cycle-plot.svg);
@@ -146,17 +146,11 @@
 .chartico.grouped-bar-chart.text:after {
   content: 'grouped bar chart';
 }
-.chartico.100%:before {
-  background-image: url(/icon/chart/100%.svg);
+.chartico.full-stacked-bar-chart:before {
+  background-image: url(/icon/chart/full-stacked-bar-chart.svg);
 }
-.chartico.100%.text:after {
-  content: '100%';
-}
-.chartico.-stacked-bar-chart:before {
-  background-image: url(/icon/chart/-stacked-bar-chart.svg);
-}
-.chartico.-stacked-bar-chart.text:after {
-  content: ' stacked bar chart';
+.chartico.full-stacked-bar-chart.text:after {
+  content: 'full stacked bar chart';
 }
 .chartico.marimekko-chart:before {
   background-image: url(/icon/chart/marimekko-chart.svg);
@@ -164,11 +158,11 @@
 .chartico.marimekko-chart.text:after {
   content: 'marimekko chart';
 }
-.chartico.length-chart:before {
-  background-image: url(/icon/chart/length-chart.svg);
+.chartico.span-chart:before {
+  background-image: url(/icon/chart/span-chart.svg);
 }
-.chartico.length-chart.text:after {
-  content: 'length chart';
+.chartico.span-chart.text:after {
+  content: 'span chart';
 }
 .chartico.population-pyramid:before {
   background-image: url(/icon/chart/population-pyramid.svg);
@@ -224,56 +218,62 @@
 .chartico.continuous-error-bar-plot.text:after {
   content: 'continuous error bar plot';
 }
+.chartico.column-chart:before {
+  background-image: url(/icon/chart/column-chart.svg);
+}
+.chartico.column-chart.text:after {
+  content: 'column chart';
+}
 .catico.distribution:before {
-  background-image: url(/icon/cat/continuous-error-bar-plot.svg);
+  background-image: url(/icon/cat/column-chart.svg);
 }
 .catico.distribution.text:after {
   content: 'distribution';
 }
 .catico.correlation:before {
-  background-image: url(/icon/cat/continuous-error-bar-plot.svg);
+  background-image: url(/icon/cat/column-chart.svg);
 }
 .catico.correlation.text:after {
   content: 'correlation';
 }
 .catico.trend:before {
-  background-image: url(/icon/cat/continuous-error-bar-plot.svg);
+  background-image: url(/icon/cat/column-chart.svg);
 }
 .catico.trend.text:after {
   content: 'trend';
 }
 .catico.change:before {
-  background-image: url(/icon/cat/continuous-error-bar-plot.svg);
+  background-image: url(/icon/cat/column-chart.svg);
 }
 .catico.change.text:after {
   content: 'change';
 }
 .catico.comparison:before {
-  background-image: url(/icon/cat/continuous-error-bar-plot.svg);
+  background-image: url(/icon/cat/column-chart.svg);
 }
 .catico.comparison.text:after {
   content: 'comparison';
 }
 .catico.proportion:before {
-  background-image: url(/icon/cat/continuous-error-bar-plot.svg);
+  background-image: url(/icon/cat/column-chart.svg);
 }
 .catico.proportion.text:after {
   content: 'proportion';
 }
 .catico.geography:before {
-  background-image: url(/icon/cat/continuous-error-bar-plot.svg);
+  background-image: url(/icon/cat/column-chart.svg);
 }
 .catico.geography.text:after {
   content: 'geography';
 }
 .catico.temporal:before {
-  background-image: url(/icon/cat/continuous-error-bar-plot.svg);
+  background-image: url(/icon/cat/column-chart.svg);
 }
 .catico.temporal.text:after {
   content: 'temporal';
 }
 .catico.hierarchy:before {
-  background-image: url(/icon/cat/continuous-error-bar-plot.svg);
+  background-image: url(/icon/cat/column-chart.svg);
 }
 .catico.hierarchy.text:after {
   content: 'hierarchy';
