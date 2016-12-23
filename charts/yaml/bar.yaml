@@ -5,19 +5,6 @@ alias:
 
 plotdb: 1069
 
-description: >
-  Bar chart uses length of colored rectangle in the horizontal direction to visualize data, which is usually used to compare one dimensional data. Generally speaking bars in bar chart are aligned to the left and sorted descendingly from top to bottom; it can also align to bottom and sorted from left to right, in this case it is called Column Chart.
-
-  Best used with small dataset to precisely compare data along the axis, yet comparing to line chart there is no connection between bars so data can be sorted to give readers better information about the ranks.
-
-  Bars implicate the absolute size of data, so it is sometimes misleading when zooming into details which make the axis not starting from zero.
-
-pros: >
-  Works great in comparing between data precisely and accurately.
-
-cons: >
-  Less intuitive at temporal ( especially periodical ) data. Works poorly with large dataset ( degrade to area chart ). Works very bad with extreme data and small change between values.
-
 category:
   - comparison
 
@@ -29,15 +16,6 @@ visualEncoding:
   - position
   - length
 
-commonPractice:
-  - For comparing between data and finding the max/min entry.
-
-classicExample:
-  - N/A
-
-mediaUsage:
-  - N/A
-
 variant:
   - grouped bar chart
   - stacked bar chart
@@ -46,3 +24,51 @@ variant:
   - bullet chart
   - full stacked bar chart
   - marimekko chart
+
+classicExample:
+  - N/A
+
+mediaUsage:
+  - N/A
+
+description:
+  en: >
+    Bar chart uses length of colored rectangle in the horizontal direction to visualize data, which is usually used to compare one dimensional data. Generally speaking bars in bar chart are aligned to the left and sorted descendingly from top to bottom; it can also align to bottom and sorted from left to right, in this case it is called Column Chart.
+
+    Best used with small dataset to precisely compare data along the axis, yet comparing to line chart there is no connection between bars so data can be sorted to give readers better information about the ranks.
+
+    Bars implicate the absolute size of data, so it is sometimes misleading when zooming into details which make the axis not starting from zero.
+  zh: >
+    以方形色塊的長度表現資料的一種圖表。常用來比較單一維度的數據，色塊可直向 (Column) 或橫向 (Bar) 排列，呈現時序資料常做橫向排列 (由左至右)。
+
+    適合小量資料集，比起折線圖少了資料間的連線，因此較不強調資料的趨勢，為無序性資料的首選圖表。
+
+    由於長條通常由圖表軸線畫起，本身暗示資料絕對大小，因此局部放大時易造成讀者誤解，不利於表現資料的細微變化。
+
+pros:
+  en: >
+    Best chart to precisely and accurately compare between values.
+  zh: >
+    最能夠精確比較圖表中數字的圖表。
+
+cons:
+  en: >
+    Work poorly with large dataset or periodic dataset.  Become useless when data variation is small comparing to the value itself.
+  zh: >
+    不易呈現週期性資料、資料量大時不易閱讀。數據變化比例小時不易閱讀。
+
+commonPractice:
+  en:
+    - For comparing between data and finding the max/min entry.
+  zh:
+    - 一般使用長條圖來表現資料的極值、或是做數值的精確比較。
+
+guideline:
+  en:
+    - origin of axis should start from zero
+    - sort bars by data to provide more information for readers
+    - works better with data where order is not applicable
+  zh:
+    - 圖表的座標原點需由零開始
+    - 數據排序後呈現為佳
+    - 比起有序資料，更適合運用在無序資料上

@@ -1,0 +1,39 @@
+name: Pie Chart
+
+alias:
+  - circle chart
+
+plotdb: 1040
+
+description: >
+  Pie charts is a kind of chart which divides circle into wedges with angles corresponding to data. Circle and wedges demonstrate a whole/part relationship, so the most common use of pie chart is to show the proportion of data in the dataset as a whole. By the natural limitation of size of angle, we suggest use at most 7 wedges in a pie chart, and sort them from 12 o'clock direction, clockwisely. 
+
+pros: >
+  Show proportion clearly, especially in small dataset and specific proportion (such as 25%, 50% and 75%)
+
+cons: >
+  Not suitable for large dataset; Often Misuse ( such as a 3D pie chart ). Work poor when comparing across other pie charts.
+
+category:
+  - proportion
+
+dimension:
+  - [angle, required, numeral]
+
+visualEncoding:
+  - angle
+  - area
+
+commonPractice:
+  - show proportion
+
+classicExample:
+  - Steve Jobs's "U.S. SmartPhone Marketshare" pie chart.
+
+mediaUsage:
+  - N/A
+
+variant:
+  - donut chart
+  - polar chart
+  - sun burst diagram

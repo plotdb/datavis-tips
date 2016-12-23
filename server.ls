@@ -263,16 +263,27 @@ update-file = ->
   [type,cmd,des] = [ftype(src), "",""]
 
   if type == \other => return
+  choose-lang = (cfg, lang) ->
+    ret = JSON.parse(JSON.stringify(cfg))
+    for k of ret => if ret[k][lang] => ret[k] = ret[k][lang]
+    ret
   build-yaml = (src) ->
+    langs = <[en zh]>
     try
       cfg = js-yaml.safe-load fs.read-file-sync src, \utf8
       cfg.id = name = cfg.name.to-lower-case!.replace(/ /g, '-')
-      template = fs.read-file-sync \template.jade .toString!
-      ret = jade.render template,{filename: "template.jade", basedir: path.join(cwd)} <<< cfg
-      des = "v/#name/index.html"
-      mkdir-recurse path.dirname(des)
-      fs.write-file-sync des, ret
-      console.log "[BUILD] #src --> #des"
+      for lang in langs =>
+        lang-cfg = choose-lang cfg, lang
+        template = fs.read-file-sync \template.jade .toString!
+        ret = jade.render template,{filename: "template.jade", basedir: path.join(cwd)} <<< lang-cfg
+        des = "v/#name/#lang/index.html"
+        mkdir-recurse path.dirname(des)
+        fs.write-file-sync des, ret
+        console.log "[BUILD] #src --> #des"
+        if lang == "en" =>
+          des = "v/#name/index.html"
+          fs.write-file-sync des, ret
+          console.log "[BUILD] #src --> #des"
     catch e
       console.log "[ERROR] #src faield:".red
       console.log e.toString!.grey

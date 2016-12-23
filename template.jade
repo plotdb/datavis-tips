@@ -28,6 +28,7 @@ html(lang="en")
     link(rel="stylesheet",type="text/css",href="/lib/plotdb.css")
     link(rel="stylesheet",type="text/css",href="/static/css/dev.css")
     link(rel="stylesheet",type="text/css",href="/static/css/index.css")
+    link(href="https://fonts.googleapis.com/earlyaccess/notosanstc.css",rel="stylesheet")
     script(type="text/javascript",src="/lib/plotdb.js")
     script(type="text/javascript",src="/lib/plotd3.js")
   body
@@ -123,7 +124,7 @@ html(lang="en")
           label Variants
           p
             each item in variant
-              .chartico.text.sm(class=item.toLowerCase().replace(/ /g,"-"))
+              .chartico.text.md(class=item.toLowerCase().replace(/ /g,"-"))
   script(type="text/javascript")= "var chartid=" + plotdb + ";"
   if bannerConfig
     script(type="text/javascript").

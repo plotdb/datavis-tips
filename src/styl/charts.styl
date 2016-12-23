@@ -1,5 +1,5 @@
 charts = (
-  animated-scatter-plot scatter-plot paired-scatter-plot connected-scatter-plot BCG-matrix ternary-plot connected-ternary-plot line-chart step-chart cycle-plot pie-chart donut-chart fan-chart 3d-pie-chart bar-chart stacked-bar-chart grouped-bar-chart full-stacked-bar-chart marimekko-chart span-chart population-pyramid bullet-chart curved-bar-chart gantt-diagram waterfall-chart parallel-coordinates bump-chart combo-chart continuous-error-bar-plot column-chart
+  animated-scatter-plot scatter-plot paired-scatter-plot connected-scatter-plot BCG-matrix ternary-plot connected-ternary-plot line-chart step-chart cycle-plot pie-chart donut-chart sun-burst-diagram 3d-pie-chart bar-chart stacked-bar-chart grouped-bar-chart full-stacked-bar-chart marimekko-chart span-chart population-pyramid bullet-chart curved-bar-chart gantt-diagram waterfall-chart parallel-coordinates bump-chart combo-chart continuous-error-bar-plot column-chart polar-chart
 )
 
 categorys = (
@@ -7,6 +7,8 @@ categorys = (
 )
 
 .chartico, .catico
+  text-align: center
+  margin-bottom: 10px
   &:before
     content: " "
     display: block
@@ -16,19 +18,33 @@ categorys = (
     border: 5px solid #fff
     border-radius: 50%
     margin: auto
+
 .chartico.sm, .catico.sm
   &:before
     width: 64px
     height: 64px
     border-width: 4px
-  margin: 0 5px
+  margin-left: 5px
+  margin-right: 5px
   display: inline-block
+
+.chartico.md, .catico.md
+  &:before
+    width: 90px
+    height: 84px
+    border-width: 4px
+    border-bottom: 0
+  margin-left: 5px
+  margin-right: 5px
+  display: inline-block
+
 .chartico.text, .catico.text
   &:before
     background: #fff
     background-position: center center
     background-repeat: no-repeat
-  margin: 0 10px
+  margin-right: 10px
+  margin-left: 10px
   width: auto!important
   &:after
     color: #444
