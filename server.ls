@@ -265,7 +265,7 @@ update-file = ->
   if type == \other => return
   choose-lang = (cfg, lang) ->
     ret = JSON.parse(JSON.stringify(cfg))
-    for k of ret => if ret[k][lang] => ret[k] = ret[k][lang]
+    for k of ret => if ret[k] and ret[k][lang] => ret[k] = ret[k][lang]
     ret
   build-yaml = (src) ->
     langs = <[en zh]>
