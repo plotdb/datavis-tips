@@ -1,4 +1,6 @@
-name: Ternary Plot
+name:
+  en: Ternary Plot
+  zh: 三元圖
 
 alias:
   - simplex plot

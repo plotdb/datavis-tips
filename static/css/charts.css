@@ -250,56 +250,86 @@
 .chartico.polar-chart.text:after {
   content: 'polar chart';
 }
+.chartico.bubble-chart:before {
+  background-image: url(/icon/chart/bubble-chart.svg);
+}
+.chartico.bubble-chart.text:after {
+  content: 'bubble chart';
+}
+.chartico.bubble-map:before {
+  background-image: url(/icon/chart/bubble-map.svg);
+}
+.chartico.bubble-map.text:after {
+  content: 'bubble map';
+}
+.chartico.dorling-cartogram:before {
+  background-image: url(/icon/chart/dorling-cartogram.svg);
+}
+.chartico.dorling-cartogram.text:after {
+  content: 'dorling cartogram';
+}
+.chartico.pie-bubble:before {
+  background-image: url(/icon/chart/pie-bubble.svg);
+}
+.chartico.pie-bubble.text:after {
+  content: 'pie bubble';
+}
+.chartico.circular-treemap:before {
+  background-image: url(/icon/chart/circular-treemap.svg);
+}
+.chartico.circular-treemap.text:after {
+  content: 'circular treemap';
+}
 .catico.distribution:before {
-  background-image: url(/icon/cat/polar-chart.svg);
+  background-image: url(/icon/cat/circular-treemap.svg);
 }
 .catico.distribution.text:after {
   content: 'distribution';
 }
 .catico.correlation:before {
-  background-image: url(/icon/cat/polar-chart.svg);
+  background-image: url(/icon/cat/circular-treemap.svg);
 }
 .catico.correlation.text:after {
   content: 'correlation';
 }
 .catico.trend:before {
-  background-image: url(/icon/cat/polar-chart.svg);
+  background-image: url(/icon/cat/circular-treemap.svg);
 }
 .catico.trend.text:after {
   content: 'trend';
 }
 .catico.change:before {
-  background-image: url(/icon/cat/polar-chart.svg);
+  background-image: url(/icon/cat/circular-treemap.svg);
 }
 .catico.change.text:after {
   content: 'change';
 }
 .catico.comparison:before {
-  background-image: url(/icon/cat/polar-chart.svg);
+  background-image: url(/icon/cat/circular-treemap.svg);
 }
 .catico.comparison.text:after {
   content: 'comparison';
 }
 .catico.proportion:before {
-  background-image: url(/icon/cat/polar-chart.svg);
+  background-image: url(/icon/cat/circular-treemap.svg);
 }
 .catico.proportion.text:after {
   content: 'proportion';
 }
 .catico.geography:before {
-  background-image: url(/icon/cat/polar-chart.svg);
+  background-image: url(/icon/cat/circular-treemap.svg);
 }
 .catico.geography.text:after {
   content: 'geography';
 }
 .catico.temporal:before {
-  background-image: url(/icon/cat/polar-chart.svg);
+  background-image: url(/icon/cat/circular-treemap.svg);
 }
 .catico.temporal.text:after {
   content: 'temporal';
 }
 .catico.hierarchy:before {
-  background-image: url(/icon/cat/polar-chart.svg);
+  background-image: url(/icon/cat/circular-treemap.svg);
 }
 .catico.hierarchy.text:after {
   content: 'hierarchy';

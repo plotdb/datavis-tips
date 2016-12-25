@@ -1,4 +1,6 @@
-name: Line Chart
+name:
+  en: Line Chart
+  zh: 折線圖
 
 alias:
   - line graph

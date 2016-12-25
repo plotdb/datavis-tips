@@ -1,4 +1,6 @@
-name: Scatter Plot
+name:
+  en: Scatter Plot
+  zh: 散布圖
 
 alias:
   - scattergram

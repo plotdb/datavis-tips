@@ -1,4 +1,6 @@
-name: Pie Chart
+name:
+  en: Pie Chart
+  zh: 圓餅圖
 
 alias:
   - circle chart

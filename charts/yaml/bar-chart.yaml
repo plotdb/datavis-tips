@@ -1,4 +1,6 @@
-name: Bar Chart
+name:
+  en: Bar Chart
+  zh: 長條圖
 
 alias:
   - bar graph

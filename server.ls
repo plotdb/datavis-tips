@@ -271,7 +271,7 @@ update-file = ->
     langs = <[en zh]>
     try
       cfg = js-yaml.safe-load fs.read-file-sync src, \utf8
-      cfg.id = name = cfg.name.to-lower-case!.replace(/ /g, '-')
+      cfg.id = name = (cfg.name.en or cfg.name).to-lower-case!.replace(/ /g, '-')
       for lang in langs =>
         lang-cfg = choose-lang cfg, lang
         template = fs.read-file-sync \template.jade .toString!
