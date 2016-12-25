@@ -294,56 +294,74 @@ body {
 .chartico.circular-treemap.text:after {
   content: 'circular treemap';
 }
+.chartico.voronoi-treemap:before {
+  background-image: url(/icon/chart/voronoi-treemap.svg);
+}
+.chartico.voronoi-treemap.text:after {
+  content: 'voronoi treemap';
+}
+.chartico.jigsaw-treemap:before {
+  background-image: url(/icon/chart/jigsaw-treemap.svg);
+}
+.chartico.jigsaw-treemap.text:after {
+  content: 'jigsaw treemap';
+}
+.chartico.convex-treemap:before {
+  background-image: url(/icon/chart/convex-treemap.svg);
+}
+.chartico.convex-treemap.text:after {
+  content: 'convex treemap';
+}
 .catico.distribution:before {
-  background-image: url(/icon/cat/circular-treemap.svg);
+  background-image: url(/icon/cat/convex-treemap.svg);
 }
 .catico.distribution.text:after {
   content: 'distribution';
 }
 .catico.correlation:before {
-  background-image: url(/icon/cat/circular-treemap.svg);
+  background-image: url(/icon/cat/convex-treemap.svg);
 }
 .catico.correlation.text:after {
   content: 'correlation';
 }
 .catico.trend:before {
-  background-image: url(/icon/cat/circular-treemap.svg);
+  background-image: url(/icon/cat/convex-treemap.svg);
 }
 .catico.trend.text:after {
   content: 'trend';
 }
 .catico.change:before {
-  background-image: url(/icon/cat/circular-treemap.svg);
+  background-image: url(/icon/cat/convex-treemap.svg);
 }
 .catico.change.text:after {
   content: 'change';
 }
 .catico.comparison:before {
-  background-image: url(/icon/cat/circular-treemap.svg);
+  background-image: url(/icon/cat/convex-treemap.svg);
 }
 .catico.comparison.text:after {
   content: 'comparison';
 }
 .catico.proportion:before {
-  background-image: url(/icon/cat/circular-treemap.svg);
+  background-image: url(/icon/cat/convex-treemap.svg);
 }
 .catico.proportion.text:after {
   content: 'proportion';
 }
 .catico.geography:before {
-  background-image: url(/icon/cat/circular-treemap.svg);
+  background-image: url(/icon/cat/convex-treemap.svg);
 }
 .catico.geography.text:after {
   content: 'geography';
 }
 .catico.temporal:before {
-  background-image: url(/icon/cat/circular-treemap.svg);
+  background-image: url(/icon/cat/convex-treemap.svg);
 }
 .catico.temporal.text:after {
   content: 'temporal';
 }
 .catico.hierarchy:before {
-  background-image: url(/icon/cat/circular-treemap.svg);
+  background-image: url(/icon/cat/convex-treemap.svg);
 }
 .catico.hierarchy.text:after {
   content: 'hierarchy';
