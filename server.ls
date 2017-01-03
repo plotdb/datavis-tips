@@ -308,6 +308,7 @@ update-file = ->
         console.log e.message
       return
     else =>
+      if /^icon/.exec src => return
       des = src.replace /\.ls$/, ".js"
       try
         mkdir-recurse path.dirname(des)

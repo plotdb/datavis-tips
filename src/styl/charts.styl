@@ -6,7 +6,11 @@ categorys = (
   distribution correlation trend change comparison proportion geography temporal hierarchy
 )
 
-.chartico, .catico
+encodings = (
+  saturation hue lightness area position aligned-length direction angle shape volume "length"
+)
+
+.chartico, .catico, .encico
   text-align: center
   margin-bottom: 10px
   &:before
@@ -19,7 +23,7 @@ categorys = (
     border-radius: 50%
     margin: auto
 
-.chartico.sm, .catico.sm
+.chartico.sm, .catico.sm, .encico.sm
   &:before
     width: 64px
     height: 64px
@@ -28,7 +32,7 @@ categorys = (
   margin-right: 5px
   display: inline-block
 
-.chartico.md, .catico.md
+.chartico.md, .catico.md, .encico.md
   &:before
     width: 90px
     height: 84px
@@ -38,7 +42,7 @@ categorys = (
   margin-right: 5px
   display: inline-block
 
-.chartico.text, .catico.text
+.chartico.text, .catico.text, .encico.text
   &:before
     background: #fff
     background-position: center center
@@ -61,7 +65,14 @@ for chart in charts
 
 for category in categorys
   .catico.{category}:before
-    background-image: unquote("url(/icon/cat/" + chart + ".svg)")
+    background-image: unquote("url(/icon/cat/" + category + ".svg)")
   .catico.{category}.text
     &:after
       content: replace("-"," ","" + category)
+
+for encoding in encodings
+  .encico.{encoding}:before
+    background-image: unquote("url(/icon/encoding/" + encoding + ".svg)")
+  .encico.{encoding}.text
+    &:after
+      content: replace("-"," ","" + encoding)

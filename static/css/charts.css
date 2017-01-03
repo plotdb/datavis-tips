@@ -1,10 +1,12 @@
 .chartico,
-.catico {
+.catico,
+.encico {
   text-align: center;
   margin-bottom: 10px;
 }
 .chartico:before,
-.catico:before {
+.catico:before,
+.encico:before {
   content: " ";
   display: block;
   width: 128px;
@@ -15,44 +17,51 @@
   margin: auto;
 }
 .chartico.sm,
-.catico.sm {
+.catico.sm,
+.encico.sm {
   margin-left: 5px;
   margin-right: 5px;
   display: inline-block;
 }
 .chartico.sm:before,
-.catico.sm:before {
+.catico.sm:before,
+.encico.sm:before {
   width: 64px;
   height: 64px;
   border-width: 4px;
 }
 .chartico.md,
-.catico.md {
+.catico.md,
+.encico.md {
   margin-left: 5px;
   margin-right: 5px;
   display: inline-block;
 }
 .chartico.md:before,
-.catico.md:before {
+.catico.md:before,
+.encico.md:before {
   width: 90px;
   height: 84px;
   border-width: 4px;
   border-bottom: 0;
 }
 .chartico.text,
-.catico.text {
+.catico.text,
+.encico.text {
   margin-right: 10px;
   margin-left: 10px;
   width: auto !important;
 }
 .chartico.text:before,
-.catico.text:before {
+.catico.text:before,
+.encico.text:before {
   background: #fff;
   background-position: center center;
   background-repeat: no-repeat;
 }
 .chartico.text:after,
-.catico.text:after {
+.catico.text:after,
+.encico.text:after {
   color: #444;
   font-weight: 400;
   font-size: 12px;
@@ -299,56 +308,122 @@
   content: 'convex treemap';
 }
 .catico.distribution:before {
-  background-image: url(/icon/cat/convex-treemap.svg);
+  background-image: url(/icon/cat/distribution.svg);
 }
 .catico.distribution.text:after {
   content: 'distribution';
 }
 .catico.correlation:before {
-  background-image: url(/icon/cat/convex-treemap.svg);
+  background-image: url(/icon/cat/correlation.svg);
 }
 .catico.correlation.text:after {
   content: 'correlation';
 }
 .catico.trend:before {
-  background-image: url(/icon/cat/convex-treemap.svg);
+  background-image: url(/icon/cat/trend.svg);
 }
 .catico.trend.text:after {
   content: 'trend';
 }
 .catico.change:before {
-  background-image: url(/icon/cat/convex-treemap.svg);
+  background-image: url(/icon/cat/change.svg);
 }
 .catico.change.text:after {
   content: 'change';
 }
 .catico.comparison:before {
-  background-image: url(/icon/cat/convex-treemap.svg);
+  background-image: url(/icon/cat/comparison.svg);
 }
 .catico.comparison.text:after {
   content: 'comparison';
 }
 .catico.proportion:before {
-  background-image: url(/icon/cat/convex-treemap.svg);
+  background-image: url(/icon/cat/proportion.svg);
 }
 .catico.proportion.text:after {
   content: 'proportion';
 }
 .catico.geography:before {
-  background-image: url(/icon/cat/convex-treemap.svg);
+  background-image: url(/icon/cat/geography.svg);
 }
 .catico.geography.text:after {
   content: 'geography';
 }
 .catico.temporal:before {
-  background-image: url(/icon/cat/convex-treemap.svg);
+  background-image: url(/icon/cat/temporal.svg);
 }
 .catico.temporal.text:after {
   content: 'temporal';
 }
 .catico.hierarchy:before {
-  background-image: url(/icon/cat/convex-treemap.svg);
+  background-image: url(/icon/cat/hierarchy.svg);
 }
 .catico.hierarchy.text:after {
   content: 'hierarchy';
+}
+.encico.saturation:before {
+  background-image: url(/icon/encoding/saturation(color, value).svg);
+}
+.encico.saturation.text:after {
+  content: 'saturation(color, value)';
+}
+.encico.hue:before {
+  background-image: url(/icon/encoding/hue(color, value).svg);
+}
+.encico.hue.text:after {
+  content: 'hue(color, value)';
+}
+.encico.lightness:before {
+  background-image: url(/icon/encoding/lightness(color, value).svg);
+}
+.encico.lightness.text:after {
+  content: 'lightness(color, value)';
+}
+.encico.area:before {
+  background-image: url(/icon/encoding/area.svg);
+}
+.encico.area.text:after {
+  content: 'area';
+}
+.encico.position:before {
+  background-image: url(/icon/encoding/position.svg);
+}
+.encico.position.text:after {
+  content: 'position';
+}
+.encico.aligned-length:before {
+  background-image: url(/icon/encoding/aligned-length.svg);
+}
+.encico.aligned-length.text:after {
+  content: 'aligned length';
+}
+.encico.direction:before {
+  background-image: url(/icon/encoding/direction.svg);
+}
+.encico.direction.text:after {
+  content: 'direction';
+}
+.encico.angle:before {
+  background-image: url(/icon/encoding/angle.svg);
+}
+.encico.angle.text:after {
+  content: 'angle';
+}
+.encico.shape:before {
+  background-image: url(/icon/encoding/shape.svg);
+}
+.encico.shape.text:after {
+  content: 'shape';
+}
+.encico.volume:before {
+  background-image: url(/icon/encoding/volume.svg);
+}
+.encico.volume.text:after {
+  content: 'volume';
+}
+.encico.length:before {
+  background-image: url(/icon/encoding/length.svg);
+}
+.encico.length.text:after {
+  content: 'length';
 }

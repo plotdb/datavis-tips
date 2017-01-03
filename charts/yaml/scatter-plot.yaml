@@ -7,7 +7,7 @@ alias:
   - scatter graph
   - scatter chart
 
-plotdb: 1025
+plotdb: 2177
 
 description: >
   typical scatter plot uses data as coordinates of points over a two-dimensional plane. higher dimension is also possible. due to the characteristics of scatter plot, it is often used to display correlation between two data series, which is better than simply calculating the correlation coefficient especially when observing non-linear relationship. scatter plot can be extended by changing colors, size, connection and dynamics of points to visualize more data series in a single chart.
