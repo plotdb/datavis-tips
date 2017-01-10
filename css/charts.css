@@ -73,11 +73,17 @@
 .chartico.animated-scatter-plot.text:after {
   content: 'animated scatter plot';
 }
+.chartico.animated-scatter-plot.text.zh:after {
+  content: "動畫散布圖";
+}
 .chartico.scatter-plot:before {
   background-image: url(/icon/chart/scatter-plot.svg);
 }
 .chartico.scatter-plot.text:after {
   content: 'scatter plot';
+}
+.chartico.scatter-plot.text.zh:after {
+  content: "散布圖";
 }
 .chartico.paired-scatter-plot:before {
   background-image: url(/icon/chart/paired-scatter-plot.svg);
@@ -85,11 +91,17 @@
 .chartico.paired-scatter-plot.text:after {
   content: 'paired scatter plot';
 }
+.chartico.paired-scatter-plot.text.zh:after {
+  content: "配對散布圖";
+}
 .chartico.connected-scatter-plot:before {
   background-image: url(/icon/chart/connected-scatter-plot.svg);
 }
 .chartico.connected-scatter-plot.text:after {
   content: 'connected scatter plot';
+}
+.chartico.connected-scatter-plot.text.zh:after {
+  content: "連接散布圖";
 }
 .chartico.BCG-matrix:before {
   background-image: url(/icon/chart/BCG-matrix.svg);
@@ -97,11 +109,17 @@
 .chartico.BCG-matrix.text:after {
   content: 'BCG matrix';
 }
+.chartico.BCG-matrix.text.zh:after {
+  content: "波士頓矩陣";
+}
 .chartico.ternary-plot:before {
   background-image: url(/icon/chart/ternary-plot.svg);
 }
 .chartico.ternary-plot.text:after {
   content: 'ternary plot';
+}
+.chartico.ternary-plot.text.zh:after {
+  content: "三元圖";
 }
 .chartico.connected-ternary-plot:before {
   background-image: url(/icon/chart/connected-ternary-plot.svg);
@@ -109,11 +127,17 @@
 .chartico.connected-ternary-plot.text:after {
   content: 'connected ternary plot';
 }
+.chartico.connected-ternary-plot.text.zh:after {
+  content: "連接三元圖";
+}
 .chartico.line-chart:before {
   background-image: url(/icon/chart/line-chart.svg);
 }
 .chartico.line-chart.text:after {
   content: 'line chart';
+}
+.chartico.line-chart.text.zh:after {
+  content: "折線圖";
 }
 .chartico.step-chart:before {
   background-image: url(/icon/chart/step-chart.svg);
@@ -121,11 +145,17 @@
 .chartico.step-chart.text:after {
   content: 'step chart';
 }
+.chartico.step-chart.text.zh:after {
+  content: "步階圖";
+}
 .chartico.cycle-plot:before {
   background-image: url(/icon/chart/cycle-plot.svg);
 }
 .chartico.cycle-plot.text:after {
   content: 'cycle plot';
+}
+.chartico.cycle-plot.text.zh:after {
+  content: "循環圖";
 }
 .chartico.pie-chart:before {
   background-image: url(/icon/chart/pie-chart.svg);
@@ -133,11 +163,17 @@
 .chartico.pie-chart.text:after {
   content: 'pie chart';
 }
+.chartico.pie-chart.text.zh:after {
+  content: "圓餅圖";
+}
 .chartico.donut-chart:before {
   background-image: url(/icon/chart/donut-chart.svg);
 }
 .chartico.donut-chart.text:after {
   content: 'donut chart';
+}
+.chartico.donut-chart.text.zh:after {
+  content: "甜甜圈圖";
 }
 .chartico.sun-burst-diagram:before {
   background-image: url(/icon/chart/sun-burst-diagram.svg);
@@ -145,11 +181,17 @@
 .chartico.sun-burst-diagram.text:after {
   content: 'sun burst diagram';
 }
+.chartico.sun-burst-diagram.text.zh:after {
+  content: "太陽花圖*";
+}
 .chartico.3:before {
   background-image: url(/icon/chart/3.svg);
 }
 .chartico.3.text:after {
   content: '3';
+}
+.chartico.3.text.zh:after {
+  content: ;
 }
 .chartico.d-pie-chart:before {
   background-image: url(/icon/chart/d-pie-chart.svg);
@@ -157,11 +199,17 @@
 .chartico.d-pie-chart.text:after {
   content: 'd pie chart';
 }
+.chartico.d-pie-chart.text.zh:after {
+  content: ;
+}
 .chartico.bar-chart:before {
   background-image: url(/icon/chart/bar-chart.svg);
 }
 .chartico.bar-chart.text:after {
   content: 'bar chart';
+}
+.chartico.bar-chart.text.zh:after {
+  content: "長條圖";
 }
 .chartico.stacked-bar-chart:before {
   background-image: url(/icon/chart/stacked-bar-chart.svg);
@@ -169,11 +217,17 @@
 .chartico.stacked-bar-chart.text:after {
   content: 'stacked bar chart';
 }
+.chartico.stacked-bar-chart.text.zh:after {
+  content: "堆積長條圖";
+}
 .chartico.grouped-bar-chart:before {
   background-image: url(/icon/chart/grouped-bar-chart.svg);
 }
 .chartico.grouped-bar-chart.text:after {
   content: 'grouped bar chart';
+}
+.chartico.grouped-bar-chart.text.zh:after {
+  content: "分組長條圖";
 }
 .chartico.full-stacked-bar-chart:before {
   background-image: url(/icon/chart/full-stacked-bar-chart.svg);
@@ -181,11 +235,17 @@
 .chartico.full-stacked-bar-chart.text:after {
   content: 'full stacked bar chart';
 }
+.chartico.full-stacked-bar-chart.text.zh:after {
+  content: "100%長條圖";
+}
 .chartico.marimekko-chart:before {
   background-image: url(/icon/chart/marimekko-chart.svg);
 }
 .chartico.marimekko-chart.text:after {
   content: 'marimekko chart';
+}
+.chartico.marimekko-chart.text.zh:after {
+  content: "Marimekko 圖*";
 }
 .chartico.span-chart:before {
   background-image: url(/icon/chart/span-chart.svg);
@@ -193,11 +253,17 @@
 .chartico.span-chart.text:after {
   content: 'span chart';
 }
+.chartico.span-chart.text.zh:after {
+  content: "長度圖*";
+}
 .chartico.population-pyramid:before {
   background-image: url(/icon/chart/population-pyramid.svg);
 }
 .chartico.population-pyramid.text:after {
   content: 'population pyramid';
+}
+.chartico.population-pyramid.text.zh:after {
+  content: "人口金字塔";
 }
 .chartico.bullet-chart:before {
   background-image: url(/icon/chart/bullet-chart.svg);
@@ -205,11 +271,17 @@
 .chartico.bullet-chart.text:after {
   content: 'bullet chart';
 }
+.chartico.bullet-chart.text.zh:after {
+  content: "子彈圖";
+}
 .chartico.curved-bar-chart:before {
   background-image: url(/icon/chart/curved-bar-chart.svg);
 }
 .chartico.curved-bar-chart.text:after {
   content: 'curved bar chart';
+}
+.chartico.curved-bar-chart.text.zh:after {
+  content: "曲式長條圖";
 }
 .chartico.gantt-diagram:before {
   background-image: url(/icon/chart/gantt-diagram.svg);
@@ -217,11 +289,17 @@
 .chartico.gantt-diagram.text:after {
   content: 'gantt diagram';
 }
+.chartico.gantt-diagram.text.zh:after {
+  content: "甘特圖";
+}
 .chartico.waterfall-chart:before {
   background-image: url(/icon/chart/waterfall-chart.svg);
 }
 .chartico.waterfall-chart.text:after {
   content: 'waterfall chart';
+}
+.chartico.waterfall-chart.text.zh:after {
+  content: "瀑布圖";
 }
 .chartico.parallel-coordinates:before {
   background-image: url(/icon/chart/parallel-coordinates.svg);
@@ -229,11 +307,17 @@
 .chartico.parallel-coordinates.text:after {
   content: 'parallel coordinates';
 }
+.chartico.parallel-coordinates.text.zh:after {
+  content: "平行座標圖*";
+}
 .chartico.bump-chart:before {
   background-image: url(/icon/chart/bump-chart.svg);
 }
 .chartico.bump-chart.text:after {
   content: 'bump chart';
+}
+.chartico.bump-chart.text.zh:after {
+  content: "凹凸圖";
 }
 .chartico.combo-chart:before {
   background-image: url(/icon/chart/combo-chart.svg);
@@ -241,11 +325,17 @@
 .chartico.combo-chart.text:after {
   content: 'combo chart';
 }
+.chartico.combo-chart.text.zh:after {
+  content: "複合圖";
+}
 .chartico.continuous-error-bar-plot:before {
   background-image: url(/icon/chart/continuous-error-bar-plot.svg);
 }
 .chartico.continuous-error-bar-plot.text:after {
   content: 'continuous error bar plot';
+}
+.chartico.continuous-error-bar-plot.text.zh:after {
+  content: "誤差區間長條圖";
 }
 .chartico.column-chart:before {
   background-image: url(/icon/chart/column-chart.svg);
@@ -253,11 +343,17 @@
 .chartico.column-chart.text:after {
   content: 'column chart';
 }
+.chartico.column-chart.text.zh:after {
+  content: "直式長條圖";
+}
 .chartico.polar-chart:before {
   background-image: url(/icon/chart/polar-chart.svg);
 }
 .chartico.polar-chart.text:after {
   content: 'polar chart';
+}
+.chartico.polar-chart.text.zh:after {
+  content: "極區圖";
 }
 .chartico.bubble-chart:before {
   background-image: url(/icon/chart/bubble-chart.svg);
@@ -265,11 +361,17 @@
 .chartico.bubble-chart.text:after {
   content: 'bubble chart';
 }
+.chartico.bubble-chart.text.zh:after {
+  content: "泡泡圖";
+}
 .chartico.bubble-map:before {
   background-image: url(/icon/chart/bubble-map.svg);
 }
 .chartico.bubble-map.text:after {
   content: 'bubble map';
+}
+.chartico.bubble-map.text.zh:after {
+  content: "泡泡地圖";
 }
 .chartico.dorling-cartogram:before {
   background-image: url(/icon/chart/dorling-cartogram.svg);
@@ -277,11 +379,17 @@
 .chartico.dorling-cartogram.text:after {
   content: 'dorling cartogram';
 }
+.chartico.dorling-cartogram.text.zh:after {
+  content: "圓式統計地圖*";
+}
 .chartico.pie-bubble:before {
   background-image: url(/icon/chart/pie-bubble.svg);
 }
 .chartico.pie-bubble.text:after {
   content: 'pie bubble';
+}
+.chartico.pie-bubble.text.zh:after {
+  content: "圓餅泡泡圖";
 }
 .chartico.circular-treemap:before {
   background-image: url(/icon/chart/circular-treemap.svg);
@@ -289,11 +397,17 @@
 .chartico.circular-treemap.text:after {
   content: 'circular treemap';
 }
+.chartico.circular-treemap.text.zh:after {
+  content: "圓式樹狀圖*";
+}
 .chartico.voronoi-treemap:before {
   background-image: url(/icon/chart/voronoi-treemap.svg);
 }
 .chartico.voronoi-treemap.text:after {
   content: 'voronoi treemap';
+}
+.chartico.voronoi-treemap.text.zh:after {
+  content: "Voronoi 樹狀圖";
 }
 .chartico.jigsaw-treemap:before {
   background-image: url(/icon/chart/jigsaw-treemap.svg);
@@ -301,11 +415,17 @@
 .chartico.jigsaw-treemap.text:after {
   content: 'jigsaw treemap';
 }
+.chartico.jigsaw-treemap.text.zh:after {
+  content: "Jigsaw 樹狀圖";
+}
 .chartico.convex-treemap:before {
   background-image: url(/icon/chart/convex-treemap.svg);
 }
 .chartico.convex-treemap.text:after {
   content: 'convex treemap';
+}
+.chartico.convex-treemap.text.zh:after {
+  content: "Convex 樹狀圖";
 }
 .catico.distribution:before {
   background-image: url(/icon/cat/distribution.svg);
@@ -313,11 +433,17 @@
 .catico.distribution.text:after {
   content: 'distribution';
 }
+.catico.distribution.text.zh:after {
+  content: "分布";
+}
 .catico.correlation:before {
   background-image: url(/icon/cat/correlation.svg);
 }
 .catico.correlation.text:after {
   content: 'correlation';
+}
+.catico.correlation.text.zh:after {
+  content: "相關";
 }
 .catico.trend:before {
   background-image: url(/icon/cat/trend.svg);
@@ -325,11 +451,17 @@
 .catico.trend.text:after {
   content: 'trend';
 }
+.catico.trend.text.zh:after {
+  content: "趨勢";
+}
 .catico.change:before {
   background-image: url(/icon/cat/change.svg);
 }
 .catico.change.text:after {
   content: 'change';
+}
+.catico.change.text.zh:after {
+  content: "變化";
 }
 .catico.comparison:before {
   background-image: url(/icon/cat/comparison.svg);
@@ -337,11 +469,17 @@
 .catico.comparison.text:after {
   content: 'comparison';
 }
+.catico.comparison.text.zh:after {
+  content: "比較";
+}
 .catico.proportion:before {
   background-image: url(/icon/cat/proportion.svg);
 }
 .catico.proportion.text:after {
   content: 'proportion';
+}
+.catico.proportion.text.zh:after {
+  content: "比例";
 }
 .catico.geography:before {
   background-image: url(/icon/cat/geography.svg);
@@ -349,11 +487,17 @@
 .catico.geography.text:after {
   content: 'geography';
 }
+.catico.geography.text.zh:after {
+  content: "空間";
+}
 .catico.temporal:before {
   background-image: url(/icon/cat/temporal.svg);
 }
 .catico.temporal.text:after {
   content: 'temporal';
+}
+.catico.temporal.text.zh:after {
+  content: "時間";
 }
 .catico.hierarchy:before {
   background-image: url(/icon/cat/hierarchy.svg);
@@ -361,11 +505,17 @@
 .catico.hierarchy.text:after {
   content: 'hierarchy';
 }
+.catico.hierarchy.text.zh:after {
+  content: "階層";
+}
 .encico.saturation:before {
   background-image: url(/icon/encoding/saturation(color, value).svg);
 }
 .encico.saturation.text:after {
   content: 'saturation(color, value)';
+}
+.encico.saturation.text.zh:after {
+  content: ;
 }
 .encico.hue:before {
   background-image: url(/icon/encoding/hue(color, value).svg);
@@ -373,11 +523,17 @@
 .encico.hue.text:after {
   content: 'hue(color, value)';
 }
+.encico.hue.text.zh:after {
+  content: ;
+}
 .encico.lightness:before {
   background-image: url(/icon/encoding/lightness(color, value).svg);
 }
 .encico.lightness.text:after {
   content: 'lightness(color, value)';
+}
+.encico.lightness.text.zh:after {
+  content: ;
 }
 .encico.area:before {
   background-image: url(/icon/encoding/area.svg);
@@ -385,11 +541,17 @@
 .encico.area.text:after {
   content: 'area';
 }
+.encico.area.text.zh:after {
+  content: "面積";
+}
 .encico.position:before {
   background-image: url(/icon/encoding/position.svg);
 }
 .encico.position.text:after {
   content: 'position';
+}
+.encico.position.text.zh:after {
+  content: "座標";
 }
 .encico.aligned-length:before {
   background-image: url(/icon/encoding/aligned-length.svg);
@@ -397,11 +559,17 @@
 .encico.aligned-length.text:after {
   content: 'aligned length';
 }
+.encico.aligned-length.text.zh:after {
+  content: "長度(共軸)";
+}
 .encico.direction:before {
   background-image: url(/icon/encoding/direction.svg);
 }
 .encico.direction.text:after {
   content: 'direction';
+}
+.encico.direction.text.zh:after {
+  content: "方向";
 }
 .encico.angle:before {
   background-image: url(/icon/encoding/angle.svg);
@@ -409,11 +577,17 @@
 .encico.angle.text:after {
   content: 'angle';
 }
+.encico.angle.text.zh:after {
+  content: "角度";
+}
 .encico.shape:before {
   background-image: url(/icon/encoding/shape.svg);
 }
 .encico.shape.text:after {
   content: 'shape';
+}
+.encico.shape.text.zh:after {
+  content: "形狀";
 }
 .encico.volume:before {
   background-image: url(/icon/encoding/volume.svg);
@@ -421,9 +595,15 @@
 .encico.volume.text:after {
   content: 'volume';
 }
+.encico.volume.text.zh:after {
+  content: "體積";
+}
 .encico.length:before {
   background-image: url(/icon/encoding/length.svg);
 }
 .encico.length.text:after {
   content: 'length';
+}
+.encico.length.text.zh:after {
+  content: "長度(異軸)";
 }
