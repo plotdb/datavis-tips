@@ -1,6 +1,7 @@
 require! <[chokidar http fs path jade stylus markdown js-yaml colors]>
 require! 'uglify-js': uglify, LiveScript: lsc
 
+
 useMarkdown = true
 markdown = markdown.markdown
 
@@ -269,13 +270,23 @@ update-file = ->
     ret
   build-yaml = (src) ->
     langs = <[en zh]>
+    i18n = JSON.parse(fs.read-file-sync \i18n/translate.json .toString!)
     try
       cfg = js-yaml.safe-load fs.read-file-sync src, \utf8
       cfg.id = name = (cfg.name.en or cfg.name).to-lower-case!.replace(/ /g, '-')
       for lang in langs =>
+        _i18n = {}
+        for k,v of i18n => _i18n[k] = v[lang] or k
         lang-cfg = choose-lang cfg, lang
         template = fs.read-file-sync \template.jade .toString!
-        ret = jade.render template,{filename: "template.jade", basedir: path.join(cwd)} <<< lang-cfg
+        ret = jade.render(
+          template, {
+            filename: "template.jade"
+            basedir: path.join(cwd)
+            md: markdown.toHTML
+            lang: lang
+          } <<< lang-cfg <<< {_:_i18n}
+        )
         des = "v/#name/#lang/index.html"
         mkdir-recurse path.dirname(des)
         fs.write-file-sync des, ret

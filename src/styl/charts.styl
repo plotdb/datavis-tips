@@ -1,14 +1,4 @@
-charts = (
-  animated-scatter-plot scatter-plot paired-scatter-plot connected-scatter-plot BCG-matrix ternary-plot connected-ternary-plot line-chart step-chart cycle-plot pie-chart donut-chart sun-burst-diagram 3d-pie-chart bar-chart stacked-bar-chart grouped-bar-chart full-stacked-bar-chart marimekko-chart span-chart population-pyramid bullet-chart curved-bar-chart gantt-diagram waterfall-chart parallel-coordinates bump-chart combo-chart continuous-error-bar-plot column-chart polar-chart bubble-chart bubble-map dorling-cartogram pie-bubble circular-treemap voronoi-treemap jigsaw-treemap convex-treemap
-)
-
-categorys = (
-  distribution correlation trend change comparison proportion geography temporal hierarchy
-)
-
-encodings = (
-  saturation hue lightness area position aligned-length direction angle shape volume "length"
-)
+@import 'chart-defines'
 
 .chartico, .catico, .encico
   text-align: center
@@ -62,6 +52,9 @@ for chart in charts
   .chartico.{chart}.text
     &:after
       content: replace("-"," ","" + chart)
+  .chartico.{chart}.text.zh
+    &:after
+      content: translation[chart]
 
 for category in categorys
   .catico.{category}:before
@@ -69,6 +62,9 @@ for category in categorys
   .catico.{category}.text
     &:after
       content: replace("-"," ","" + category)
+  .catico.{category}.text.zh
+    &:after
+      content: translation[category]
 
 for encoding in encodings
   .encico.{encoding}:before
@@ -76,3 +72,6 @@ for encoding in encodings
   .encico.{encoding}.text
     &:after
       content: replace("-"," ","" + encoding)
+  .encico.{encoding}.text.zh
+    &:after
+      content: translation[encoding]

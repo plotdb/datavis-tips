@@ -32,7 +32,7 @@ html(lang="en")
     script(type="text/javascript",src="/lib/plotdb.js")
     script(type="text/javascript",src="/lib/plotd3.js")
   body
-    #root
+    #root(class=lang)
       .panel.panel-default(style="width:800px;margin:auto")
         .preview(style="position:relative;z-index:1")
           #chart-sample
@@ -45,88 +45,111 @@ html(lang="en")
         div(style="position:relative;z-index:2")
           .avatar(style="background:url(/icon/chart/" + id + ".svg) #fff")
           a.btn.btn-success(href="https://plotdb.com/chart/"+plotdb,
-          style="position:absolute;margin:-54px 0 0 156px",target="_blank") online editor
+          style="position:absolute;margin:-54px 0 0 156px",
+          target="_blank") online editor &nbsp;#[i.fa.fa-external-link]
           .similar.text-right
-            label work best for
+            label= _["work best for"]
             br
-            each item in category
-              .catico.sm.text(class=item)
+            if category
+              each item in category
+                .catico.sm.text(class=[item,lang].join(" "))
 
         .panel-body.content
           .title
             span= name
             small  / #[span= alias]
 
-          p= description
+          if description
+            p!= md(description).toString()
+          else
+            p.grayed (no description...)
           br
 
           .row
             .col-sm-6
-              label Pros
+              label= _["Pros"]
               p= pros
             .col-sm-6
-              label Cons
+              label= _["Cons"]
               p= cons
           br
-
+          if guideline
+            .row
+              .col-sm-12
+                label
+                  span= _["Guideline"]
+                ul
+                  each item in guideline
+                    li= item
+          br
           .row
-            .col-sm-6
-              label
-                span Dimensions
-                small / 
-                if dimension.filter(function(it){return it[1]=='required'}).length == dimension.length
-                  small= dimension.length
-                else
-                  small= dimension.filter(function(it){return it[1]=='required'}).length
-                  small  ~ 
-                  small= dimension.length
-                small  dimensions
-              .labels
-                each item in dimension
-                  if item[1] == "required"
-                    .label.label-primary
-                      span= item[0]
-                      span  / 
-                      span= item[2]
+            if dimension
+              .col-sm-6
+                label
+                  span= _["Dimensions"]
+                  small / 
+                  if dimension.filter(function(it){return it[1]=='required'}).length == dimension.length
+                    small= dimension.length
                   else
-                    .label.label-default
-                      span= item[0]
-                      span  / 
-                      span= item[2]
-              br
-            .col-sm-6
-              label Visual Encodings
-              .labels
-                each item in visualEncoding
-                  .encico.text.md(class=item.toLowerCase().replace(/ /g,"-"))
-              br
+                    small= dimension.filter(function(it){return it[1]=='required'}).length
+                    small  ~ 
+                    small= dimension.length
 
-          label Common Practice
-          ul
-            each item in commonPractice
-              li= item
-          br
+                  small  dimensions
+                .labels
+                  each item in dimension
+                    if item[1] == "required"
+                      .label.label-primary
+                        span= item[0]
+                        span  / 
+                        span= item[2]
+                    else
+                      .label.label-default
+                        span= item[0]
+                        span  / 
+                        span= item[2]
+                br
+            if visualEncoding
+              .col-sm-6
+                label= _["Visual Encodings"]
+                .labels
+                  each item in visualEncoding
+                    .encico.text.md(class=[item.toLowerCase().replace(/ /g,"-"),lang].join(" "))
+                br
 
-          label Classic Example
-          ul 
-            each item in classicExample
-              li= item
-          br
+          if commonPractice
+            label= _["Common Practice"]
+            ul
+              each item in commonPractice
+                li= item
+            br
 
-          label Media Usage
-          ul
-            each item in mediaUsage
-              if item == "N/A"
-                li N/A
-              else
-                li #[span= item.author], "#[a(href=item.link,target="_blank")= item.title]", #[span= item.media], #[span= item.year].
-                
-          br
+          if classicExample
+            label= _["Classic Example"]
+            ul 
+              each item in classicExample
+                li= item
+            br
 
-          label Variants
-          p
-            each item in variant
-              .chartico.text.md(class=item.toLowerCase().replace(/ /g,"-"))
+          if mediaUsage
+            label= _["Media Usage"]
+            ul
+              each item in mediaUsage
+                if item == "N/A"
+                  li N/A
+                else
+                  li #[span= item.author], "#[a(href=item.link,target="_blank")= item.title]", #[span= item.media], #[span= item.year].
+            br
+
+          if variant
+            label= _["Variants"]
+            p
+              each item in variant
+                .chartico.text.md(class=[item.toLowerCase().replace(/ /g,"-"),lang].join(" "))
+    .footer
+      a(href="http://plotdb.com",target="_blank")
+        span POWERED BY PLOTDB
+        img(src="/img/plotdb-mini-alt.png")
   script(type="text/javascript")= "var chartid=" + plotdb + ";"
   if bannerConfig
     script(type="text/javascript").
@@ -143,6 +166,7 @@ html(lang="en")
     });
     document.getElementById("choices").addEventListener("click",function(it) {
       idx = +it.target.getAttribute("data-idx");
+      if(!idx) return;
       Array.from(document.getElementById("choices").querySelectorAll(".choice"))
         .map(function(d) { d.className = "choice";});
       document.getElementById("choices").querySelector(".choice:nth-of-type(" + idx + ")" )
@@ -153,3 +177,10 @@ html(lang="en")
       curChart.bind();
       curChart.render();
     });
+    setInterval(function() {
+      curChart.data(curChart._.chart.sample);
+      curChart.parse();
+      curChart.resize();
+      curChart.bind();
+      curChart.render();
+    }, 2000);
