@@ -1,15 +1,78 @@
-label {
-  background: #fbfbf8;
+/*
+label
+  background: #fbfbf8
+  display: block
+  max-width: 260px
+  border-radius: 0 5px 5px 0
+  padding: 0 15px
+  margin-left: -15px
+  border: 1px solid #aaa
+  border-left: none
+  box-shadow: 0 1px 1px rgba(0,0,0,0.2)
+.row .col-sm-6:last-of-type label
+  border-left: 1px solid #999
+  border-radius: 5px
+*/
+.card label {
+  font-weight: 200;
+  width: 100%;
   display: block;
-  max-width: 260px;
-  border-radius: 0 5px 5px 0;
-  padding: 0 15px;
-  margin-left: -15px;
-  border: 1px solid #aaa;
-  border-left: none;
-  box-shadow: 0 1px 1px rgba(0,0,0,0.2);
+  margin-left: 20px;
 }
-.row .col-sm-6:last-of-type label {
-  border-left: 1px solid #999;
-  border-radius: 5px;
+.card .text-center label,
+.card .similar label {
+  margin-left: 0;
+}
+.card .panel-body {
+  padding: 0;
+}
+.card .title {
+  padding: 0 20px;
+}
+.card .title hr {
+  margin-bottom: 0;
+}
+.card .description {
+  padding: 10px 20px;
+  margin: 0;
+}
+.card .pros-cons {
+  padding: 10px;
+  background: #f9f9f9;
+  color: #222;
+  border-top: 1px solid #ccc;
+  border-bottom: 1px solid #ccc;
+}
+.card .pros-cons .icon {
+  font-size: 3em;
+  text-align: center;
+  line-height: 1em;
+  margin-top: 10px;
+}
+.card .pros-cons label {
+  color: #999;
+  font-size: 0.9em;
+  text-align: center;
+  margin: 0;
+}
+.card .details {
+  padding: 10px;
+  margin: 10px 0 0;
+  background: #fff;
+}
+.card .details label {
+  font-size: 0.9em;
+  color: #999;
+}
+.card .components {
+  padding: 20px 10px 0;
+  border-top: 1px solid #ccc;
+  border-bottom: 1px solid #ccc;
+  margin: 0 0 10px;
+  background: #f9f9f9;
+}
+.card .components label {
+  font-size: 0.9em;
+  color: #777;
+  margin-bottom: 10px;
 }

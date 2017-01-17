@@ -7,13 +7,13 @@ alias:
 
 plotdb: 953
 
-description: >
+description: |
   Line chart connects data points in a Cartesian coordinate system including two axes (namely X axis and Y axis). The connection hints readers the order and direction of data ( usually from left to right ) thus is quite good at showing trends in data series, yet is not suitable for unordered data. Works better than bar/column chart when scaling or zooming since unlike data, there is no connection between axes and data points, but still to be careful when truncating axis.
 
-pros: >
+pros: |
   Great tool to visualize data trends. still legible with many lines when trends are similar.
 
-cons: >
+cons: |
   Counter-intuitive with unordered data. Work poorly with periodical dataset. Become too complicated when too many lines with different trends all together.
 
 category:
@@ -28,10 +28,13 @@ visualEncoding:
   - direction
 
 commonPractice:
-  - Visualize data trends.
+  en: TBD
+  zh: |
+    * Visualize data trends.
 
 classicExample:
-  - N/A
+  en: TBD
+  zh: TBD
 
 mediaUsage:
   - author: Jeremy Ashkenas, Alicia Parlapiano

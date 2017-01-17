@@ -17,6 +17,8 @@ doctype html
 - og.section = "Taiwan"
 - og.keyword = "zbryikt,template"
 - og.description = ""
+mixin markdown(content)
+  p!= md(content).toString()
 html(lang="en")
   head(prefix="og: http://ogp.me/ns#")
     meta(charset="utf-8")
@@ -28,12 +30,12 @@ html(lang="en")
     link(rel="stylesheet",type="text/css",href="/lib/plotdb.css")
     link(rel="stylesheet",type="text/css",href="/static/css/dev.css")
     link(rel="stylesheet",type="text/css",href="/static/css/index.css")
-    link(href="https://fonts.googleapis.com/earlyaccess/notosanstc.css",rel="stylesheet")
+    //-link(href="https://fonts.googleapis.com/earlyaccess/notosanstc.css",rel="stylesheet")
     script(type="text/javascript",src="/lib/plotdb.js")
     script(type="text/javascript",src="/lib/plotd3.js")
   body
     #root(class=lang)
-      .panel.panel-default(style="width:800px;margin:auto")
+      .card.panel.panel-default(style="width:800px;margin:auto")
         .preview(style="position:relative;z-index:1")
           #chart-sample
           if (bannerConfig || []).length > 1
@@ -49,7 +51,6 @@ html(lang="en")
           target="_blank") online editor &nbsp;#[i.fa.fa-external-link]
           .similar.text-right
             label= _["work best for"]
-            br
             if category
               each item in category
                 .catico.sm.text(class=[item,lang].join(" "))
@@ -58,94 +59,97 @@ html(lang="en")
           .title
             span= name
             small  / #[span= alias]
-
-          if description
-            p!= md(description).toString()
-          else
-            p.grayed (no description...)
-          br
-
-          .row
-            .col-sm-6
-              label= _["Pros"]
-              p= pros
-            .col-sm-6
-              label= _["Cons"]
-              p= cons
-          br
-          if guideline
-            .row
-              .col-sm-12
-                label
-                  span= _["Guideline"]
-                ul
-                  each item in guideline
-                    li= item
-          br
-          .row
-            if dimension
-              .col-sm-6
-                label
-                  span= _["Dimensions"]
-                  small / 
-                  if dimension.filter(function(it){return it[1]=='required'}).length == dimension.length
-                    small= dimension.length
-                  else
-                    small= dimension.filter(function(it){return it[1]=='required'}).length
-                    small  ~ 
-                    small= dimension.length
-
-                  small  dimensions
-                .labels
-                  each item in dimension
-                    if item[1] == "required"
-                      .label.label-primary
-                        span= item[0]
-                        span  / 
-                        span= item[2]
-                    else
-                      .label.label-default
-                        span= item[0]
-                        span  / 
-                        span= item[2]
-                br
-            if visualEncoding
-              .col-sm-6
-                label= _["Visual Encodings"]
-                .labels
-                  each item in visualEncoding
-                    .encico.text.md(class=[item.toLowerCase().replace(/ /g,"-"),lang].join(" "))
-                br
+            hr
+          .description
+            if description
+              +markdown(description)
+            else
+              p.grayed (no description...)
 
           if commonPractice
-            label= _["Common Practice"]
-            ul
-              each item in commonPractice
-                li= item
-            br
+            .details
+              label= _["Common Practice"]
+              +markdown(commonPractice)
+              br
 
-          if classicExample
-            label= _["Classic Example"]
-            ul 
-              each item in classicExample
-                li= item
-            br
+          .pros-cons
+            .row
+              .col-sm-6
+                .icon(style="font-size:3em;color:#8bc53e"): i.fa.fa-check-circle
+                label= _["Pros"]
+                +markdown(pros)
+              .col-sm-6
+                .icon(style="font-size:3em;color:#c59c6c"): i.fa.fa-times-circle
+                label= _["Cons"]
+                +markdown(cons)
 
-          if mediaUsage
-            label= _["Media Usage"]
-            ul
-              each item in mediaUsage
-                if item == "N/A"
-                  li N/A
-                else
-                  li #[span= item.author], "#[a(href=item.link,target="_blank")= item.title]", #[span= item.media], #[span= item.year].
-            br
+          .details
+            if guideline
+              label= _["Guideline"]
+              +markdown(guideline)
+              br
+
+            if mediaUsage
+              label= _["Media Usage"]
+              ul
+                each item in mediaUsage
+                  if item == "N/A"
+                    li N/A
+                  else
+                    li #[span= item.author], "#[a(href=item.link,target="_blank")= item.title]", #[span= item.media], #[span= item.year].
+              br
+
+            if classicExample
+              .guideline
+                label= _["Classic Example"]
+                ul 
+                  each item in classicExample
+                    li= item
+            if alternative
+              .guideline
+                label= _["Alternatives"]
+                +markdown(alternative)
+                br
+
+
+          .components
+            .row
+              if dimension
+                .col-sm-6.text-center
+                  label
+                    span= _["Dimensions"]
+                    //-small / 
+                    br
+                    if dimension.filter(function(it){return it[2]=='required'}).length == dimension.length
+                      small= dimension.length
+                    else
+                      small= dimension.filter(function(it){return it[2]=='required'}).length
+                      small  ~ 
+                      small= dimension.length
+                    small  #{_["維"]}
+                  .labels
+                    each item in dimension
+                      .dimico.text.md.no-border.shadow(class=[item[0].toLowerCase().replace(/ /g,"-"),lang].join(" "))
+                        .taxico(class=[item[1].toLowerCase().replace(/ /g,"-"),lang].join(" "))
+                  br
+              if visualEncoding
+                .col-sm-6.text-center
+                  label
+                    span= _["Visual Encodings"]
+                    br
+                    small= visualEncoding.length
+                    small  #{_["種編碼"]}
+                  .labels
+                    each item in visualEncoding
+                      .encico.text.md.no-border.shadow(class=[item.toLowerCase().replace(/ /g,"-"),lang].join(" "))
+                  br
 
           if variant
-            label= _["Variants"]
-            p
-              each item in variant
-                .chartico.text.md(class=[item.toLowerCase().replace(/ /g,"-"),lang].join(" "))
+            .text-center
+              label= _["Variants"]
+              p
+                each item in variant
+                  .chartico.text.md(class=[item.toLowerCase().replace(/ /g,"-"),lang].join(" "))
     .footer
       a(href="http://plotdb.com",target="_blank")
         span POWERED BY PLOTDB

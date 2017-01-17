@@ -23,27 +23,29 @@ html(lang="en")
     meta(name='viewport', content='width=device-width, initial-scale=1.0')
     title= title
     // libraries
-    include library.jade
+    include /library.jade
     // custom files
-    link(rel="stylesheet",type="text/css",href="lib/plotdb.css")
-    link(rel="stylesheet",type="text/css",href="static/css/dev.css")
-    link(rel="stylesheet",type="text/css",href="static/css/index.css")
+    link(rel="stylesheet",type="text/css",href="/lib/plotdb.css")
+    link(rel="stylesheet",type="text/css",href="/static/css/dev.css")
+    link(rel="stylesheet",type="text/css",href="/static/css/index.css")
     link(href="https://fonts.googleapis.com/earlyaccess/notosanstc.css",rel="stylesheet")
-    script(type="text/javascript",src="lib/plotdb.js")
-    script(type="text/javascript",src="lib/plotd3.js")
+    script(type="text/javascript",src="/lib/plotdb.js")
+    script(type="text/javascript",src="/lib/plotd3.js")
   body
     #root
+      iframe(src="http://localhost.io/v/chart/953",allowfullscreen="true",width="700px",height="400px")
       h2 Datavis.tips
       label Charts
       each item in config.charts
-        .chartico.text.md.no-border(class=[item.toLowerCase().replace(/ /g,"-"),lang].join(" "))
+        a(href="/v/" + item +"/zh/")
+          .chartico.text.md.no-border.zh(class=[item.toLowerCase().replace(/ /g,"-"),lang].join(" "))
       br
       br
       label Categories
       each item in config.categories
-        .catico.text.md.no-border(class=[item.toLowerCase().replace(/ /g,"-"),lang].join(" "))
+        .catico.text.md.no-border.zh(class=[item.toLowerCase().replace(/ /g,"-"),lang].join(" "))
       br
       br
       label Encodings
       each item in config.encodings
-        .encico.text.md.no-border(class=[item.toLowerCase().replace(/ /g,"-"),lang].join(" "))
+        .encico.text.md.no-border.zh(class=[item.toLowerCase().replace(/ /g,"-"),lang].join(" "))

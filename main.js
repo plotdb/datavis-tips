@@ -1,0 +1,1 @@
+var fs,lsc,siteConfig;fs=require("fs"),lsc=require("LiveScript"),siteConfig=eval(lsc.compile(fs.readFileSync("src/ls/config.ls").toString(),{bare:!0}).toString());

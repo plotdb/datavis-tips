@@ -8,5 +8,8 @@
   "Classic Example": {"zh": "經典案例"},
   "Media Usage": {"zh": "媒體案例"},
   "Variants": {"zh": "相關變形"},
-  "Guideline": {"zh": "使用要點"}
+  "Guideline": {"zh": "使用要點"},
+  "charts": {"zh": "圖表"},
+  "categories": {"zh": "類別"},
+  "encodings": {"zh": "視覺元素"}
 }

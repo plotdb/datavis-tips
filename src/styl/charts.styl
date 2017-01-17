@@ -1,6 +1,4 @@
-@import 'chart-defines'
-
-.chartico, .catico, .encico
+.chartico, .catico, .encico, .dimico
   text-align: center
   margin-bottom: 10px
   &:before
@@ -12,8 +10,11 @@
     border: 5px solid #fff
     border-radius: 50%
     margin: auto
+.chartico.no-border, .catico.no-border, .encico.no-border, .dimico.no-border
+  &:before
+    border: 0
 
-.chartico.sm, .catico.sm, .encico.sm
+.chartico.sm, .catico.sm, .encico.sm, .dimico.sm
   &:before
     width: 64px
     height: 64px
@@ -22,17 +23,16 @@
   margin-right: 5px
   display: inline-block
 
-.chartico.md, .catico.md, .encico.md
+.chartico.md, .catico.md, .encico.md, .dimico.md
   &:before
     width: 90px
-    height: 84px
+    height: 90px
     border-width: 4px
-    border-bottom: 0
   margin-left: 5px
   margin-right: 5px
   display: inline-block
 
-.chartico.text, .catico.text, .encico.text
+.chartico.text, .catico.text, .encico.text, .dimico.text
   &:before
     background: #fff
     background-position: center center
@@ -46,32 +46,72 @@
     font-size: 12px
     display: block
 
+.chartico.shadow, .catico.shadow, .encico.shadow, .dimico.shadow
+  &:before
+    box-shadow: 0 2px 3px rgba(0,0,0,0.2)
+    margin-bottom: 5px
+
+.dimico
+  position: relative
+.taxico
+  position: absolute
+  top: 0
+  left: 0
+  width:100%
+  height: 100%
+  background-repeat: no-repeat
+.dimico.text .taxico:after
+  position: absolute
+  bottom: -13px
+  font-size: 12px
+  width: 100%
+  left: 0
+
+
 for chart in charts
   .chartico.{chart}:before
     background-image: unquote("url(/icon/chart/" + chart + ".svg)")
   .chartico.{chart}.text
     &:after
-      content: replace("-"," ","" + chart)
+      content: i18n('en',chart)
   .chartico.{chart}.text.zh
     &:after
-      content: translation[chart]
+      content: i18n('zh',chart)
 
-for category in categorys
+for category in categories
   .catico.{category}:before
     background-image: unquote("url(/icon/cat/" + category + ".svg)")
   .catico.{category}.text
     &:after
-      content: replace("-"," ","" + category)
+      content: i18n('en',category)
   .catico.{category}.text.zh
     &:after
-      content: translation[category]
+      content: i18n('zh',category)
 
 for encoding in encodings
   .encico.{encoding}:before
     background-image: unquote("url(/icon/encoding/" + encoding + ".svg)")
   .encico.{encoding}.text
     &:after
-      content: replace("-"," ","" + encoding)
+      content: i18n('en',encoding)
   .encico.{encoding}.text.zh
     &:after
-      content: translation[encoding]
+      content: i18n('zh',encoding)
+
+for dimension in dimensions
+  .dimico.{dimension}:before
+    background-image: unquote("url(/icon/dim/" + dimension + ".svg)")
+  .dimico.{dimension}.text
+    &:after
+      content: i18n('en',dimension)
+  .dimico.{dimension}.text.zh
+    &:after
+      content: i18n('zh',dimension)
+
+for taxonomy in taxonomies
+  .dimico .taxico.{taxonomy}
+    background-image: unquote("url(/icon/tax/" + taxonomy + ".svg)")
+  .dimico.text .taxico.{taxonomy}:after
+    content: i18n('en',taxonomy)
+  .dimico.text.zh .taxico.{taxonomy}:after
+    content: i18n('zh',taxonomy)

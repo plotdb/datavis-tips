@@ -262,21 +262,20 @@ update-file = ->
   src = if it.0 != \/ => path.join(cwd,it) else it
   src = src.replace path.join(cwd,\/), ""
   [type,cmd,des] = [ftype(src), "",""]
-
   if type == \other => return
+  site-config = eval(lsc.compile((fs.read-file-sync \src/ls/config.ls .toString!),{bare: true}) .toString!)
   choose-lang = (cfg, lang) ->
     ret = JSON.parse(JSON.stringify(cfg))
     for k of ret => if ret[k] and ret[k][lang] => ret[k] = ret[k][lang]
     ret
   build-yaml = (src) ->
     langs = <[en zh]>
-    i18n = JSON.parse(fs.read-file-sync \i18n/translate.json .toString!)
     try
       cfg = js-yaml.safe-load fs.read-file-sync src, \utf8
       cfg.id = name = (cfg.name.en or cfg.name).to-lower-case!.replace(/ /g, '-')
       for lang in langs =>
         _i18n = {}
-        for k,v of i18n => _i18n[k] = v[lang] or k
+        for k,v of site-config.translation => _i18n[k] = v[lang] or k
         lang-cfg = choose-lang cfg, lang
         template = fs.read-file-sync \template.jade .toString!
         ret = jade.render(
@@ -347,6 +346,11 @@ update-file = ->
         des = src.replace(/src\/styl/, "static/css").replace(/\.styl$/, ".css")
         stylus fs.read-file-sync(src)toString!
           .set \filename, src
+          # since stylus seems not provide access into nested object..
+          .use (s) ->
+            for k,v of site-config => s.define k, v
+          .define 'i18n', (lang,text) -> 
+            return new stylus.nodes.String(site-config.translation[text.val][lang.val])
           .define 'index', (a,b) ->
             a = (a.string or a.val).split(' ')
             return new stylus.nodes.Unit(a.indexOf b.val)
@@ -368,7 +372,11 @@ update-file = ->
     try 
       desdir = path.dirname(des)
       if !fs.exists-sync(desdir) or !fs.stat-sync(desdir).is-directory! => mkdir-recurse desdir
-      fs.write-file-sync des, jade.render (fs.read-file-sync src .toString!),{filename: src, basedir: path.join(cwd)}
+      fs.write-file-sync des,(
+        jade.render(
+          (fs.read-file-sync src .toString!),{filename: src, basedir: path.join(cwd)} <<< {config: site-config}
+        )
+      )
       console.log "[BUILD] #src --> #des"
     catch
       console.log "[BUILD] #src failed: "

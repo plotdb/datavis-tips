@@ -9,13 +9,13 @@ alias:
 
 plotdb: 2177
 
-description: >
+description: |
   typical scatter plot uses data as coordinates of points over a two-dimensional plane. higher dimension is also possible. due to the characteristics of scatter plot, it is often used to display correlation between two data series, which is better than simply calculating the correlation coefficient especially when observing non-linear relationship. scatter plot can be extended by changing colors, size, connection and dynamics of points to visualize more data series in a single chart.
 
-pros: >
+pros: |
   Can be used to easily identify correlation and even trend. more dimensions can be made to visual encoding as we expected, such as size, shape, color and order.
 
-cons: >
+cons: |
   Nominal / discrete data will overlap each other ( especially with a small range of data extent ) in scatter plot. One can change opacity or draw points with stroke only to alleviate this issue.
 
 category:
@@ -34,11 +34,15 @@ visualEncoding:
   - color
 
 commonPractice:
-  - Show correlation between two data series
+  en: TBD
+  zh: |
+    * Show correlation between two data series
 
 classicExample:
-  - Gapminder / Hans Rosling
-  - one of "seven basic tools of quality"
+  en: TBD
+  zh: |
+    * Gapminder / Hans Rosling
+    * one of "seven basic tools of quality"
 
 mediaUsage:
   - author: Alicia Parlapiano

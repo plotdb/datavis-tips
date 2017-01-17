@@ -33,31 +33,31 @@ mediaUsage:
 
 description:
   en: TBD
-  zh: >
+  zh: |
     以圓面積對應到資料大小、用平面上的多個圓表現資料的一種圖表。不同於散布圖，圓圈位置沒有一定規則，可以將圓依資料大小從圖表中心以螺旋的方式繞出，也可往特定方向排序；不排序時，圓的邊框、填色、座標皆可呈現資訊，同時也適合以動畫呈現資料變化的趨勢
 
     常疊合至地圖上搭配地理空間表現資訊。比起長條、折線圖相比，更能有效的利用圖表空間。
 
 pros:
   en: TBD
-  zh: >
+  zh: |
     讓讀者快速粗略了解數據之間的比較，包括整體與個體、個體與個體，以及數據分布的平均性。容易呈現大量資料。
 
 
 cons:
   en: TBD
-  zh: >
+  zh: |
     不易看出數據之間的比例，不適合有序性的資料。
 
 commonPractice:
   en: TBD
-  zh:
-    - 一般使用長條圖來表現資料的極值、或是做數值的精確比較。
+  zh: |
+    * 一般使用長條圖來表現資料的極值、或是做數值的精確比較。
 
 guideline:
-  en:
-    - avoid shapes other than circle. complicated shape makes area comparison more difficult.
-    - map data directly into area, or square root of data to radius of circle.
-  zh:
-    - 務必以面積代表資料。描繪圓形時，半徑應代入資料的平方根。
-    - 避免使用圓形以外的形狀，因為圓以外的形狀讓面積計算與比較更加困難。
+  en: |
+    * avoid shapes other than circle. complicated shape makes area comparison more difficult.
+    * map data directly into area, or square root of data to radius of circle.
+  zh: |
+    * 務必以面積代表資料。描繪圓形時，半徑應代入資料的平方根。
+    * 避免使用圓形以外的形狀，因為圓以外的形狀讓面積計算與比較更加困難。
