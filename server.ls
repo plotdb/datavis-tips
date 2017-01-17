@@ -284,7 +284,7 @@ update-file = ->
             basedir: path.join(cwd)
             md: markdown.toHTML
             lang: lang
-          } <<< lang-cfg <<< {_:_i18n}
+          } <<< lang-cfg <<< {_:_i18n} <<< {site: site-config}
         )
         des = "v/#name/#lang/index.html"
         mkdir-recurse path.dirname(des)

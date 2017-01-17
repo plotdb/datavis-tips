@@ -7,34 +7,44 @@ alias:
 
 plotdb: 953
 
-description: |
-  Line chart connects data points in a Cartesian coordinate system including two axes (namely X axis and Y axis). The connection hints readers the order and direction of data ( usually from left to right ) thus is quite good at showing trends in data series, yet is not suitable for unordered data. Works better than bar/column chart when scaling or zooming since unlike data, there is no connection between axes and data points, but still to be careful when truncating axis.
+description:
+  en: TBD
+  zh: |
+    將資料以點點相連的方式呈現在平面上的一種圖表。資料通常分為水平與垂直兩個軸線，由左而右連線([偶有例外](http://www.thefunctionalart.com/2016/06/defying-conventions-in-visualization.html))，連線暗示了資料的順序與變化，因此適合用來呈現__序列資料的趨勢__。
 
-pros: |
-  Great tool to visualize data trends. still legible with many lines when trends are similar.
+    也因此，若資料沒有順序性，較不適合使用折線圖來呈現；相對地，對有序資料來說，折線圖往往比長條圖更適合。此外，因為折線圖並不像長條圖暗示了數值的絕對大小，因此局部放大時比較不會造成資料間比例的錯誤解讀，但仍然需要小心利用。
 
-cons: |
-  Counter-intuitive with unordered data. Work poorly with periodical dataset. Become too complicated when too many lines with different trends all together.
+    折線簡明的本質使它容易與其它折線重疊描繪，不像面積圖或長條圖一般只能堆疊描繪，然而當資料量多且混亂時，多重折線圖只會讓資訊變得更混亂。此時，可以考慮使用 Bump Chart 、滑坡圖等進階的圖表來簡化資訊。
+
+commonPractice:
+  en: TBD
+  zh: |
+    * 折線圖通常用來表現資料的趨勢。
+    * 當提到「走勢」、「變化」、「傾向」等概念時，可嘗試使用折線圖來處理。
+
+pros: 
+  en: Great tool to visualize data trends. still legible with many lines when trends are similar.
+  zh: |
+    * 表現趨勢的不二選擇。
+    * 在資料量大時仍可以大略表現趨勢。
+
+cons:
+  en: Counter-intuitive with unordered data. Work poorly with periodical dataset. Become too complicated when too many lines with different trends all together.
+  zh: |
+    * 用在無序資料上相當反直覺。
+    * 不容易用來觀察周期性資料。
+    * 當線段多時圖表會變得相當複雜。
 
 category:
   - trend
 
 dimension:
-  - [x, required, numeral]
-  - [y, required, numeral, multiple]
+  - [x coord, ordinal, required]
+  - [y coord, interval, required, multiple]
 
 visualEncoding:
   - position
   - direction
-
-commonPractice:
-  en: TBD
-  zh: |
-    * Visualize data trends.
-
-classicExample:
-  en: TBD
-  zh: TBD
 
 mediaUsage:
   - author: Jeremy Ashkenas, Alicia Parlapiano
@@ -51,3 +61,57 @@ variant:
   - bump chart
   - continuous error bar plot
   - combo chart
+
+bannerConfig:
+  [{
+    margin: 10, background: "#eee", gridBackground: "none",
+    padding: 12,
+    palette: {colors: [{hex: "#444"},{hex: "#666"},{hex: "#999"}]},
+    legendShow: false,
+    fill: "rgba(100%,63%,40%,0.7)",
+    fontSize: 11,
+    fontFamily: "arial",
+    gridStrokeWidth: 1,
+    gridDashArray: "1 0",
+    gridStroke: "#ddd",
+    gridFrameStrokeWidth: 0,
+    textFill: "#666",
+    sort: "Descending",
+    xAxisTickSizeInner: 0,
+    xAxisTickSizeOuter: 0,
+    yAxisHandleOverlap: "none",
+    yAxisShowDomain: true,
+    yAxisStroke: "#aaa",
+    labelShow: true
+  },{
+    margin: 10, background: "#eaeff5", gridBackground: "#eaeff5",
+    palette: {colors: [{hex: "#fff"},{hex: "#ffd"},{hex: "#fdf"}]},
+    fill: "rgba(14%,35%,50%,0.8)",
+    padding: 6,
+    fontSize: 13,
+    fontFamily: "tahoma",
+    labelShow: false,
+    gridStrokeWidth: 0,
+    gridDashArray: "1 0",
+    gridStroke: "rgba(0,0,0,0)",
+    gridFrameStrokeWidth: 0,
+    textFill: "#554",
+    sort: "Ascending",
+    xAxisTickSizeInner: 4
+  },{
+    margin: 10, background: "#f9f9f9", gridBackground: "#f9f9f9",
+    palette: {colors: [{hex: "#e96"},{hex: "#ae5"},{hex: "#48d"},{hex: "#999"}]},
+    padding: 2,
+    legendShow: true,
+    fontFamily: "lato",
+    fill: "rgba(25%,25%,25%,0.9)",
+    fontSize: 12,
+    textFill: "#444",
+    sort: "None",
+    xAxisTickSizeInner: 4,
+    yAxisTickSizeOuter: 4,
+    gridDashArray: "2 2",
+    gridStrokeWidth: 1,
+    gridStroke: "#999",
+    xAxisStroke: "#999"
+  }]
