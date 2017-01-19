@@ -33,7 +33,7 @@ guideline:
   en: N/A
   zh: |
     * 上色時，避免過於混亂的色調。
-    * 務必以面積代表資料。描繪圓形時，半徑應代入資料的平方根。
+    * 務必直接以面積代表資料。描繪圓形時，半徑應代入資料的平方根。
     * 避免使用圓形以外的形狀，因為圓以外的形狀讓面積計算與比較更加困難。
     * 通常用來比較適合「相加」的資料。溫度、年齡等數據較不適合。
 
@@ -58,10 +58,10 @@ visualEncoding:
   - position
 
 variant:
-  - pie bubble
-  - circular treemap
-  - dorling cartogram
-  - bubble map
+  - pie-bubble
+  - circular-treemap
+  - dorling-cartogram
+  - bubble-map
 
 classicExample: |
   * "[Snake Oil Supplements?](http://www.informationisbeautiful.net/visualizations/snake-oil-supplements/)", Information is Beautiful. 

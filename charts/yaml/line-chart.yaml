@@ -1,6 +1,4 @@
-name:
-  en: Line Chart
-  zh: 折線圖
+name: line-chart
 
 alias:
   - line graph
@@ -54,13 +52,13 @@ mediaUsage:
     link: http://www.nytimes.com/interactive/2014/06/05/upshot/how-the-recession-reshaped-the-economy-in-255-charts.html
 
 variant:
-  - parallel coordinates
-  - connected scatter plot
-  - step chart
-  - cycle plot
-  - bump chart
-  - continuous error bar plot
-  - combo chart
+  - parallel-coordinates
+  - connected-scatter-plot
+  - step-chart
+  - cycle-plot
+  - bump-chart
+  - continuous-error-bar-plot
+  - combo-chart
 
 bannerConfig:
   [{

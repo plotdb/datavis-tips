@@ -1,53 +1,75 @@
-name:
-  en: Treemap
-  zh: 樹狀區塊圖
-
-alias:
+name: treemap
 
 plotdb: 1006
 
+description:
+  en: N/A
+  zh: |
+    1991 年由 BenShneiderman 發明、使用層層相疊的矩形表示階層式資料的視覺化手法。樹狀區塊圖通常用矩形的面積來類比數據大小，並以邊界或色調表現資料分組，再加上其階層的本值，因此相當適合在表現階層式資料的同時仍提供資料間對比的線索。
+
+    類似 ?[bubble-chart] ，它也有效率地運用了所有的顯示空間，但是由於分組侷限了排版的自由度，它並不像 ?[bubble-chart] 有這麼強大的彈性可以自由發揮，而是更著重於資料階層的表現。
+
+    ?[treemap] 的實用性受資料特性影響頗大，當階層不多、甚至沒有階層時，?[treemap] 退化至單純的面積比較；而無論資料量太多、太少、差異太大、差異太小時，圖表的可讀性都會降低。儘管如此，適當的著色與妥善運用互動縮放機制可大大改善資料量大時的可讀性問題。
+
+
 category:
   - hierarchy
+  - comparison
+
+pros:
+  en: N/A
+  zh: |
+    * 清楚地表現出多層次的資料關係。
+    * 更有效率的利用顯示空間。
+
+cons:
+  en: N/A
+  zh: |
+    * 資料量少時用 ?[stacked-bar-chart] 更適合。
+    * 資料差異小時不容易看出差別，較不適用。
+    * 差異大時亦不適合，因小區塊幾乎無法顯示。
+    * 相加無意義的資料不適用。( 如平均年齡 )
+
+commonPractice:
+  en: N/A
+  zh: |
+    * 分組 / 階層式資料想要同時比較群體與個體時，用 ?[treemap] 可獲得不錯的效果。
+    * 資料量大或是有兩層以上的階層時，搭配互動縮放比起 ?[stacked-bar-chart] 會更加實用。
+
+guideline:
+  en: N/A
+  zh: |
+    * 務必直接以面積代表資料。
+    * 上色時，建議依大分組決定主色調，再調整次級分組內的彩度或明度。
+    * 通常用來比較適合「相加」的資料。溫度、年齡等數據較不適合。
+
+alternative:
+  en: N/A
+  zh: |
+    * 若階層並非重點，可考慮使用 ?[bubble-chart] 以呈現更多維度。
+    * 若沒有階層關係，可直接使用 ?[bar-chart] 讓資料更容易比較。
+    * 若需要將圖表置入特殊形狀中 ( 如地圖 )，可考慮使用 ?[voronoi-treemap]。
 
 dimension:
-  - [area, required, numeral]
-  - [group, optional, nominal]
+  - [area, ratio, required]
+  - [color, nominal, optional]
 
 visualEncoding:
   - area
   - color
 
 variant:
-  - voronoi treemap
-  - circular treemap
-  - jigsaw treemap
-  - convex treemap
+  - voronoi-treemap
+  - circular-treemap
+  - jigsaw-treemap
+  - convex-treemap
 
-classicExample:
-  - N/A
+classicExample: |
+  * Ben Shneiderman, [Treemap Art Project Exhibition](http://www.cpnas.org/exhibitions/archive/every-algorithm-has-art-in.html), October 16, 2014 - April 10, 2015
 
 mediaUsage:
-  - N/A
+  - author: Marcos Weskamp
+    title: Newsmap
+    year: 2010
+    link: http://newsmap.jp/
 
-description:
-  en: TBD
-  zh: |
-    1991 年由 BenShneiderman 發明、使用層層相疊的矩形表示階層式資料的視覺化手法。樹狀區塊圖通常用矩形的面積來類比數據大小，並以邊界或色調表現資料分組，再加上其階層的本值，因此相當適合在表現階層式資料的同時仍提供資料間對比的線索。它也有效率地運用了所有的顯示空間。資料量大時可能會降低可讀性，適當的著色與運用互動機制可以改善這個問題。
-
-pros:
-  en: TBD
-  zh: |
-    清楚表現階層式資料之間數據的對比
-
-cons:
-  en: TBD
-  zh: |
-    少量、非階層式等的資料使用長條圖等方式會更適合
-
-commonPractice:
-  en: TBD
-  zh: TBD
-
-guideline:
-  en: TBD
-  zh: TBD

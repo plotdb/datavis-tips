@@ -2,6 +2,24 @@
   config = do
     key-types: <[charts categories encodings dimension taxonomies]>
     charts: <[
+      animated-scatter-plot arc-diagram area-chart bar-chart
+      bcg-matrix box-whisky-plot bubble-array bubble-chart bubble-map bullet-chart
+      bump-chart cherry-chart chord-diagram circular-treemap column-chart combo-chart
+      connected-scatter-plot connected-ternary-plot continuous-error-bar-plot
+      curved-bar-chart cycle-plot dashboard difference-chart donut-chart
+      dorling-cartogram dot-chart dumbbell-chart fishbone flow-chart
+      full-stacked-bar-chart funnel-chart gantt-diagram gauge grouped-bar-chart
+      infographics line-chart lollipop-chart
+      map marimekko-chart paired-scatter-plot paired-slopegraph
+      parallel-coordinates pareto-diagram pie-bubble pie-chart-3d pie-chart polar-chart
+      population-pyramid pyramid-chart radar-chart recycle-chart sankey-chart sankey-chord
+      scatter-plot slopegraph span-chart stacked-area-chart stacked-bar-chart
+      step-chart streamgraph sun-burst-diagram ternary-plot timeline treemap
+      venn-diagram vertical-dumbbell-chart violin-chart voronoi-treemap waffle-chart
+      waterfall-chart wordcloud world-globe jigsaw-treemap convex-treemap network
+    ]>
+    /*
+    charts: <[
       animated-scatter-plot scatter-plot paired-scatter-plot connected-scatter-plot bcg-matrix
       ternary-plot connected-ternary-plot line-chart step-chart cycle-plot pie-chart donut-chart
       sun-burst-diagram pie-chart-3d bar-chart stacked-bar-chart grouped-bar-chart
@@ -9,9 +27,9 @@
       curved-bar-chart gantt-diagram waterfall-chart parallel-coordinates bump-chart combo-chart
       continuous-error-bar-plot column-chart polar-chart bubble-chart bubble-map dorling-cartogram
       pie-bubble circular-treemap voronoi-treemap jigsaw-treemap convex-treemap dot-chart lollipop-chart
-      slopegraph
+      slopegraph radar-chart
     ]>
-
+    */
     categories: <[
       distribution correlation trend change comparison proportion geography temporal hierarchy overview
     ]>
@@ -135,6 +153,9 @@
       "slopegraph": do
         zh: "滑坡圖"
         en: "Slopegraph"
+      "radar-chart": do
+        zh: "雷達圖"
+        en: "Radar Chart"
       "circular-treemap": do
         zh: "圓式樹狀圖*"
         en: "Circular Treemap"
@@ -153,6 +174,102 @@
       "lollipop-chart": do
         zh: "棒棒糖圖"
         en: "Lollipop Chart"
+      "arc-diagram": do
+        zh: "弧線圖"
+        en: "Arc Diagram"
+      "area-chart": do
+        zh: "面積圖"
+        en: "Area Chart"
+      "box-whisky-plot": do
+        zh: "盒鬚圖"
+        en: "Box Whisky Plot"
+      "bubble-array": do
+        zh: "泡泡陣列"
+        en: "Bubble Array"
+      "cherry-chart": do
+        zh: "櫻桃圖"
+        en: "Cherry Chart"
+      "chord-diagram": do
+        zh: "弦圖"
+        en: "Chord Diagram"
+      "dashboard": do
+        zh: "儀表板"
+        en: "Dashboard"
+      "difference-chart": do
+        zh: "面積差異圖"
+        en: "Difference Chart"
+      "dumbbell-chart": do
+        zh: "啞鈴圖"
+        en: "Dumbbell Chart"
+      "fishbone": do
+        zh: "魚骨圖"
+        en: "Fishbone"
+      "flow-chart": do
+        zh: "流量圖"
+        en: "Flow Chart"
+      "funnel-chart": do
+        zh: "漏斗圖"
+        en: "Funnel Chart"
+      "gauge": do
+        zh: "指示儀表"
+        en: "Gauge Meter"      
+      "infographics": do
+        zh: "資訊圖表"
+        en: "Infographics"
+      "map": do
+        zh: "地圖"
+        en: "Map"
+      "paired-slopegraph": do
+        zh: "配對滑坡圖"
+        en: "Paired Slopegraph"
+      "pareto-diagram": do
+        zh: "柏拉圖"
+        en: "Pareto Diagram"
+      "pyramid-chart": do
+        zh: "金字塔圖"
+        en: "Pyramid Chart"
+      "recycle-chart": do
+        zh: "循環圖"
+        en: "Recycle Chart"
+      "sankey-chart": do
+        zh: "山基圖"
+        en: "Sankey Chart"
+      "sankey-chord": do
+        zh: "山基式弦圖"
+        en: "Sankey Chord"
+      "stacked-area-chart": do
+        zh: "堆積面積圖"
+        en: "Stacked Area Chart"
+      "streamgraph": do
+        zh: "主題河流"
+        en: "Streamgraph"
+      "timeline": do
+        zh: "時間軸"
+        en: "Timeline"
+      "treemap": do
+        zh: "樹狀圖"
+        en: "Treemap"
+      "venn-diagram": do
+        zh: "文氏圖"
+        en: "Venn Diagram"
+      "vertical-dumbbell-chart": do
+        zh: "直式啞鈴圖"
+        en: "Vertical Dumbbell Chart"
+      "violin-chart": do
+        zh: "提琴圖"
+        en: "Violin Chart"
+      "waffle-chart": do
+        zh: "鬆餅圖"
+        en: "Waffle Chart"
+      "wordcloud": do
+        zh: "文字雲"
+        en: "Word Cloud"
+      "world-globe": do
+        zh: "地球儀"
+        en: "World Globe"
+      "network": do
+        zh: "網絡圖"
+        en: "Network Graph"
       "distribution": do
         zh: "分布"
         en: "distribution"

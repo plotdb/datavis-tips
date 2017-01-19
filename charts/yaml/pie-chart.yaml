@@ -1,6 +1,4 @@
-name:
-  en: Pie Chart
-  zh: 圓餅圖
+name: pie-chart
 
 alias:
   - circle chart
@@ -80,11 +78,11 @@ alternative:
     * 只有兩筆資料卻需要跨圖表比較時，可使用 ?[pie-bubble]
 
 variant:
-  - donut chart
-  - polar chart
-  - sun burst diagram
-  - pie chart 3d
-  - pie bubble
+  - donut-chart
+  - polar-chart
+  - sun-burst-diagram
+  - pie-chart-3d
+  - pie-bubble
 
 bannerConfig:
   [{

@@ -97,7 +97,7 @@ html(lang="en")
                   if item == "N/A"
                     li N/A
                   else
-                    li #[span= item.author], "#[a(href=item.link,target="_blank")= item.title]", #[span= item.media], #[span= item.year].
+                    li #[span= item.author], "#[a(href=item.link,target="_blank")= item.title]", #[span= (item.media ? item.media + "," : "")] #[span= item.year].
               br
 
             if classicExample
@@ -149,7 +149,8 @@ html(lang="en")
               label= _["Variants"]
               p
                 each item in variant
-                  .chartico.text.md(class=[item.toLowerCase().replace(/ /g,"-"),lang].join(" "))
+                  a(href=tourl(item))
+                    .chartico.text.md(class=[item.toLowerCase().replace(/ /g,"-"),lang].join(" "))
     .footer
       a(href="http://plotdb.com",target="_blank")
         span POWERED BY PLOTDB

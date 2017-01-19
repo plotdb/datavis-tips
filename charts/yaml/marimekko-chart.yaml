@@ -1,9 +1,31 @@
-name: bar-chart
-
+name: marimekko-chart
 alias:
-  - bar graph
+  - mosaic plot
 
-plotdb: 1069
+plotdb: 1118
+
+category:
+  - comparison
+
+dimension:
+  - [x coord, required, any]
+  - [y coord, required, numeral]
+
+visualEncoding:
+  - position
+  - length
+
+variant:
+  - grouped bar chart
+  - stacked bar chart
+  - column chart
+  - span chart
+  - bullet chart
+  - full stacked bar chart
+  - marimekko chart
+
+mediaUsage:
+  - N/A
 
 description:
   en: |
@@ -19,26 +41,7 @@ description:
 
     通常不會用在資料量太大的資料集，因為在那種情況下，長條通常也細到看不出，或者整張圖退化成一般的面積圖了。此外，比起折線圖少了資料間的連線，因此較不強調資料的趨勢，為無序性資料的首選圖表。
 
-    由於長條通常由圖表軸線畫起，本身暗示資料絕對大小，因此局部放大時易造成讀者誤解，不利於表現資料的細微變化。這時可以使用明顯的省略符號，亦或者考慮改用?[dot-chart]，因為點圖沒有連線的問題，比較不會造成圖表的嚴重誤解；即使如此，操弄座標軸時仍需要格外注意。
-
-category:
-  - comparison
-
-dimension:
-  - [x coord, ratio, required]
-  - [y coord, nominal, required]
-
-visualEncoding:
-  - aligned-length
-
-variant:
-  - grouped-bar-chart
-  - stacked-bar-chart
-  - column-chart
-  - span-chart
-  - bullet-chart
-  - full-stacked-bar-chart
-  - marimekko-chart
+    由於長條通常由圖表軸線畫起，本身暗示資料絕對大小，因此局部放大時易造成讀者誤解，不利於表現資料的細微變化。
 
 pros:
   en: |
@@ -51,24 +54,17 @@ cons:
   en: |
     Work poorly with large dataset or periodic dataset.  Become useless when data variation is small comparing to the value itself.
   zh: |
-    * 不易呈現週期性資料。
-    * 資料量大或變化比例小時不易閱讀。
-
-keyword:
-  en: TBD
-  zh:
-    - 比較
-    - 最大
-    - 最小
-    - 極值
-    - 精確
+    不易呈現週期性資料、資料量大或數據變化比例小時不易閱讀。
 
 commonPractice:
   en: |
     * For comparing between data and finding the max/min entry.
   zh: |
     * 一般使用長條圖來表現資料的極值、或是做數值的精確比較。
-    * 要表現「最大.. 」、「..比..大」等「比較」的概念時，可先試著使用長條圖來處理。
+
+alternative:
+  en: N/A
+  zh: N/A
 
 guideline:
   en: |
@@ -79,11 +75,57 @@ guideline:
     * 圖表的座標原點需由零開始
     * 數據排序後呈現為佳
     * 比起有序資料，更適合運用在無序資料上
-    * 適當使用格線與軸線刻度可增加資料判讀的正確性
 
-alternative:
-  en: TBD
-  zh: |
-    * 資料過多時，可改用 ?[treemap]
-    * 要避免裁切造成的錯誤判讀，可使用 ?[dot-chart]
-    * 資料含有時序等趨勢的概念時，可考慮改用 ?[line-chart]
+bannerConfig:
+  [{
+    margin: 10, background: "#eee", gridBackground: "none",
+    padding: 12,
+    palette: {colors: [{hex: "#444"},{hex: "#666"},{hex: "#999"}]},
+    legendShow: false,
+    fill: "rgba(100%,63%,40%,0.7)",
+    fontSize: 11,
+    fontFamily: "arial",
+    gridStrokeWidth: 1,
+    gridDashArray: "1 0",
+    gridStroke: "#ddd",
+    gridFrameStrokeWidth: 0,
+    textFill: "#666",
+    sort: "Descending",
+    xAxisTickSizeInner: 0,
+    xAxisTickSizeOuter: 0,
+    yAxisHandleOverlap: "none",
+    yAxisShowDomain: true,
+    yAxisStroke: "#aaa",
+    labelShow: true
+  },{
+    margin: 10, background: "#eaeff5", gridBackground: "#eaeff5",
+    palette: {colors: [{hex: "#fff"},{hex: "#ffd"},{hex: "#fdf"}]},
+    fill: "rgba(14%,35%,50%,0.8)",
+    padding: 6,
+    fontSize: 13,
+    fontFamily: "tahoma",
+    labelShow: false,
+    gridStrokeWidth: 0,
+    gridDashArray: "1 0",
+    gridStroke: "rgba(0,0,0,0)",
+    gridFrameStrokeWidth: 0,
+    textFill: "#554",
+    sort: "Ascending",
+    xAxisTickSizeInner: 4
+  },{
+    margin: 10, background: "#f9f9f9", gridBackground: "#f9f9f9",
+    palette: {colors: [{hex: "#e96"},{hex: "#ae5"},{hex: "#48d"},{hex: "#999"}]},
+    padding: 2,
+    legendShow: true,
+    fontFamily: "lato",
+    fill: "rgba(25%,25%,25%,0.9)",
+    fontSize: 12,
+    textFill: "#444",
+    sort: "None",
+    xAxisTickSizeInner: 4,
+    yAxisTickSizeOuter: 4,
+    gridDashArray: "2 2",
+    gridStrokeWidth: 1,
+    gridStroke: "#999",
+    xAxisStroke: "#999"
+  }]

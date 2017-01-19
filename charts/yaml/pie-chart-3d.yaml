@@ -75,11 +75,11 @@ alternative:
     * 直接改用 ?[pie-chart] ，或 ?[pie-chart] 中建議的其它方案。
 
 variant:
-  - donut chart
-  - polar chart
-  - sun burst diagram
-  - pie chart
-  - pie bubble
+  - donut-chart
+  - polar-chart
+  - sun-burst-diagram
+  - pie-chart
+  - pie-bubble
 
 bannerConfig:
   [{

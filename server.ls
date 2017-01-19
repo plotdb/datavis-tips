@@ -317,6 +317,8 @@ update-file = ->
             filename: "template.jade"
             basedir: path.join(cwd)
             md: markdown.toHTML
+            tourl: -> "/v/#it/#lang/"
+            tokey: -> it.to-lower-case!replace(' ', '-')
             lang: lang
           } <<< lang-cfg <<< {_:_i18n} <<< {site: site-config}
         )
