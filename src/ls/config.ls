@@ -1,6 +1,6 @@
 (->
   config = do
-
+    key-types: <[charts categories encodings dimension taxonomies]>
     charts: <[
       animated-scatter-plot scatter-plot paired-scatter-plot connected-scatter-plot bcg-matrix
       ternary-plot connected-ternary-plot line-chart step-chart cycle-plot pie-chart donut-chart
@@ -8,7 +8,8 @@
       full-stacked-bar-chart marimekko-chart span-chart population-pyramid bullet-chart
       curved-bar-chart gantt-diagram waterfall-chart parallel-coordinates bump-chart combo-chart
       continuous-error-bar-plot column-chart polar-chart bubble-chart bubble-map dorling-cartogram
-      pie-bubble circular-treemap voronoi-treemap jigsaw-treemap convex-treemap
+      pie-bubble circular-treemap voronoi-treemap jigsaw-treemap convex-treemap dot-chart lollipop-chart
+      slopegraph
     ]>
 
     categories: <[
@@ -131,6 +132,9 @@
       "pie-bubble": do
         zh: "圓餅泡泡圖"
         en: "pie bubble"
+      "slopegraph": do
+        zh: "滑坡圖"
+        en: "slopegraph"
       "circular-treemap": do
         zh: "圓式樹狀圖*"
         en: "circular treemap"
@@ -143,6 +147,12 @@
       "convex-treemap": do
         zh: "Convex 樹狀圖"
         en: "convex treemap"
+      "dot-chart": do
+        zh: "點圖"
+        en: "dot plot"
+      "lollipop-chart": do
+        zh: "棒棒糖圖"
+        en: "lollipop chart"
       "distribution": do
         zh: "分布"
         en: "distribution"

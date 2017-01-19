@@ -268,6 +268,24 @@ update-file = ->
     ret = JSON.parse(JSON.stringify(cfg))
     for k of ret => if ret[k] and ret[k][lang] => ret[k] = ret[k][lang]
     ret
+
+  lookup-key = (key) ->
+    for type in site-config.key-types =>
+      if (site-config[type] or []).indexOf(key) >= 0 => return key
+    return null
+
+  token-to-url = (input="",lang="en") ->
+    re = /\?\[([^\] ]+?)\]/g
+    matches = input.match(re) or []
+    for item in matches =>
+      key = lookup-key item.replace(/[\?\[\]]/g, "")
+      if !key => continue
+      name = (site-config.translation[key] or {})[lang] or key
+      input = input.replace(
+        item, "[#name](/v/#key/#lang/)"
+      )
+    return input
+
   build-yaml = (src) ->
     langs = <[en zh]>
     try
@@ -277,6 +295,9 @@ update-file = ->
         _i18n = {}
         for k,v of site-config.translation => _i18n[k] = v[lang] or k
         lang-cfg = choose-lang cfg, lang
+        str = JSON.stringify(lang-cfg)
+        lang-cfg = JSON.parse(token-to-url str, lang)
+
         template = fs.read-file-sync \template.jade .toString!
         ret = jade.render(
           template, {

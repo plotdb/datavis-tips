@@ -21,7 +21,7 @@ description:
 
     通常不會用在資料量太大的資料集，因為在那種情況下，長條通常也細到看不出，或者整張圖退化成一般的面積圖了。此外，比起折線圖少了資料間的連線，因此較不強調資料的趨勢，為無序性資料的首選圖表。
 
-    由於長條通常由圖表軸線畫起，本身暗示資料絕對大小，因此局部放大時易造成讀者誤解，不利於表現資料的細微變化。這時可以使用明顯的省略符號，亦或者考慮改用[點圖 (dot plot)](/v/dot-plot/zh/)，因為點圖沒有連線的問題，比較不會造成圖表的嚴重誤解；即使如此，操弄座標軸時仍需要格外注意。
+    由於長條通常由圖表軸線畫起，本身暗示資料絕對大小，因此局部放大時易造成讀者誤解，不利於表現資料的細微變化。這時可以使用明顯的省略符號，亦或者考慮改用?[dot-chart]，因為點圖沒有連線的問題，比較不會造成圖表的嚴重誤解；即使如此，操弄座標軸時仍需要格外注意。
 
 category:
   - comparison
@@ -64,6 +64,7 @@ keyword:
     - 最小
     - 極值
     - 精確
+
 commonPractice:
   en: |
     * For comparing between data and finding the max/min entry.
@@ -85,9 +86,10 @@ guideline:
 alternative:
   en: TBD
   zh: |
-    * 資料過多時，可改用 [樹狀圖 (Treemap)](/v/treemap/zh/)
-    * 要避免裁切造成的錯誤判讀，可使用 [點狀圖 (Dot Plot)](/v/dot-plot/zh/)
-    * 資料含有時序等趨勢的概念時，可考慮改用 [折線圖 (Line Plot)](/v/line-chart/zh/)
+    * 資料過多時，可改用 ?[treemap]
+    * 要避免裁切造成的錯誤判讀，可使用 ?[dot-chart]
+    * 資料含有時序等趨勢的概念時，可考慮改用 ?[line-chart]
+
 bannerConfig:
   [{
     margin: 10, background: "#eee", gridBackground: "none",
