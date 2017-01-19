@@ -1,3 +1,22 @@
+meta:
+  desc: |
+    chart yaml 的基本架構如下
+    =========================
+    * 基本資訊
+      name, alias(Key 列表), plotdb(plotdb id), description
+    * 優劣
+      pros, cons
+    * 使用要領
+      commonPractice, guideline, alternative
+    * 範例
+      mediaUsage(物件列表;包含 author, title, media, year, link), classicExample
+    * 屬性
+      category(Key 列表), keyword(列表)
+      visualEncoding(Key 列表), variant(Key 列表)
+      dimension(陣列列表;[Key(dim),Key(enc),required|optional,multiple?]
+    * 程式設定
+      bannerConfig
+
 name:
   en: Template
   zh: 樣版
@@ -11,8 +30,8 @@ category:
   - comparison
 
 dimension:
-  - [x, required, any]
-  - [y, required, numeral]
+  - [x coord, required, any]
+  - [y coord, required, numeral]
 
 visualEncoding:
   - position
@@ -64,6 +83,10 @@ commonPractice:
     * For comparing between data and finding the max/min entry.
   zh: |
     * 一般使用長條圖來表現資料的極值、或是做數值的精確比較。
+
+alternative:
+  en: N/A
+  zh: N/A
 
 guideline:
   en: |

@@ -58,7 +58,8 @@ html(lang="en")
         .panel-body.content
           .title
             span= name
-            small  / #[span= alias]
+            if alias
+              small  / #[span= alias]
             hr
           .description
             if description
@@ -102,9 +103,7 @@ html(lang="en")
             if classicExample
               .guideline
                 label= _["Classic Example"]
-                ul 
-                  each item in classicExample
-                    li= item
+                +markdown(classicExample)
               br
             if alternative
               .guideline

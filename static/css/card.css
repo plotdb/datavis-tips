@@ -19,9 +19,14 @@ label
   display: block;
   margin-left: 20px;
 }
-.card .text-center label,
-.card .similar label {
+.card .text-center label {
   margin-left: 0;
+}
+.card .similar label {
+  position: absolute;
+  top: 0;
+  right: 0;
+  width: 80px;
 }
 .card .panel-body {
   padding: 0;

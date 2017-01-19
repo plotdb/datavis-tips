@@ -17,142 +17,142 @@
     ]>
 
     encodings: <[
-      saturation hue lightness area position aligned-length direction angle shape volume length
+      saturation hue lightness area position aligned-length direction angle shape volume length color
     ]>
 
     dimensions: <[
-      y-coord x-coord angle area color
+      y-coord x-coord angle area color radius
     ]>
     taxonomies: <[
-      nominal categorical ordinal interval ratio
+      nominal categorical ordinal interval ratio any
     ]>
     translation: do
       "animated-scatter-plot": do
         zh: "動畫散布圖"
-        en: "animated scatter plot"
+        en: "Animated Scatter Plot"
       "scatter-plot": do
         zh: "散布圖"
-        en: "scatter plot"
+        en: "Scatter Plot"
       "paired-scatter-plot": do
         zh: "配對散布圖"
-        en: "paired scatter plot"
+        en: "Paired Scatter Plot"
       "connected-scatter-plot": do
         zh: "連接散布圖"
-        en: "connected scatter plot"
+        en: "Connected Scatter Plot"
       "bcg-matrix": do
         zh: "波士頓矩陣"
         en: "BCG Matrix"
       "ternary-plot": do
         zh: "三元圖"
-        en: "ternary plot"
+        en: "Ternary Plot"
       "connected-ternary-plot": do
         zh: "連接三元圖"
-        en: "connected ternary plot"
+        en: "Connected Ternary Plot"
       "line-chart": do
         zh: "折線圖"
-        en: "line chart"
+        en: "Line Chart"
       "step-chart": do
         zh: "步階圖"
-        en: "step chart"
+        en: "Step Chart"
       "cycle-plot": do
         zh: "循環圖"
-        en: "cycle plot"
+        en: "Cycle Plot"
       "pie-chart": do
         zh: "圓餅圖"
-        en: "pie chart"
+        en: "Pie Chart"
       "donut-chart": do
         zh: "甜甜圈圖"
-        en: "donut chart"
+        en: "Donut Chart"
       "sun-burst-diagram": do
         zh: "太陽花圖*"
-        en: "sun burst diagram"
+        en: "Sun Burst Diagram"
       "pie-chart-3d": do
         zh: "立體圓餅圖"
-        en: "3d pie chart"
+        en: "3D Pie Chart"
       "bar-chart": do
         zh: "長條圖"
-        en: "bar chart"
+        en: "Bar Chart"
       "stacked-bar-chart": do
         zh: "堆積長條圖"
-        en: "stacked bar chart"
+        en: "Stacked Bar Chart"
       "grouped-bar-chart": do
         zh: "分組長條圖"
-        en: "grouped bar chart"
+        en: "Grouped Bar Chart"
       "full-stacked-bar-chart": do
         zh: "100%長條圖"
-        en: "100% stacked bar chart"
+        en: "100% Stacked Bar Chart"
       "marimekko-chart": do
         zh: "Marimekko 圖*"
-        en: "marimekko chart"
+        en: "Marimekko Chart"
       "span-chart": do
         zh: "長度圖*"
-        en: "span chart"
+        en: "Span Chart"
       "population-pyramid": do
         zh: "人口金字塔"
-        en: "population pyramid"
+        en: "Population Pyramid"
       "bullet-chart": do
         zh: "子彈圖"
-        en: "bullet chart"
+        en: "Bullet Chart"
       "curved-bar-chart": do
         zh: "曲式長條圖"
-        en: "curved bar chart"
+        en: "Curved Bar Chart"
       "gantt-diagram": do
         zh: "甘特圖"
-        en: "gantt diagram"
+        en: "Gantt Diagram"
       "waterfall-chart": do
         zh: "瀑布圖"
-        en: "waterfall chart"
+        en: "Waterfall Chart"
       "parallel-coordinates": do
         zh: "平行座標圖*"
-        en: "parallel coordinates"
+        en: "Parallel Coordinates"
       "bump-chart": do
         zh: "凹凸圖"
-        en: "bump chart"
+        en: "Bump Chart"
       "combo-chart": do
         zh: "複合圖"
-        en: "combo chart"
+        en: "Combo Chart"
       "continuous-error-bar-plot": do
         zh: "誤差區間長條圖"
-        en: "continuous error bar plot"
+        en: "Continuous Error Bar Plot"
       "column-chart": do
         zh: "直式長條圖"
-        en: "column chart"
+        en: "Column Chart"
       "polar-chart": do
         zh: "極區圖"
-        en: "polar chart"
+        en: "Polar Chart"
       "bubble-chart": do
         zh: "泡泡圖"
-        en: "bubble chart"
+        en: "Bubble Chart"
       "bubble-map": do
         zh: "泡泡地圖"
-        en: "bubble map"
+        en: "Bubble Map"
       "dorling-cartogram": do
         zh: "圓式統計地圖*"
-        en: "dorling cartogram"
+        en: "Dorling Cartogram"
       "pie-bubble": do
         zh: "圓餅泡泡圖"
-        en: "pie bubble"
+        en: "Pie Bubble"
       "slopegraph": do
         zh: "滑坡圖"
-        en: "slopegraph"
+        en: "Slopegraph"
       "circular-treemap": do
         zh: "圓式樹狀圖*"
-        en: "circular treemap"
+        en: "Circular Treemap"
       "voronoi-treemap": do
         zh: "Voronoi 樹狀圖"
-        en: "voronoi treemap"
+        en: "Voronoi Treemap"
       "jigsaw-treemap": do
         zh: "Jigsaw 樹狀圖"
-        en: "jigsaw treemap"
+        en: "Jigsaw Treemap"
       "convex-treemap": do
         zh: "Convex 樹狀圖"
-        en: "convex treemap"
+        en: "Convex Treemap"
       "dot-chart": do
         zh: "點圖"
-        en: "dot plot"
+        en: "Dot Plot"
       "lollipop-chart": do
         zh: "棒棒糖圖"
-        en: "lollipop chart"
+        en: "Lollipop Chart"
       "distribution": do
         zh: "分布"
         en: "distribution"
@@ -270,6 +270,9 @@
       "color": do
         zh: "顏色"
         en: "Color"
+      "radius": do
+        zh: "半徑"
+        en: "Radius"
       "nominal": do
         zh: "文字"
         en: "Nominal"
@@ -285,6 +288,62 @@
       "ratio": do
         zh: "絕對數值"
         en: "Ratio"
+      "any": do
+        zh: "任意資料"
+        en: "Any Type"
+
+  config.banner-config = [{
+    margin: 10, background: "\#eee", gridBackground: "none",
+    padding: 12,
+    palette: {colors: [{hex: "\#444"},{hex: "\#666"},{hex: "\#999"}]},
+    legendShow: false,
+    fill: "rgba(100%,63%,40%,0.7)",
+    fontSize: 11,
+    fontFamily: "arial",
+    gridStrokeWidth: 1,
+    gridDashArray: "1 0",
+    gridStroke: "\#ddd",
+    gridFrameStrokeWidth: 0,
+    textFill: "\#666",
+    sort: "Descending",
+    xAxisTickSizeInner: 0,
+    xAxisTickSizeOuter: 0,
+    yAxisHandleOverlap: "none",
+    yAxisShowDomain: true,
+    yAxisStroke: "\#aaa",
+    labelShow: true
+  },{
+    margin: 10, background: "\#eaeff5", gridBackground: "\#eaeff5",
+    palette: {colors: [{hex: "\#fff"},{hex: "\#ffd"},{hex: "\#fdf"}]},
+    fill: "rgba(14%,35%,50%,0.8)",
+    padding: 6,
+    fontSize: 13,
+    fontFamily: "tahoma",
+    labelShow: false,
+    gridStrokeWidth: 0,
+    gridDashArray: "1 0",
+    gridStroke: "rgba(0,0,0,0)",
+    gridFrameStrokeWidth: 0,
+    textFill: "\#554",
+    sort: "Ascending",
+    xAxisTickSizeInner: 4
+  },{
+    margin: 10, background: "\#f9f9f9", gridBackground: "\#f9f9f9",
+    palette: {colors: [{hex: "\#e96"},{hex: "\#ae5"},{hex: "\#48d"},{hex: "\#999"}]},
+    padding: 2,
+    legendShow: true,
+    fontFamily: "lato",
+    fill: "rgba(25%,25%,25%,0.9)",
+    fontSize: 12,
+    textFill: "\#444",
+    sort: "None",
+    xAxisTickSizeInner: 4,
+    yAxisTickSizeOuter: 4,
+    gridDashArray: "2 2",
+    gridStrokeWidth: 1,
+    gridStroke: "\#999",
+    xAxisStroke: "\#999"
+  }]
 
   if module? => module.exports = config
   if window? => window.config = config

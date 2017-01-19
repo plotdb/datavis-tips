@@ -274,6 +274,11 @@ update-file = ->
       if (site-config[type] or []).indexOf(key) >= 0 => return key
     return null
 
+  translate-key = (key,lang="en") ->
+    ret = lookup-key key
+    if !ret => return key
+    return (site-config.translation[key] or {})[lang] or key
+
   token-to-url = (input="",lang="en") ->
     re = /\?\[([^\] ]+?)\]/g
     matches = input.match(re) or []
@@ -297,6 +302,14 @@ update-file = ->
         lang-cfg = choose-lang cfg, lang
         str = JSON.stringify(lang-cfg)
         lang-cfg = JSON.parse(token-to-url str, lang)
+        lang-cfg.name = translate-key(lang-cfg.name,lang)
+
+        
+        for i from 0 til lang-cfg.[]banner-config =>
+          lang-cfg.[]banner-config[i] = (site-config.[]banner-config[i] or {}) <<< lang-cfg.[]banner-config[i]
+        if lang-cfg.[]banner-config.length < site-config.[]banner-config.length =>
+          for i from lang-cfg.banner-config.length til site-config.[]banner-config.length =>
+            lang-cfg.banner-config.push site-config.[]banner-config[i]
 
         template = fs.read-file-sync \template.jade .toString!
         ret = jade.render(
