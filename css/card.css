@@ -22,6 +22,9 @@ label
 .card .text-center label {
   margin-left: 0;
 }
+.card .similar .catico {
+  margin: 0 5px 0 0;
+}
 .card .similar label {
   position: absolute;
   top: 0;
