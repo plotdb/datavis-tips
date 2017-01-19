@@ -565,6 +565,15 @@
 .catico.hierarchy.text.zh:after {
   content: '階層';
 }
+.catico.overview:before {
+  background-image: url(/icon/cat/overview.svg);
+}
+.catico.overview.text:after {
+  content: 'overview';
+}
+.catico.overview.text.zh:after {
+  content: '概觀';
+}
 .encico.saturation:before {
   background-image: url(/icon/encoding/saturation.svg);
 }

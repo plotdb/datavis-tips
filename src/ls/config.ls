@@ -13,7 +13,7 @@
     ]>
 
     categories: <[
-      distribution correlation trend change comparison proportion geography temporal hierarchy
+      distribution correlation trend change comparison proportion geography temporal hierarchy overview
     ]>
 
     encodings: <[
@@ -180,6 +180,9 @@
       "hierarchy": do
         zh: "階層"
         en: "hierarchy"
+      "overview": do
+        zh: "概觀"
+        en: "overview"
       "saturation": do
         zh: "飽和度"
         en: "saturation"
