@@ -457,6 +457,33 @@
 .chartico.convex-treemap.text.zh:after {
   content: 'Convex 樹狀圖';
 }
+.chartico.dot-chart:before {
+  background-image: url(/icon/chart/dot-chart.svg);
+}
+.chartico.dot-chart.text:after {
+  content: 'dot plot';
+}
+.chartico.dot-chart.text.zh:after {
+  content: '點圖';
+}
+.chartico.lollipop-chart:before {
+  background-image: url(/icon/chart/lollipop-chart.svg);
+}
+.chartico.lollipop-chart.text:after {
+  content: 'lollipop chart';
+}
+.chartico.lollipop-chart.text.zh:after {
+  content: '棒棒糖圖';
+}
+.chartico.slopegraph:before {
+  background-image: url(/icon/chart/slopegraph.svg);
+}
+.chartico.slopegraph.text:after {
+  content: 'slopegraph';
+}
+.chartico.slopegraph.text.zh:after {
+  content: '滑坡圖';
+}
 .catico.distribution:before {
   background-image: url(/icon/cat/distribution.svg);
 }
