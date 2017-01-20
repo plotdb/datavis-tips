@@ -143,6 +143,9 @@ label small {
   padding-right: 5px;
   text-align: right;
 }
+.footer .label {
+  padding-bottom: 0.2em;
+}
 .footer span {
   color: #444;
   vertical-align: middle;
