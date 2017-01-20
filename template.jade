@@ -155,6 +155,10 @@ html(lang="en")
       a(href="http://plotdb.com",target="_blank")
         span POWERED BY PLOTDB
         img(src="/img/plotdb-mini-alt.png")
+      .pull-left
+        for lang in site.langs
+          a.label.label-default(href=["/v", key, lang].join("/"))= lang.toUpperCase()
+          span &nbsp;
   script(type="text/javascript")= "var chartid=" + plotdb + ";"
   if bannerConfig
     script(type="text/javascript").

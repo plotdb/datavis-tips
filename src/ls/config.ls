@@ -1,5 +1,6 @@
 (->
   config = do
+    langs: <[zh en]>
     key-types: <[charts categories encodings dimension taxonomies]>
     charts: <[
       animated-scatter-plot arc-diagram area-chart bar-chart
@@ -18,18 +19,7 @@
       venn-diagram vertical-dumbbell-chart violin-chart voronoi-treemap waffle-chart
       waterfall-chart wordcloud world-globe jigsaw-treemap convex-treemap network
     ]>
-    /*
-    charts: <[
-      animated-scatter-plot scatter-plot paired-scatter-plot connected-scatter-plot bcg-matrix
-      ternary-plot connected-ternary-plot line-chart step-chart cycle-plot pie-chart donut-chart
-      sun-burst-diagram pie-chart-3d bar-chart stacked-bar-chart grouped-bar-chart
-      full-stacked-bar-chart marimekko-chart span-chart population-pyramid bullet-chart
-      curved-bar-chart gantt-diagram waterfall-chart parallel-coordinates bump-chart combo-chart
-      continuous-error-bar-plot column-chart polar-chart bubble-chart bubble-map dorling-cartogram
-      pie-bubble circular-treemap voronoi-treemap jigsaw-treemap convex-treemap dot-chart lollipop-chart
-      slopegraph radar-chart
-    ]>
-    */
+
     categories: <[
       distribution correlation trend change comparison proportion geography temporal hierarchy overview
     ]>

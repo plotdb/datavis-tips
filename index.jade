@@ -36,7 +36,8 @@ html(lang="en")
       h2 Datavis.tips
       label Charts
       each item in config.charts
-        .chartico.text.md.no-border(class=[item.toLowerCase().replace(/ /g,"-"),lang].join(" "))
+        a(href="/v/" + item + "/en/")
+          .chartico.text.md.no-border(class=[item.toLowerCase().replace(/ /g,"-"),lang].join(" "))
       br
       br
       label Categories
