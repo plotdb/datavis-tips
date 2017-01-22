@@ -439,6 +439,15 @@
 .chartico.lollipop-chart.text.zh:after {
   content: '棒棒糖圖';
 }
+.chartico.histogram:before {
+  background-image: url(/icon/chart/histogram.svg);
+}
+.chartico.histogram.text:after {
+  content: 'Histogram';
+}
+.chartico.histogram.text.zh:after {
+  content: '直方圖';
+}
 .chartico.map:before {
   background-image: url(/icon/chart/map.svg);
 }
