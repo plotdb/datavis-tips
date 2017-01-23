@@ -106,6 +106,13 @@
   width: 100%;
   left: 0;
 }
+.chartico.disabled,
+.catico.disabled,
+.encico.disabled,
+.taxico.disabled,
+.dimico.disabled {
+  filter: grayscale(100%) brightness(200%) opacity(60%);
+}
 .chartico.animated-scatter-plot:before {
   background-image: url(/icon/chart/animated-scatter-plot.svg);
 }
