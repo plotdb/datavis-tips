@@ -1,6 +1,4 @@
-name:
-  en: Ternary Plot
-  zh: 三元圖
+name: ternary-plot
 
 alias:
   - simplex plot
@@ -9,39 +7,44 @@ alias:
 
 plotdb: 2013
 
-description: |
-  Variation of scatter plot which contains three variables summing to a fixed value. usually, this can be the proportions between 3 variables ( which have the summation of 100% ).
+description:
+  en: N/A
+  zh: |
+    ?[ternary-plot]是?[scatter-plot]的其中一種變型，用於呈現三個變量的資料集，比起一般的?[scatter-plot]多了一種維度。在圖表上，三個變量的總和是一個固定的值，所以實務上來說我們通常都會將三個變量先轉為比例 ( 總和為 100% ) ，再進行描繪。
 
-  Most use in mineralogy to visualize components of materials, in this case chart is divided into several areas to identify the proportion range of different materials.
+    除了直接在圖上標記資料點以外，另一種常見的做法是將三角形底圖切成許多塊，每塊皆代表一種不同的分類，用以說明在各種分類可能的成份範圍；這樣的用法在研究成份的學科中尤其常見，比方說礦物學中就利用?[ternary-plot]來呈現黏土、淤泥與砂在不同比例混合下所形成的材料分類。
+
+
+commonPractice:
+  en: TBD
+  zh: |
+    * 欲表現三個變量的?[proportion]、?[distribution]或?[correlation]時，可以嘗試使用?[ternary-plot]。
+    * 常用來呈現礦物、岩石或其它化學物質的組成分布。
 
 pros: |
-  Works great in showing proportion, correlation with exactly three variables.
+  * 同時表現出三種變數之間的比例與相關性。
+  * 若在底圖上依資料的類別欄劃分邊界，還可以清楚地表現不同類別的分布範圍。
 
 cons: |
-  the fact that needing exactly three variables makes it less useful in most situation.
+  * 必須要恰好三個變數的情況下才能使用，使得能用上?[ternary-plot]的機會比較少。
 
 category:
   - correlation
 
 dimension:
-  - [x, required, numeral]
-  - [y, required, numeral]
-  - [z, required, numeral]
-  - [color, optional, any]
-  - [size, optional, numeral]
+  - [x coord, ratio, required]
+  - [y coord, ratio, required]
+  - [z coord, ratio, required]
+  - [color, any, optional]
+  - [area, ratio, optional]
 
 visualEncoding:
   - position
 
-commonPractice:
-  en: TBD
-  zh: |
-    * Visualize the composition of rocks or minerals
-
 classicExample:
   en: TBD
   zh: |
-    * Colors for Ag / Au / Cu composition 
+    * [Colors for Ag / Au / Cu composition](https://en.wikipedia.org/wiki/Ternary_plot#/media/File:Ag-Au-Cu-colours-english.svg)
 
 mediaUsage:
   - author: Jeremy Ashkenas, Larry Buchanan
@@ -52,3 +55,15 @@ mediaUsage:
 
 variant:
   - connected ternary plot
+
+bannerConfig:
+  [{
+    gridFrameStroke: "#999",
+    gridFrameStrokeWidth: 2
+  },{
+    gridFrameStroke: "#8ac",
+    gridFrameStrokeWidth: 1
+  },{
+    gridFrameStroke: "#444",
+    gridFrameStrokeWidth: 1
+  }]

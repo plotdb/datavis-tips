@@ -37,7 +37,8 @@ html(lang="en")
       label Charts
       each item in config.charts
         a(href="/v/" + item + "/en/")
-          .chartico.text.md.no-border(class=[item.toLowerCase().replace(/ /g,"-"),lang].join(" "))
+          .chartico.text.md.no-border(class=[
+          item.toLowerCase().replace(/ /g,"-"),lang,(exists(item) ? "" : "disabled")].join(" "))
       br
       br
       label Categories

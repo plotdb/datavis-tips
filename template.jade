@@ -34,6 +34,7 @@ html(lang="en")
     script(type="text/javascript",src="/lib/plotdb.js")
     script(type="text/javascript",src="/lib/plotd3.js")
   body
+    include navbar.jade
     #root(class=lang)
       .card.panel.panel-default(style="width:800px;margin:auto")
         .preview(style="position:relative;z-index:1")
@@ -59,7 +60,8 @@ html(lang="en")
           .title
             span= name
             if alias
-              small  / #[span= alias]
+              small  / 
+              small: span= (lang!="en" ? [nameEN.toLowerCase()] : []).concat(alias).join(", ")
             hr
           .description
             if description

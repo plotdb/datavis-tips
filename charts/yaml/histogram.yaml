@@ -17,7 +17,7 @@ commonPractice:
   en: N/A
   zh: |
     * 當欲表達的概念有談到「分布」、「頻率」、「次數」等關鍵字時，便是嘗試?[histogram]的好時機。
-    * 攝影時用以了解照片的亮度平衡。
+    * 常用在照片分析，用以了解照片的亮度平衡。
     * 任何數列都可以利用範圍分組的方式製出?[histogram]。
 
 guideline:
@@ -38,7 +38,7 @@ dimension:
   - [y coord, ratio, required]
 
 visualEncoding:
-  - position
+  - aligned length
 
 variant:
   - bar-chart
@@ -46,10 +46,11 @@ variant:
 pros:
   en: N/A
   zh: |
-    * 無論多大量的資料，都可以輕鬆使用?[histogram]來表現。
+    * 即使大量資料也能很容易的用?[histogram]來表現。
     * 相當適合表現分布。
 
 cons:
   en: N/A
   zh: |
-    * 區間分組有時不易拿捏，過大或過小都會造成資料的錯誤解讀。
+    * 區間分組有時不易拿捏，過大或過小都可能會造成資料的錯誤解讀。
+    *

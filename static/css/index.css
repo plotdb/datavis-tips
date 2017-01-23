@@ -19,6 +19,18 @@ body {
 .grayed {
   color: #999;
 }
+nav.navbar-default {
+  max-width: 800px;
+  margin: 0 auto;
+  border: none;
+  background: none;
+  box-shadow: none;
+}
+.navbar-default .navbar-brand,
+.navbar-default .navbar-nav > li > a {
+  color: #444;
+  text-shadow: 0 0 3px #fff;
+}
 .chartico,
 .catico,
 .encico,
@@ -126,6 +138,13 @@ body {
   font-size: 12px;
   width: 100%;
   left: 0;
+}
+.chartico.disabled,
+.catico.disabled,
+.encico.disabled,
+.taxico.disabled,
+.dimico.disabled {
+  filter: grayscale(100%) brightness(200%) opacity(60%);
 }
 .chartico.animated-scatter-plot:before {
   background-image: url(/icon/chart/animated-scatter-plot.svg);

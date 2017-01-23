@@ -264,6 +264,11 @@ update-file = ->
   [type,cmd,des] = [ftype(src), "",""]
   if type == \other => return
   site-config = eval(lsc.compile((fs.read-file-sync \src/ls/config.ls .toString!),{bare: true}) .toString!)
+  jade-config = do
+    md: markdown.toHTML
+    tokey: -> it.to-lower-case!replace(' ', '-')
+    exists: -> fs.exists-sync "charts/yaml/#it.yaml" 
+
   choose-lang = (cfg, lang) ->
     ret = JSON.parse(JSON.stringify(cfg))
     for k of ret => if ret[k] and ret[k][lang] => ret[k] = ret[k][lang]
@@ -303,10 +308,9 @@ update-file = ->
         str = JSON.stringify(lang-cfg)
         lang-cfg = JSON.parse(token-to-url str, lang)
         lang-cfg.key = lang-cfg.name
-        lang-cfg.name = translate-key(lang-cfg.name,lang)
-
-        
-        for i from 0 til lang-cfg.[]banner-config =>
+        lang-cfg.nameEN = translate-key(lang-cfg.key,"en")
+        lang-cfg.name = translate-key(lang-cfg.key,lang)
+        for i from 0 til lang-cfg.[]banner-config.length =>
           lang-cfg.[]banner-config[i] = (site-config.[]banner-config[i] or {}) <<< lang-cfg.[]banner-config[i]
         if lang-cfg.[]banner-config.length < site-config.[]banner-config.length =>
           for i from lang-cfg.banner-config.length til site-config.[]banner-config.length =>
@@ -317,11 +321,9 @@ update-file = ->
           template, {
             filename: "template.jade"
             basedir: path.join(cwd)
-            md: markdown.toHTML
-            tourl: -> "/v/#it/#lang/"
-            tokey: -> it.to-lower-case!replace(' ', '-')
             lang: lang
-          } <<< lang-cfg <<< {_:_i18n} <<< {site: site-config}
+            tourl: -> "/v/#it/#lang/"
+          } <<< jade-config <<< lang-cfg <<< {_:_i18n} <<< {site: site-config}
         )
         des = "v/#name/#lang/index.html"
         mkdir-recurse path.dirname(des)
@@ -411,7 +413,8 @@ update-file = ->
       if !fs.exists-sync(desdir) or !fs.stat-sync(desdir).is-directory! => mkdir-recurse desdir
       fs.write-file-sync des,(
         jade.render(
-          (fs.read-file-sync src .toString!),{filename: src, basedir: path.join(cwd)} <<< {config: site-config}
+          (fs.read-file-sync src .toString!),
+          {filename: src, basedir: path.join(cwd)} <<< jade-config <<< {config: site-config}
         )
       )
       console.log "[BUILD] #src --> #des"

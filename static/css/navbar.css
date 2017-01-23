@@ -1,0 +1,12 @@
+nav.navbar-default {
+  max-width: 800px;
+  margin: 0 auto;
+  border: none;
+  background: none;
+  box-shadow: none;
+}
+.navbar-default .navbar-brand,
+.navbar-default .navbar-nav > li > a {
+  color: #444;
+  text-shadow: 0 0 3px #fff;
+}
