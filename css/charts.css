@@ -374,6 +374,15 @@
 .chartico.flow-chart.text.zh:after {
   content: '流量圖';
 }
+.chartico.cohort-chart:before {
+  background-image: url(/icon/chart/cohort-chart.svg);
+}
+.chartico.cohort-chart.text:after {
+  content: 'Cohort Chart';
+}
+.chartico.cohort-chart.text.zh:after {
+  content: '隊列圖';
+}
 .chartico.full-stacked-bar-chart:before {
   background-image: url(/icon/chart/full-stacked-bar-chart.svg);
 }
@@ -464,6 +473,15 @@
 .chartico.heatmap.text.zh:after {
   content: '熱度圖';
 }
+.chartico.contour-map:before {
+  background-image: url(/icon/chart/contour-map.svg);
+}
+.chartico.contour-map.text:after {
+  content: 'Contour Map';
+}
+.chartico.contour-map.text.zh:after {
+  content: '輪廓圖';
+}
 .chartico.map:before {
   background-image: url(/icon/chart/map.svg);
 }
@@ -499,6 +517,15 @@
 }
 .chartico.paired-slopegraph.text.zh:after {
   content: '配對滑坡圖';
+}
+.chartico.spectrogram:before {
+  background-image: url(/icon/chart/spectrogram.svg);
+}
+.chartico.spectrogram.text:after {
+  content: 'Spectrogram';
+}
+.chartico.spectrogram.text.zh:after {
+  content: '光譜圖';
 }
 .chartico.parallel-coordinates:before {
   background-image: url(/icon/chart/parallel-coordinates.svg);
@@ -895,6 +922,15 @@
 }
 .catico.overview.text.zh:after {
   content: '概觀';
+}
+.catico.periodic:before {
+  background-image: url(/icon/cat/periodic.svg);
+}
+.catico.periodic.text:after {
+  content: 'Periodic';
+}
+.catico.periodic.text.zh:after {
+  content: '週期';
 }
 .encico.saturation:before {
   background-image: url(/icon/encoding/saturation.svg);
