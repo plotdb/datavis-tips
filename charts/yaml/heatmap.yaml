@@ -1,6 +1,4 @@
-name:
-  en: Heatmap
-  zh: 熱圖
+name: heatmap
 
 alias:
   - heat map
@@ -8,48 +6,68 @@ alias:
 plotdb: 1009
 
 category:
-  - pattern
+  - distribution
+
+description:
+  en: TBD
+  zh: |
+    ?[heatmap]並非指稱一種特定圖表，而是一種運用顏色色階與陣列式排列的視覺呈現方式。通常以二維矩陣式的熱圖為典型案例，但是以?[contour-map]、?[spectrogram]等使用形式也所在多有。並不侷限於特定的形狀或排列方式。
+
+    除了矩陣式的表現，另一種常見的應用為網頁行為分析，在這種情境下，熱度圖依網頁不同區域的點擊率高低來描繪色階。應用在地圖上也相當常見，比方說雨量、空氣污染、房產交易熱度等等。能有效率的呈現數據並做概略性的分析，但不容易做資料的精確對比。
+
+    使用?[heatmap]時常見的一種錯誤是利用彩虹色階來做配色的方式，這種配色法容易影響明度的連續性而造成斷層，除了對色盲讀者不友善外，也影響數值與圖表間連結的直覺性；因此使用?[heatmap]時考慮到明度的變化是相當重要的。
+
+commonPractice:
+  en: TBD
+  zh: |
+    * 呈現多維度的數值分布時，有時可用顏色取代其中一個維度來簡化圖表。例如，用一維的?[heatmap]取代?[histogram]，或使用二維的?[heatmap]取代立體的?[scatter-plot]。
+    * 資料量大以至空間侷限，很難用長度、面積等元素表現資料時，可嘗試運用?[heatmap]來有效率的運用空間。
+    * 廣泛運用在氣象、生物、網路等不同領域：
+      * 在氣候觀測上，常使用?[heatma]表現累積雨量、氣溫等 
+      * 在生物學中，常用來解析 DNA 資料。
+      * 用來觀察網站使用者的互動熱點。
 
 dimension:
-  - [x, required, any]
-  - [y, required, any]
-  - [color, required, numeral]
+  - [color, interval, required]
 
 visualEncoding:
   - color
 
 variant:
   - choropleth
-  - cohort chart
+  - cohort-chart
+  - spectrogram
+  - contour-map
 
 classicExample:
   en: |
     * Precipitation Map
   zh: |
     * 降雨量圖
+    * 氣溫圖
 
 mediaUsage:
   - N/A
 
-description:
-  en: TBD
-  zh: |
-    以色階表現資料的一種圖表，常以方塊陣列的形式應用在數值矩陣呈現上，但不限於特定的形狀與排列方式。除了矩陣，另一種常見的應用為網頁行為分析，在這種情境下，熱度圖依網頁不同區域的點擊率高低來描繪色階。應用在地圖上也相當常見，比方說雨量、空氣污染、房產交易熱度等等。能有效率的呈現數據並做概略性的分析，但不容易做資料的精確對比。
-
 pros:
   en: TBD
   zh: |
-    可快速取得大範圍資料的重點
+    * 可快速取得大範圍資料的重點
+    * 極有效的節省圖表空間
+    * 具有不錯的視覺效果
 
 cons:
   en: TBD
   zh: |
-    資料量不足時較不具意義
-
-commonPractice:
-  en: TBD
-  zh: TBD
+    * 資料量不足時較不具意義
+    * 很不容易判讀資料間的比例與大小差異
+    * 容易忽略資料中的細節
+    * 容易因選色的疏忽讓圖表失去可讀性
 
 guideline:
   en: TBD
-  zh: TBD
+  zh: |
+    * 使用時務必考慮明度的一致性變化。
+    * 需要更精確比較資料時，需搭配額外的資訊來呈現。或者，直接使用效率更高的圖表。
+    * 配色時需考慮色盲使用者，例如避免使用紅綠雙色來表現正負值。
+

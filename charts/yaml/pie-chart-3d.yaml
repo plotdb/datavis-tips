@@ -3,16 +3,18 @@ name: pie-chart-3d
 alias:
   - pie chart that sucks
 
-plotdb: 1040
+plotdb: 2193
 
 description:
   en: N/A
   zh: |
-    圓餅圖的一種變形。與圓餅圖相同的是仍然使用楔形的尖角角度來表現資料，但卻將整個圓想像為一個圓柱來切割；為了表現圓柱的概念，通常會以立體繪圖的形式來表現，因此稱為立體圓餅圖。
+    圓餅圖的一種變形。與圓餅圖相同的是仍用楔形的角度來表現資料，唯一的不同在於?[pie-chart-3d]將整個圓想像為一個圓柱來切割，類似切蛋糕一般；為了表現圓柱的概念，通常會以立體繪圖的形式來表現，因此稱為?[pie-chart-3d]。
 
-    由於立體化，產生了立體圖表常常會有的問題，比方說透視造成的資料扭曲、圓柱側面的額外面積影響了整體資料比例的判讀等等，然而為了設計或視覺效果的考量，使用立體圓餅圖的情況並不少見，甚至許多套裝軟體與線上工具也都有提供產生立體圓餅圖的功能。
+    由於立體化，產生了立體圖表常常會有的問題，比方說透視造成的資料扭曲、圓柱側面的額外面積影響了整體資料比例的判讀等等，然而為了設計或視覺效果的考量，使用立體圓餅圖的情況並不少見，甚至許多套裝軟體與線上工具也都有提供產生?[pie-chart-3d]的功能。
 
-    立體圓餅圖的這些缺點使得他成為了最不受歡迎的圖表之一，一般學習過資料視覺化的圖表使用者通常都會避開這類的爭議圖表不要使用。
+    ?[pie-chart-3d]的這些缺點使得他成為了最不受歡迎的圖表之一，一般學習過資料視覺化的圖表使用者通常都會避開這類的爭議圖表不要使用，一方面避免造成資料的錯誤判讀、另一方面也避免讓讀者覺得作者不夠專業。
+
+    事實上，當圓餅圖只有兩組資料時，適當的旋轉可讓資料扭曲變得比較不這麼嚴重；而在製作?[infographics]時，有時為了視覺效果會使用?[pie-chart-3d]。即便一般都建議避免使用此圖表，若真的有其必要時，還是請自己依照製圖的需求來決定。
 
 pros:
   en: N/A
@@ -31,11 +33,12 @@ guideline:
   en: N/A
   zh: |
     * 避免使用此類圖表
-    * 若要使用，則可搭配下列步驟：
-        1. 首先將下方拉近、上方推遠
-        2. 將對自己有利的部份置於下方
-        3. 並妥善運用前進色強化下方圓餅
-        4. 將圓餅拉出使用效果尤佳
+    * 若要使用，可盡量減少切分數量。
+    * 搭配下列步驟可讓資料扭曲最大化：
+        1. 首先利用立體透視效果讓下方離讀者較近、上方較遠。
+        2. 接著，將對自己有利的部份置於下方。
+        3. 此時搭配著將下方圓餅拉出使用效果尤佳。
+        3. 妥善運用前進色可以進一步放大下方圓餅。
 
 classicExample: |
   * Steve Jobs’s "U.S. SmartPhone Marketshare" pie chart.
@@ -59,8 +62,8 @@ visualEncoding:
 commonPractice:
   en: N/A
   zh: |
-    * 表現整體與部份的比例
-    * 當談到「比例」、「市佔」、「佔了..成」等與整體相比的概念時，可以嘗試使用圓餅圖來呈現。
+    * ?[pie-chart-3d]主要是用來呈現比例的圖表，不過通常都會考慮優先使用?[pie-chart]。
+    * 通常都為了視覺效果才使用?[pie-chart-3d]。
 
 keyword:
   en: N/A
@@ -72,7 +75,7 @@ keyword:
 alternative:
   en: N/A
   zh: |
-    * 直接改用 ?[pie-chart] ，或 ?[pie-chart] 中建議的其它方案。
+    * 直接改用?[pie-chart]，或?[pie-chart]中建議的其它方案。
 
 variant:
   - donut-chart
@@ -101,22 +104,12 @@ bannerConfig:
     yAxisHandleOverlap: "none",
     yAxisShowDomain: true,
     yAxisStroke: "#aaa",
-    labelShow: true
+    labelShow: true,
+    stroke: "#fff",
+    legendInline: false
   },{
-    margin: 10, background: "#eaeff5", gridBackground: "#eaeff5",
-    palette: {colors: [{hex: "#fff"},{hex: "#ffd"},{hex: "#fdf"}]},
-    fill: "rgba(14%,35%,50%,0.8)",
-    padding: 6,
-    fontSize: 13,
-    fontFamily: "tahoma",
-    labelShow: false,
-    gridStrokeWidth: 0,
-    gridDashArray: "1 0",
-    gridStroke: "rgba(0,0,0,0)",
-    gridFrameStrokeWidth: 0,
-    textFill: "#554",
-    sort: "Ascending",
-    xAxisTickSizeInner: 4
+    xAxisTickSizeInner: 4,
+    stroke: "#666",
   },{
     margin: 10, background: "#f9f9f9", gridBackground: "#f9f9f9",
     palette: {colors: [{hex: "#e96"},{hex: "#ae5"},{hex: "#48d"},{hex: "#999"}]},

@@ -8,10 +8,10 @@
       bump-chart cherry-chart chord-diagram circular-treemap column-chart combo-chart
       connected-scatter-plot connected-ternary-plot continuous-error-bar-plot
       curved-bar-chart cycle-plot dashboard difference-chart donut-chart
-      dorling-cartogram dot-chart dumbbell-chart fishbone flow-chart
+      dorling-cartogram dot-chart dumbbell-chart fishbone flow-chart cohort-chart
       full-stacked-bar-chart funnel-chart gantt-diagram gauge grouped-bar-chart
-      infographics line-chart lollipop-chart histogram
-      map marimekko-chart paired-scatter-plot paired-slopegraph
+      infographics line-chart lollipop-chart histogram heatmap contour-map
+      map marimekko-chart paired-scatter-plot paired-slopegraph spectrum
       parallel-coordinates pareto-diagram pie-bubble pie-chart-3d pie-chart polar-chart
       population-pyramid pyramid-chart radar-chart recycle-chart sankey-chart sankey-chord
       scatter-plot slopegraph span-chart stacked-area-chart stacked-bar-chart
@@ -263,6 +263,18 @@
       "histogram": do
         zh: "直方圖"
         en: "Histogram"
+      "heatmap": do
+        zh: "熱度圖"
+        en: "Heatmap"
+      "contour-map": do
+        zh: "輪廓圖",
+        en: "Contour Map"
+      "spectrogram": do
+        zh: "光譜圖"
+        en: "Spectrogram"
+      "cohort-chart": do
+        zh: "隊列圖"
+        en: "Cohort Chart"
       "distribution": do
         zh: "分布"
         en: "distribution"
@@ -426,7 +438,7 @@
     yAxisStroke: "\#aaa",
     labelShow: true
   },{
-    margin: 10, background: "\#eaeff5", gridBackground: "\#eaeff5",
+    margin: 10, background: "\#444444", gridBackground: "\#555555",
     palette: {colors: [{hex: "\#fff"},{hex: "\#ffd"},{hex: "\#fdf"}]},
     fill: "rgba(14%,35%,50%,0.8)",
     padding: 6,

@@ -1,6 +1,4 @@
-name:
-  en: Scatter Plot
-  zh: 散布圖
+name: scatter-plot
 
 alias:
   - scattergram
@@ -9,34 +7,47 @@ alias:
 
 plotdb: 2177
 
-description: |
-  typical scatter plot uses data as coordinates of points over a two-dimensional plane. higher dimension is also possible. due to the characteristics of scatter plot, it is often used to display correlation between two data series, which is better than simply calculating the correlation coefficient especially when observing non-linear relationship. scatter plot can be extended by changing colors, size, connection and dynamics of points to visualize more data series in a single chart.
+description:
+  en: N/A
+  zh: |
+    將兩組資料做為點的 X 、 Y 座標繪製在二維平面上，用以了解資料分布與兩組數據間相關特性的圖表，但也有做成三維圖表的應用。
 
-pros: |
-  Can be used to easily identify correlation and even trend. more dimensions can be made to visual encoding as we expected, such as size, shape, color and order.
+    資料描繪在平面上之後，我們更容易看出兩組數據間的關係，因此?[scatter-plot]常用來表現兩組資料間的相關性，比起相關係數來說更適合用來觀察資料的非線性關係。經常會搭配一條線性迴歸線來說明資料的相關性。
+
+    繪製?[scatter-plot]時，除了畫上基本的資料點外，還可改變資料點的顏色、大小、其間的連線與時間動態等元素，是相當具有彈性的一種視覺化手法。
+
+    為品管七大手法之一。
+
+commonPractice:
+  en: TBD
+  zh: |
+    * 談到「關係」、「分布」等概念時，可嘗試使用?[scatter-plot]
+    * 展示兩組數據之間的相關性。
+
+pros:
+  en: N/A
+  zh: |
+    * 表現相關性的首選圖表，連線時甚至可以同時呈現趨勢。
+    * 具有高度彈性，可透過形狀、顏色、大小等特性呈現更多資訊。
 
 cons: |
-  Nominal / discrete data will overlap each other ( especially with a small range of data extent ) in scatter plot. One can change opacity or draw points with stroke only to alleviate this issue.
+    * 離散式的資料容易互相重疊，不易閱讀。可透過半透明或空心圓的方式減輕這個問題。
+    * 分布極度不均時，需搭配縮放等互動形式來觀察細節。
 
 category:
-  - distrubtion
+  - distribution
   - correlation 
 
 dimension:
-  - [x, required, numeral]
-  - [y, required, numeral]
-  - [color, optional, any]
-  - [size, optional, numeral]
+  - [x coord, ratio, required]
+  - [y coord, ratio, required]
+  - [color, any, optional]
+  - [area, ratio, optional]
 
 visualEncoding:
   - position
   - area
   - color
-
-commonPractice:
-  en: TBD
-  zh: |
-    * Show correlation between two data series
 
 classicExample:
   en: TBD
