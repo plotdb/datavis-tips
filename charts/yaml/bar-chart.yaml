@@ -5,6 +5,9 @@ alias:
 
 plotdb: 1069
 
+category:
+  - comparison
+
 description:
   en: |
     Bar chart uses length of colored rectangle in the horizontal direction to visualize data, which is usually used to compare one dimensional data. Generally speaking bars in bar chart are aligned to the left and sorted descendingly from top to bottom; it can also align to bottom and sorted from left to right, in this case it is called Column Chart.
@@ -21,8 +24,44 @@ description:
 
     由於長條通常由圖表軸線畫起，本身暗示資料絕對大小，因此局部放大時易造成讀者誤解，不利於表現資料的細微變化。這時可以使用明顯的省略符號，亦或者考慮改用?[dot-chart]，因為點圖沒有連線的問題，比較不會造成圖表的嚴重誤解；即使如此，操弄座標軸時仍需要格外注意。
 
-category:
-  - comparison
+commonPractice:
+  en: |
+    * For comparing between data and finding the max/min entry.
+  zh: |
+    * 一般使用長條圖來表現資料的極值、或是做數值的精確比較。
+    * 要表現「最大.. 」、「..比..大」等「比較」的概念時，可先試著使用長條圖來處理。
+
+pros:
+  en: |
+    Best chart to precisely and accurately compare between values. Also suitable for finding extreme values and rankings of values.
+  zh: |
+    * 最能夠精確比較圖表中數字的圖表。
+    * 此外，也很適合用來了解資料間的大小順序。
+
+cons:
+  en: |
+    Work poorly with large dataset or periodic dataset.  Become useless when data variation is small comparing to the value itself.
+  zh: |
+    * 不易呈現週期性資料。
+    * 資料量大或變化比例小時不易閱讀。
+
+guideline:
+  en: |
+    * origin of axis should start from zero
+    * sort bars by data to provide more information for readers
+    * works better with data where order is not applicable
+  zh: |
+    * 圖表的座標原點需由零開始
+    * 數據排序後呈現為佳
+    * 比起有序資料，更適合運用在無序資料上
+    * 適當使用格線與軸線刻度可增加資料判讀的正確性
+
+alternative:
+  en: N/A
+  zh: |
+    * 資料過多時，可改用 ?[treemap]
+    * 要避免裁切造成的錯誤判讀，可使用 ?[dot-chart]
+    * 資料含有時序等趨勢的概念時，可考慮改用 ?[line-chart]
 
 dimension:
   - [x coord, ratio, required]
@@ -40,50 +79,11 @@ variant:
   - full-stacked-bar-chart
   - marimekko-chart
 
-pros:
-  en: |
-    Best chart to precisely and accurately compare between values. Also suitable for finding extreme values and rankings of values.
-  zh: |
-    * 最能夠精確比較圖表中數字的圖表。
-    * 此外，也很適合用來了解資料間的順序關係。
-
-cons:
-  en: |
-    Work poorly with large dataset or periodic dataset.  Become useless when data variation is small comparing to the value itself.
-  zh: |
-    * 不易呈現週期性資料。
-    * 資料量大或變化比例小時不易閱讀。
-
 keyword:
-  en: TBD
+  en: N/A
   zh:
     - 比較
     - 最大
     - 最小
     - 極值
     - 精確
-
-commonPractice:
-  en: |
-    * For comparing between data and finding the max/min entry.
-  zh: |
-    * 一般使用長條圖來表現資料的極值、或是做數值的精確比較。
-    * 要表現「最大.. 」、「..比..大」等「比較」的概念時，可先試著使用長條圖來處理。
-
-guideline:
-  en: |
-    * origin of axis should start from zero
-    * sort bars by data to provide more information for readers
-    * works better with data where order is not applicable
-  zh: |
-    * 圖表的座標原點需由零開始
-    * 數據排序後呈現為佳
-    * 比起有序資料，更適合運用在無序資料上
-    * 適當使用格線與軸線刻度可增加資料判讀的正確性
-
-alternative:
-  en: TBD
-  zh: |
-    * 資料過多時，可改用 ?[treemap]
-    * 要避免裁切造成的錯誤判讀，可使用 ?[dot-chart]
-    * 資料含有時序等趨勢的概念時，可考慮改用 ?[line-chart]

@@ -1,0 +1,76 @@
+name: area-chart
+
+alias:
+  - area graph
+
+plotdb: 2091
+
+category:
+  - comparison
+  - trend
+
+description:
+  en: N/A
+  zh: |
+    最早由統計圖表之父 [William Playfair](https://en.wikipedia.org/wiki/William_Playfair) 開始使用、基於?[line-chart]的一種圖表，將折線至座標軸的範圍以色塊填滿，形成一整塊區域，故稱?[area-chart]。在同時呈現多組數據的時候，通常會將面積堆疊起來 ( ?[stacked-area-chart] )，以避免互相覆蓋以至於無法看到資料與走勢，但也有利用透明效果製作?[layered-area-chart]的例子。
+
+    有時，面積不一定要由折線填滿至座標軸，常見的另一種應用?[difference-chart]是將兩條折線之間的空隙填滿，並依照何者在上使用對應的不同顏色來填，可以用以表現兩條線的消長關係，最有名的例子為 William Playfair 所製作、用以表現國家進出口量差異的?[difference-chart]。
+
+    雖然說基於?[line-chart]，?[area-chart]將區域填滿的特色讓他的性質更接近長條圖，也因此比起?[line-chart]更適合表現堆疊的資訊。相較之下，因為?[line-chart]沒有填滿，讀者通常傾向將一張?[line-chart]中的多條折線視為互相獨立而沒有堆疊，因此很難做到堆疊的效果。?[area-chart]可說是兼具了?[line-chart]與?[bar-chart]的優點，相對地這兩種圖表的限制與要點也通常可以應用於?[area-chart]之上。
+
+    雖說有不一樣的名字，?[area-chart]通常也泛指將折線下方面積填色的各種圖表，例如?[stacked-area-chart]、?[full-stacked-area-chart]或者?[layered-area-chart]。
+
+commonPractice:
+  en: N/A
+  zh: |
+    * 希望如長條般__堆疊__的同時又表現__趨勢__時，可嘗試使用?[stacked-area-chart]
+    * 在__堆疊__的同時想表現__趨勢__與__比例__時，可嘗試使用?[full-stacked-area-chart]
+
+
+pros:
+  en: N/A
+  zh: |
+    * 同時發揮堆疊與表現趨勢的優勢。
+    * 比起?[line-chart]，可以同時表線更多組數據。
+
+cons:
+  en: N/A
+  zh: |
+    * 用在無序資料上相當反直覺。
+    * 不容易用來觀察周期性資料。
+    * ?[stacked-area-chart]在數值變化大時很容易因人的閱讀習慣而誤判資料。
+
+guideline:
+  en: N/A
+  zh: |
+    * 製作時可考慮調整圖表的長寬比讓折線的走勢能有一定的斜度 ( 接近 45 度為佳 )，然而仍應以版面配置考量為主。
+    * 通常不考慮使用?[layered-area-chart]，除非你有夠好的理由不直接使用?[line-chart]。
+    * 圖表的座標原點需由零開始
+
+alternative:
+  en: TBD
+  zh: |
+    * 需要將多組資料併列顯示時，可搭配「small multiple」技巧。
+    * 資料不需/無法堆疊時(如表現年紀的走勢)，可直接使用?[line-chart]
+    * 表現無序資料時，使用?[bar-chart]或其系列變化型。
+    * 有牽扯到週期性的概念時，使用?[radar-chart]或?[stacked-radar-chart]。
+
+dimension:
+  - [x coord, ratio, required]
+  - [y coord, nominal, required]
+
+visualEncoding:
+  - length
+  - area
+
+variant:
+  - line-chart
+  - layered-area-chart
+  - stacked-area-chart
+  - stacked-radar-chart
+  - alluvial-diagram
+  - streamgraph
+
+keyword:
+  en: N/A
+  zh: N/A

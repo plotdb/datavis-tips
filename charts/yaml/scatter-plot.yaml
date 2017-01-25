@@ -63,10 +63,10 @@ mediaUsage:
     link: http://www.nytimes.com/interactive/2014/03/15/business/higher-income-longer-lives.html
 
 variant:
-  - connected scatter plot
-  - paired scatter plot
-  - animated scatter plot
-  - ternary plot
+  - connected-scatter-plot
+  - paired-scatter-plot
+  - animated-scatter-plot
+  - ternary-plot
 
 bannerConfig:
   [{

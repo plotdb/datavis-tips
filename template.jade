@@ -152,7 +152,9 @@ html(lang="en")
               p
                 each item in variant
                   a(href=tourl(item))
-                    .chartico.text.md(class=[item.toLowerCase().replace(/ /g,"-"),lang].join(" "))
+                    .chartico.text.md(class=[
+                    item.toLowerCase().replace(/ /g,"-"),lang,(exists(item) ? "" : "disabled")].join(" "))
+
     .footer
       a(href="http://plotdb.com",target="_blank")
         span POWERED BY PLOTDB

@@ -1,0 +1,67 @@
+name: venn-diagram
+
+alias:
+  en:
+    - set diagram
+    - logic diagram
+  zh:
+    - 范恩圖
+    - 維恩圖
+    - 范氏圖
+
+plotdb: 2194
+
+category:
+  - comparison
+
+description:
+  en: N/A
+  zh: |
+    1880 年由英國數學家 John Venn 提出的圖表，故稱?[venn-diagram]，用以表示集合間交集的所有可能，常見的形式為兩個或三個互相重疊的圓，但表現形式並不僅限於圓，數量上也可以更多。
+
+commonPractice:
+  en: N/A
+  zh: |
+    * 表現集合的概念。
+    * 若談到一件事可以由數個不同的成份所「組成」，則可以用?[venn-diagram]來表現這些成份所組成的各種可能。
+
+pros:
+  en: N/A
+  zh: |
+    * 清楚表現各種基本元素與其可能的組成。
+
+cons:
+  en: N/A
+  zh: |
+    * 單純的?[venn-diagram]只呈現組成，並沒有呈現其背後的比例。
+
+alternative:
+  en: N/A
+  zh: |
+    * ?[venn-diagram] 通常不涉及數據，若需要表現數據的比較，可搭配面積圖的形式使用，例如紐約時報的「[For the Elderly, Diseases That Overlap](http://www.nytimes.com/interactive/2013/04/16/science/disease-overlap-in-elderly.html?_r=1&)」報導形式。
+
+dimension:
+  - [x coord, ratio, required]
+  - [y coord, nominal, required]
+
+mediaUsage:
+  - author: Matthew Bloch and Hannah Fairfield
+    title: For the Elderly, Diseases That Overlap
+    media: New York Times
+    year: 2013
+    link: http://www.nytimes.com/interactive/2013/04/16/science/disease-overlap-in-elderly.html?_r=1&
+
+classicExample:
+  en: |
+    * [7 sets Venn Diagram](http://moebio.com/research/sevensets/), by Santiago Ortiz.
+    * [Good, Cheap, Fast - Pick Two](https://www.purechat.com/blog/fast-cheap-and-good-the-small-business-guide-to-content-creation/)
+  zh: |
+    * [7 sets Venn Diagram](http://moebio.com/research/sevensets/)，互動式的七組集合文氏圖，作者為 Santiago Ortiz。
+    * [Good, Cheap, Fast - Pick Two](https://www.purechat.com/blog/fast-cheap-and-good-the-small-business-guide-to-content-creation/)，表現「品質、價格與速度不可兼得」的圖表。
+
+visualEncoding:
+  - color
+
+keyword:
+  en: N/A
+  zh: N/A

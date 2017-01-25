@@ -7,17 +7,18 @@
       bcg-matrix box-whisky-plot bubble-array bubble-chart bubble-map bullet-chart
       bump-chart cherry-chart chord-diagram circular-treemap column-chart combo-chart
       connected-scatter-plot connected-ternary-plot continuous-error-bar-plot
-      curved-bar-chart cycle-plot dashboard difference-chart donut-chart
+      curved-bar-chart cycle-plot dashboard difference-chart donut-chart layered-area-chart
       dorling-cartogram dot-chart dumbbell-chart fishbone flow-chart cohort-chart
       full-stacked-bar-chart funnel-chart gantt-diagram gauge grouped-bar-chart
       infographics line-chart lollipop-chart histogram heatmap contour-map
-      map marimekko-chart paired-scatter-plot paired-slopegraph spectrum
+      map marimekko-chart paired-scatter-plot paired-slopegraph spectrogram
       parallel-coordinates pareto-diagram pie-bubble pie-chart-3d pie-chart polar-chart
       population-pyramid pyramid-chart radar-chart recycle-chart sankey-chart sankey-chord
       scatter-plot slopegraph span-chart stacked-area-chart stacked-bar-chart
       step-chart streamgraph sun-burst-diagram ternary-plot timeline treemap
       venn-diagram vertical-dumbbell-chart violin-chart voronoi-treemap waffle-chart
       waterfall-chart wordcloud world-globe jigsaw-treemap convex-treemap network
+      full-stacked-area-chart alluvial-diagram stacked-radar-chart
     ]>
 
     categories: <[
@@ -87,8 +88,14 @@
         zh: "分組長條圖"
         en: "Grouped Bar Chart"
       "full-stacked-bar-chart": do
-        zh: "100%長條圖"
+        zh: "100%堆積長條圖"
         en: "100% Stacked Bar Chart"
+      "full-stacked-area-chart": do
+        zh: "100%堆積區域圖"
+        en: "100% Stacked Area Chart"
+      "alluvial-diagram": do
+        zh: "沖積圖"
+        en: "Alluvial Diagram"
       "marimekko-chart": do
         zh: "Marimekko 圖*"
         en: "Marimekko Chart"
@@ -146,6 +153,9 @@
       "radar-chart": do
         zh: "雷達圖"
         en: "Radar Chart"
+      "stacked-radar-chart": do
+        zh: "堆積雷達圖"
+        en: "Stacked Radar Chart"
       "circular-treemap": do
         zh: "圓式樹狀圖*"
         en: "Circular Treemap"
@@ -168,8 +178,11 @@
         zh: "弧線圖"
         en: "Arc Diagram"
       "area-chart": do
-        zh: "面積圖"
+        zh: "區域圖"
         en: "Area Chart"
+      "layered-area-chart": do
+        zh: "分層式區域圖"
+        en: "Layered Area Chart"
       "box-whisky-plot": do
         zh: "盒鬚圖"
         en: "Box Whisky Plot"
@@ -228,7 +241,7 @@
         zh: "山基式弦圖"
         en: "Sankey Chord"
       "stacked-area-chart": do
-        zh: "堆積面積圖"
+        zh: "堆積區域圖"
         en: "Stacked Area Chart"
       "streamgraph": do
         zh: "主題河流"
@@ -267,7 +280,7 @@
         zh: "熱度圖"
         en: "Heatmap"
       "contour-map": do
-        zh: "輪廓圖",
+        zh: "輪廓圖"
         en: "Contour Map"
       "spectrogram": do
         zh: "光譜圖"

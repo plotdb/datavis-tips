@@ -33,6 +33,18 @@ cons:
     * 不容易用來觀察周期性資料。
     * 當線段多時圖表會變得相當複雜。
 
+guideline:
+  en: N/A
+  zh: |
+    * 製作時可考慮調整圖表的長寬比讓折線的走勢能有一定的斜度 ( 接近 45 度為佳 )，然而仍應以版面配置考量為主。
+
+alternative:
+  en: TBD
+  zh: |
+    * 需要將多組資料堆疊顯示時，可使用?[stacked-area-chart]。
+    * 表現無序資料時，使用?[bar-chart]。
+    * 有牽扯到週期性的概念時，使用?[radar-chart]或?[cycle-plot]。
+
 category:
   - trend
 
