@@ -1,0 +1,79 @@
+name: polar-chart
+
+alias:
+  en:
+    - rose chart
+    - Nightingale’s rose
+    - Circular Histogram
+  zh:
+    - 極座標餅圖
+    - 玫瑰圖
+    - 南丁格爾玫瑰圖
+
+plotdb: 968
+
+description:
+  en: N/A
+  zh: |
+    形式上類似?[pie-chart]，但其實完全不一樣的圖表，先以等角度將圓切割為數塊圓餅，再調整圓餅邊長將面積類比到資料的圖表，屬於面積圖的一種。此外，雖然說?[polar-chart]很像極化過的?[area-chart]，但有多組資料時彼此其實是互相重疊的，所以本質上來看它更像是極化了的?[line-chart]。
+
+    最著名的使用實例可說是克里米亞戰爭的死亡人數圖；護士精神的代名詞佛羅倫絲．南丁格爾曾使用這種圖表來表現克里米亞野戰醫院中的士兵死亡數，因此又稱為南丁格爾玫瑰圖。
+
+    由於使用面積而非角度來表現資料，?[polar-chart]排除了?[pie-chart]的幾個缺點，同時其圓的概念比起其它圖表更適用於週期性資料，然而一般來說使用?[line-chart]或?[bar-chart]對資料判讀來說會有更好的效果，而圓餅互相重疊這個本質也因為面積圖的特性，容易讓人誤解為互相堆疊，造成圖表判讀錯誤，使用上要特別注意。
+
+commonPractice:
+  en: N/A
+  zh: |
+    * 主要用在週期性資料的趨勢比較。
+    * 由於面積圖的本質，當資料差異較大時使用?[polar-chart]可減少圖表起伏的變化程度。
+
+pros:
+  en: N/A
+  zh: |
+    * 適合表現週期性的資料
+    * 可減少資料差異大帶來的圖表極端變化，進而更有效率的運用空間。
+
+cons:
+  en: N/A
+  zh: |
+    * 區塊是重疊而非堆疊，容易造成誤解。
+    * 比起?[bar-chart]或?[line-chart]資料判讀的效率較差。
+
+category:
+  - comparison
+  - periodic
+
+dimension:
+  - [area,ratio,required]
+  - [angle,ordinal,required]
+
+visualEncoding:
+  - area
+
+variant:
+  - radar-chart
+  - pie-chart
+  - donut-chart
+
+keyword:
+  en: TBD
+  zh:
+    - 比較
+    - 最大
+    - 最小
+    - 極值
+    - 精確
+
+guideline:
+  en: N/A
+  zh: |
+    * 資料對應到面積而非半徑，切勿混淆。
+    * 各區塊的中心角度需維持一致。
+    * 典型用法為重疊而非堆疊。
+    * 各區塊依資料順序(例如逐年)順時針排序，而非依數值的大小。
+
+alternative:
+  en: TBD
+  zh: |
+    * 通常可直接使用?[radar-chart]、?[stacked-bar-chart]或?[line-chart]取代。
+    * 長期的週期性資料亦可考慮使用?[cycle-plot]。
