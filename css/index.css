@@ -488,6 +488,15 @@ nav.navbar-default {
 .chartico.histogram.text.zh:after {
   content: '直方圖';
 }
+.chartico.heatmap:before {
+  background-image: url(/icon/chart/heatmap.svg);
+}
+.chartico.heatmap.text:after {
+  content: 'Heatmap';
+}
+.chartico.heatmap.text.zh:after {
+  content: '熱度圖';
+}
 .chartico.map:before {
   background-image: url(/icon/chart/map.svg);
 }
