@@ -1,0 +1,75 @@
+name: cherry-chart
+
+plotdb: 1119
+
+category:
+  - correlation
+  - distribution
+
+description:
+  en: N/A
+  zh: |
+    與?[scatter-plot]類似，運用兩組資料做為點的 X 、 Y 座標繪製在二維平面上，但再額外利用點延伸出去的線段表現第三組資料。跟?[bubble-chart]相似，都可以用來表現額外的維度，但?[bubble-chart]使用的是面積，而?[cherry-chart]則使用了長度，可說是?[scatter-plot]與?[bar-chart]的組合型圖表。
+
+    一般來說，?[bubble-chart]會比?[cherry-chart]更討喜，然而有時過大的泡泡佔了許多空間，造成其它泡泡被遮蓋，這時便可以考慮改用?[cherry-chart]並以線段長度代替面積來表現數據，比較不會有資料覆蓋的問題。
+
+    另外，?[cherry-chart]有時也可以搭配直線指向的角度來呈現額外的資料，比起?[bubble-chart]來說更適合呈現包含向量的資料。然而對於差異較大的資料來說，線段比起面積讓人感受到更劇烈的變化，因此在使用上，可以多方與?[bubble-chart]比較來確認最適合表現的形式為何者，亦或者可以將?[bubble-chart]搭配?[cherry-chart]做出含線段的?[bubble-chart]。
+
+
+
+commonPractice:
+  en: N/A
+  zh: |
+    * 表現資料分布，同時想要額外表現一組資料的大小。
+    * 使用?[bubble-chart]發現資料互相覆蓋的狀況頗嚴重時。
+    * 想要同時表現資料分布與向量式資料時。
+
+pros:
+  en: N/A
+  zh: |
+    * 比起?[scatter-plot]來說有更大的彈性。
+    * 比起?[bubble-chart]來說可以更精簡的顯示資料。
+    * 可以表現向量型資料。
+
+cons:
+  en: N/A
+  zh: |
+    * 搭配方向使用時，若無明顯分布很容易就讓圖表變得很雜亂。
+    * 未對齊的長度線段仍不利於做資料比較。
+
+guideline:
+  en: N/A
+  zh: |
+    * 使用前先考慮是否可以置換成?[bubble-chart]。
+    * 線段從點的外框開始畫起，避免因為過短的線段而被泡泡覆蓋。
+
+alternative:
+  en: N/A
+  zh: |
+    * 若資料點不多，可使用?[bubble-chart]。
+    * 使用?[bubble-chart]時，妥善的調整半徑的大小也可以避免互相覆蓋。
+
+dimension:
+  - [x coord, interval, required]
+  - [y coord, interval, required]
+  - [length, ratio, required]
+
+visualEncoding:
+  - position
+  - length
+
+variant:
+  - scatter-plot
+  - bubble-chart
+  - lollipop-chart
+
+mediaUsage:
+  - author: Mike Bostock, Shan Carter and Matthew Ericson
+    title: At the National Conventions, the Words They Used
+    media: New York Times
+    year: 2012
+    link: http://www.nytimes.com/interactive/2012/09/06/us/politics/convention-word-counts.html?_r=0
+
+keyword:
+  en: N/A
+  zh: N/A

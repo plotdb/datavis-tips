@@ -64,6 +64,13 @@ variant:
   - pie-chart
   - donut-chart
 
+mediaUsage:
+  - author: Mike Bostock, Shan Carter and Matthew Ericson
+    title: At the National Conventions, the Words They Used
+    media: New York Times
+    year: 2012
+    link: http://www.nytimes.com/interactive/2012/09/06/us/politics/convention-word-counts.html?_r=0
+
 keyword:
   en: N/A
   zh: N/A
