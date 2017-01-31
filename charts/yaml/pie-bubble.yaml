@@ -1,0 +1,69 @@
+name: pie-bubble
+
+plotdb: 1003
+
+category:
+  - comparison
+  - proportion
+  - diverging
+
+description:
+  en: N/A
+  zh: |
+    ?[pie-chart]與?[bubble-chart]的組合式圖表，將?[bubble-chart]的各個圓替換成圓餅，用以表現各組圓中的資料比例；同樣的道理也可以運用在?[donut-chart]上，但?[pie-chart]比起?[donut-chart]有完整的面積，因此較能正確表現數據。
+
+    通常，資料並不適合在多組?[pie-chart]中做比較，因此我們通常較少見到運用「Small Multiple」手法的?[pie-chart]，然而當圓餅中的資料只有兩筆的時候，只要透過妥善的擺放，我們可以相當容易地辨識出不同圓餅中的數值比例與差異；這時，再搭配?[bubble-chart]的面積維度與妥善的安排圓的位置，我們便得到了?[pie-bubble]。
+
+    一種可能的使用情境是用來取代文字雲，尤其是需要跨不同文本做詞頻比較的時候；比方說，欲呈現兩位候選人政見中用詞的比例與整體數量，我們可以利用政見斷詞後造出的字詞數先做出?[bubble-chart]，再依照兩位候選人用到各字詞的比例製作各個圓中的?[pie-chart]。最後，將圓依比例排序，我們可以很容易觀察到下列幾個特徵：
+
+      * 兩位候選人的特色用詞
+      * 兩位候選人的共同用詞
+      * 整體用詞量的比較
+
+    由於三組以上的資料便會造成?[pie-chart]的閱讀困難，通常只以兩組資料做分岐式的資料比較。
+
+commonPractice:
+  en: N/A
+  zh: |
+    * 分歧式資料，同時想觀察比例與比較數量時。
+    * 可用以替代候選人政見、用詞等的文字雲。
+
+pros:
+  en: N/A
+  zh: |
+    * 能夠同時比較數量與觀察比例。
+
+cons:
+  en: N/A
+  zh: |
+    * 限制在兩組資料的情境下，使用較為侷限。
+
+guideline:
+  en: N/A
+  zh: |
+    * 只適用於兩組資料的情境，不適合比較三組以上的資料。
+    * ?[bubble-chart]依比例排序為佳。
+    * 建議將?[pie-chart]中兩塊圓餅方向固定於左右兩方。
+
+alternative:
+  en: N/A
+  zh: |
+    * 亦可用?[stacked-bar-chart]，並依比例排序。
+
+dimension:
+  - [area, ratio, required]
+  - [angle, ratio, required]
+  - [angle, ratio, required]
+
+visualEncoding:
+  - angle
+  - area
+
+variant:
+  - bubble-chart
+  - pie-chart
+  - donut-chart
+
+keyword:
+  en: N/A
+  zh: N/A

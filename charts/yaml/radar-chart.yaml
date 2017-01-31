@@ -1,0 +1,67 @@
+name: radar-chart
+
+alias:
+  - Radar Chart
+  - Web Chart
+  - Star Chart
+  - Star Plot
+  - Spider Chart
+
+plotdb: 1020
+
+category:
+  - comparison
+  - periodic
+
+description:
+  en: N/A
+  zh: |
+    類似?[line-chart]或?[layered-area-chart]，不過經過極座標轉換，軸線與格點呈現放射狀的形式；如同雷達螢幕一般，資料點隨著軸線圍繞圖表中心擺放，並將各點以線段做連結。
+
+    相較於?[line-chart]、?[bar-chart]等直角座標系的圖表來說，?[radar-chart]因其資料點並非沿直線對齊，因此相對不容易做資料間的比較。然而，由於?[radar-chart]中「圓」的特性隱喻了「循環」、「整體」的概念，因此常用來表現週期性的資料，比方說逐月的統計資料。另一種合適的情境則是用來呈現方向性的資料 ( 如風向 )，這時?[radar-chart]比起?[line-chart]或?[bar-chart]就相當實用了。
+
+    還有一種使用情境則常出現在電玩攻略中；在這種情況下，?[radar-chart]並不用來呈現循序式的資料，而是用來呈現角色的能力屬性值。在這種情況下，資料本身沒有順序，其單位或範圍也不一定一致，這時?[radar-chart]的使用更接近?[chernoff-face]，以多邊形的形狀來識別不同角色間的特性與差異。
+
+commonPractice:
+  en: N/A
+  zh: |
+    * 使用?[radar-chart]來表現週期 / 循環式資料。
+    * 無序資料時，亦可將?[radar-chart]做為強調資料特徵的手法
+
+pros:
+  en: N/A
+  zh: |
+    * 很適合呈現週期性、方向性的資料。
+
+cons:
+  en: N/A
+  zh: |
+    * 較不容易在資料間做比較。
+    * 若資料變化大，複雜的形狀有時會讓資料理解更具難度。
+
+guideline:
+  en: N/A
+  zh: |
+    * 適合用在至少三個資料點以上的情況。
+    * 格線只有在各組資料間有相同範圍與單位時有意義。
+
+alternative:
+  en: N/A
+  zh: |
+    * 資料不具周期特性時，可直接使用?[line-chart]。
+    * 亦可使用?[polar-chart]表現同樣的資料。
+
+dimension:
+  - [radius, interval, required]
+  - [angle, ratio, required]
+
+visualEncoding:
+  - angle
+  - length
+
+variant:
+  - polar-chart
+
+keyword:
+  en: N/A
+  zh: N/A

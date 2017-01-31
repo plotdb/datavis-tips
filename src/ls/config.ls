@@ -19,10 +19,11 @@
       venn-diagram vertical-dumbbell-chart violin-chart voronoi-treemap waffle-chart
       waterfall-chart wordcloud world-globe jigsaw-treemap convex-treemap network
       full-stacked-area-chart alluvial-diagram stacked-radar-chart
+      chernoff-face
     ]>
 
     categories: <[
-      distribution correlation trend change comparison proportion geography temporal hierarchy overview periodic
+      distribution correlation trend change comparison proportion geography temporal hierarchy overview periodic diverging
     ]>
 
     encodings: <[
@@ -288,6 +289,9 @@
       "cohort-chart": do
         zh: "隊列圖"
         en: "Cohort Chart"
+      "chernoff-face": do
+        zh: "切爾諾夫臉型"
+        en: "Chernoff Face"
       "distribution": do
         zh: "分布"
         en: "distribution"
@@ -432,6 +436,9 @@
       "any": do
         zh: "任意資料"
         en: "Any Type"
+      "diverging": do
+        zh: "分歧式"
+        en: "Diverging"
 
   config.banner-config = [{
     margin: 10, background: "\#eee", gridBackground: "none",

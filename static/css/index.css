@@ -902,6 +902,15 @@ nav.navbar-default {
 .chartico.stacked-radar-chart.text.zh:after {
   content: '堆積雷達圖';
 }
+.chartico.chernoff-face:before {
+  background-image: url(/icon/chart/chernoff-face.svg);
+}
+.chartico.chernoff-face.text:after {
+  content: 'Chernoff Face';
+}
+.chartico.chernoff-face.text.zh:after {
+  content: '切爾諾夫臉型';
+}
 .catico.distribution:before {
   background-image: url(/icon/cat/distribution.svg);
 }
@@ -1000,6 +1009,15 @@ nav.navbar-default {
 }
 .catico.periodic.text.zh:after {
   content: '週期';
+}
+.catico.diverging:before {
+  background-image: url(/icon/cat/diverging.svg);
+}
+.catico.diverging.text:after {
+  content: 'Diverging';
+}
+.catico.diverging.text.zh:after {
+  content: '分歧式';
 }
 .encico.saturation:before {
   background-image: url(/icon/encoding/saturation.svg);
