@@ -138,7 +138,7 @@
   content: 'Area Chart';
 }
 .chartico.area-chart.text.zh:after {
-  content: '面積圖';
+  content: '區域圖';
 }
 .chartico.bar-chart:before {
   background-image: url(/icon/chart/bar-chart.svg);
@@ -329,6 +329,15 @@
 .chartico.donut-chart.text.zh:after {
   content: '甜甜圈圖';
 }
+.chartico.layered-area-chart:before {
+  background-image: url(/icon/chart/layered-area-chart.svg);
+}
+.chartico.layered-area-chart.text:after {
+  content: 'Layered Area Chart';
+}
+.chartico.layered-area-chart.text.zh:after {
+  content: '分層式區域圖';
+}
 .chartico.dorling-cartogram:before {
   background-image: url(/icon/chart/dorling-cartogram.svg);
 }
@@ -390,7 +399,7 @@
   content: '100% Stacked Bar Chart';
 }
 .chartico.full-stacked-bar-chart.text.zh:after {
-  content: '100%長條圖';
+  content: '100%堆積長條圖';
 }
 .chartico.funnel-chart:before {
   background-image: url(/icon/chart/funnel-chart.svg);
@@ -669,7 +678,7 @@
   content: 'Stacked Area Chart';
 }
 .chartico.stacked-area-chart.text.zh:after {
-  content: '堆積面積圖';
+  content: '堆積區域圖';
 }
 .chartico.stacked-bar-chart:before {
   background-image: url(/icon/chart/stacked-bar-chart.svg);
@@ -833,6 +842,42 @@
 .chartico.network.text.zh:after {
   content: '網絡圖';
 }
+.chartico.full-stacked-area-chart:before {
+  background-image: url(/icon/chart/full-stacked-area-chart.svg);
+}
+.chartico.full-stacked-area-chart.text:after {
+  content: '100% Stacked Area Chart';
+}
+.chartico.full-stacked-area-chart.text.zh:after {
+  content: '100%堆積區域圖';
+}
+.chartico.alluvial-diagram:before {
+  background-image: url(/icon/chart/alluvial-diagram.svg);
+}
+.chartico.alluvial-diagram.text:after {
+  content: 'Alluvial Diagram';
+}
+.chartico.alluvial-diagram.text.zh:after {
+  content: '沖積圖';
+}
+.chartico.stacked-radar-chart:before {
+  background-image: url(/icon/chart/stacked-radar-chart.svg);
+}
+.chartico.stacked-radar-chart.text:after {
+  content: 'Stacked Radar Chart';
+}
+.chartico.stacked-radar-chart.text.zh:after {
+  content: '堆積雷達圖';
+}
+.chartico.chernoff-face:before {
+  background-image: url(/icon/chart/chernoff-face.svg);
+}
+.chartico.chernoff-face.text:after {
+  content: 'Chernoff Face';
+}
+.chartico.chernoff-face.text.zh:after {
+  content: '切爾諾夫臉型';
+}
 .catico.distribution:before {
   background-image: url(/icon/cat/distribution.svg);
 }
@@ -931,6 +976,15 @@
 }
 .catico.periodic.text.zh:after {
   content: '週期';
+}
+.catico.diverging:before {
+  background-image: url(/icon/cat/diverging.svg);
+}
+.catico.diverging.text:after {
+  content: 'Diverging';
+}
+.catico.diverging.text.zh:after {
+  content: '分歧式';
 }
 .encico.saturation:before {
   background-image: url(/icon/encoding/saturation.svg);
