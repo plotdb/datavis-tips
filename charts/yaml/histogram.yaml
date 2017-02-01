@@ -42,6 +42,9 @@ visualEncoding:
 
 variant:
   - bar-chart
+  - column-chart
+  - violin-chart
+  - box-whisky-plot
 
 pros:
   en: N/A
