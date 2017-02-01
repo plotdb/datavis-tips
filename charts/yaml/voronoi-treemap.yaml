@@ -1,0 +1,79 @@
+name: voronoi-treemap
+
+plotdb: 1017
+
+description:
+  en: N/A
+  zh: |
+    以面積表現資料的一種圖表，與?[treemap]有相同的階層結構，不同的是在?[voronoi-treemap]中各個區塊的形狀不一定是矩形，而是任意的凸多邊形。
+
+    一般的?[treemap]使用矩形區塊的面積來表現資料，這帶來了兩個問題：
+
+      * 長寬比例有時會過於極端，導致區塊不易辨識、甚至比較面積。
+      * 不適合放入非矩形的繪圖區域中。
+
+    ?[voronoi-treemap]由於其多邊形的特質，妥善的克服了這兩個問題。不過，?[voronoi-treemap]的計算更加複雜，也比較不容易實作。
+
+category:
+  - hierarchy
+  - comparison
+
+pros:
+  en: N/A
+  zh: |
+    * 清楚地表現出多層次的資料關係。
+    * 更有效率的利用顯示空間。
+    * 可彈性地運用於不同形狀的顯示區域中。
+
+cons:
+  en: N/A
+  zh: |
+    * 資料量少時用 ?[stacked-bar-chart] 更適合。
+    * 資料差異小時不容易看出差別，較不適用。
+    * 差異大時亦不適合，因小區塊幾乎無法顯示。
+    * 相加無意義的資料不適用。( 如平均年齡 )
+    * 運算相當耗時。
+
+commonPractice:
+  en: N/A
+  zh: |
+    * 分組 / 階層式資料想要同時比較群體與個體時，用?[voronoi-treemap]可獲得不錯的效果。
+    * 資料量大或是有兩層以上的階層時，搭配互動縮放比起 ?[stacked-bar-chart] 會更加實用。
+    * 任何適用?[treemap]的時機卻需要顯示在特殊形狀的區塊中時。
+
+guideline:
+  en: N/A
+  zh: |
+    * 務必直接以面積代表資料。
+    * 上色時，建議依大分組決定主色調，再調整次級分組內的彩度或明度。
+    * 通常用來比較適合「相加」的資料。溫度、年齡等數據較不適合。
+
+alternative:
+  en: N/A
+  zh: |
+    * 若階層並非重點，可考慮使用 ?[bubble-chart] 以呈現更多維度。
+    * 若沒有階層關係，可直接使用 ?[bar-chart] 讓資料更容易比較。
+
+dimension:
+  - [area, ratio, required]
+  - [color, nominal, optional]
+
+visualEncoding:
+  - area
+  - color
+
+variant:
+  - treemap
+  - circular-treemap
+  - jigsaw-treemap
+  - convex-treemap
+
+classicExample: |
+  * howmuch.net: [Watch 35 Years of the World’s Economy Evolving as a Living Organism](https://howmuch.net/articles/world-economy-as-a-living-organism), September 30, 2015
+
+mediaUsage:
+  - author: Gregor Aisch and Robert Gebeloff
+    title: Mapping Migration in the United States
+    year: 2014
+    link: https://www.nytimes.com/2014/08/16/upshot/mapping-migration-in-the-united-states-since-1900.html
+
