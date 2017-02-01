@@ -1,0 +1,67 @@
+name: full-stacked-bar-chart
+
+plotdb: 1022
+
+category:
+  - comparison
+  - proportion
+
+description:
+  en: N/A
+  zh: |
+    與?[stacked-bar-chart]類似的堆疊式長條圖，但長條高度總和永遠固定並且等高，捨棄了原本?[bar-chart]的主要用途(比較資料)而改為強調各組數據間的比例變化。比起?[stacked-bar-chart]又更容易閱讀一些，因為對齊的區塊變多了，同時等高的特色也讓讀者可以更專注於判讀數據間的比例。
+
+    即便如此，過多資料組時仍會使長條不容易比較，整體來說大約三至四組的堆疊區塊是適當的。
+
+commonPractice:
+  en: N/A
+  zh: |
+    * 觀察並比較__時序性__或__多組資料間__的__比例變化__時，可嘗試使用?[full-stacked-bar-chart]。
+
+pros:
+  en: N/A
+  zh: |
+    * 相較於?[pie-chart]，更適合跨長條做資料比較。
+
+cons:
+  en: N/A
+  zh: |
+    * 不容易比較未對齊區塊的數值大小。
+    * 無法表現數值的絕對大小。
+    
+
+guideline:
+  en: N/A
+  zh: |
+    * 建議不用於多於五組資料的比較。
+
+alternative:
+  en: N/A
+  zh: |
+    * 資料過多時，可改用?[treemap]。
+    * 強調比例時，可改用?[full-stacked-bar-chart]。
+    * 強調各區塊變化時，可改用?[slopegraph]。
+
+dimension:
+  - [x coord, ratio, required]
+  - [y coord, nominal, required]
+
+visualEncoding:
+  - length
+
+variant:
+  - bar-chart
+  - grouped-bar-chart
+  - column-chart
+  - span-chart
+  - full-stacked-bar-chart
+  - marimekko-chart
+
+keyword:
+  en: N/A
+  zh:
+    - 比較
+    - 最大
+    - 最小
+    - 極值
+    - 精確
