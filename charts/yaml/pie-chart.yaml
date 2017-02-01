@@ -35,7 +35,7 @@ guideline:
     * 若顯示比例，其總和需為 100%
     * 建議從 12 點鐘方向開始順時針方向排序
     * 2 ~ 7 筆資料為佳。
-    * 避免用於跨圓餅圖做比較。
+    * 避免用於跨圖表比較。
 
 classicExample: |
   * Steve Jobs’s "U.S. SmartPhone Marketshare" pie chart.
@@ -60,7 +60,7 @@ commonPractice:
   en: N/A
   zh: |
     * 表現整體與部份的比例
-    * 當談到「比例」、「市佔」、「佔了..成」等與整體相比的概念時，可以嘗試使用圓餅圖來呈現。
+    * 當談到「比例」、「市佔」、「佔了..成」等與整體相比的概念時，可以嘗試使用?[pie-chart]來呈現。
 
 keyword:
   en: N/A
@@ -72,6 +72,7 @@ keyword:
 alternative:
   en: N/A
   zh: |
+    * 通常可直接改用?[donut-chart]。
     * 需要跨圖表比較時，可改用 ?[stacked-bar-chart] 或是 ?[slopegraph]
     * 資料量過多時，可將比例較小的部份合併顯示。
     * 資料量過多時，可將部份圓餅合併至另一張長條圖顯示。

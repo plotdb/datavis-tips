@@ -869,6 +869,15 @@
 .chartico.stacked-radar-chart.text.zh:after {
   content: '堆積雷達圖';
 }
+.chartico.lollipop-with-pie:before {
+  background-image: url(/icon/chart/lollipop-with-pie.svg);
+}
+.chartico.lollipop-with-pie.text:after {
+  content: 'Lollipop Pies';
+}
+.chartico.lollipop-with-pie.text.zh:after {
+  content: '圓餅棒棒糖圖';
+}
 .chartico.chernoff-face:before {
   background-image: url(/icon/chart/chernoff-face.svg);
 }

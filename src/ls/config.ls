@@ -18,7 +18,7 @@
       step-chart streamgraph sun-burst-diagram ternary-plot timeline treemap
       venn-diagram vertical-dumbbell-chart violin-chart voronoi-treemap waffle-chart
       waterfall-chart wordcloud world-globe jigsaw-treemap convex-treemap network
-      full-stacked-area-chart alluvial-diagram stacked-radar-chart
+      full-stacked-area-chart alluvial-diagram stacked-radar-chart lollipop-with-pie
       chernoff-face
     ]>
 
@@ -175,6 +175,9 @@
       "lollipop-chart": do
         zh: "棒棒糖圖"
         en: "Lollipop Chart"
+      "lollipop-with-pie": do
+        zh: "圓餅棒棒糖圖"
+        en: "Lollipop Pies"
       "arc-diagram": do
         zh: "弧線圖"
         en: "Arc Diagram"
