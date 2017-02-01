@@ -62,6 +62,9 @@ html(lang="en")
             if alias
               small  / 
               small: span= (lang!="en" ? [nameEN.toLowerCase()] : []).concat(alias).join(", ")
+            else if !alias && lang != "en"
+              small  / 
+              small: span= (lang!="en" ? [nameEN.toLowerCase()] : []).join(", ")
             hr
           .description
             if description

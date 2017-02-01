@@ -1,0 +1,72 @@
+name: stacked-bar-chart
+
+plotdb: 1008
+
+category:
+  - comparison
+  - proportion
+
+description:
+  en: N/A
+  zh: |
+    ?[bar-chart]的變形，同樣以方形色塊的長度表現資料的一種圖表。與?[bar-chart]不同的是，長條被切成數塊用以表現資料中的成份比例，因此可以同時觀察整體數量的比較以及各組資料中的成份比例。
+
+    基本的使用原則類似?[bar-chart]，不過堆疊的區塊因為並沒有對齊，並不容易跨長條做資料比較；這時可以搭配一些不同的做法來改善：
+
+      * 使用「[Dancing Stacked Bar](https://plotdb.com/chart/992)」，透過點擊色塊來指定對齊的基準線。
+      * 使用「[Small Multiple Bar Chart](https://plotdb.com/chart/1111)」，透過點擊來切換堆疊 / 分開呈現的效果。
+      * 使用?[full-stacked-bar-chart]，同時將資料組限制在三組以下，這樣色塊便可以透過兩端來對齊比較。
+
+commonPractice:
+  en: N/A
+  zh: |
+    * 要表現整體量與其中比例的比較時，可以使用?[stacked-bar-chart]來呈現。
+
+pros:
+  en: N/A
+  zh: |
+    * 相較於?[pie-chart]，更適合跨長條做資料比較。
+
+cons:
+  en: N/A
+  zh: |
+    * 不容易比較未對齊區塊的數值大小。
+    
+
+guideline:
+  en: N/A
+  zh: |
+    * 數據排序後呈現為佳
+    * 比起有序資料，更適合運用在無序資料上
+    * 適當使用格線與軸線刻度可增加資料判讀的正確性
+
+alternative:
+  en: N/A
+  zh: |
+    * 資料過多時，可改用?[treemap]。
+    * 強調比例時，可改用?[full-stacked-bar-chart]。
+    * 強調各區塊變化時，可改用?[slopegraph]。
+
+dimension:
+  - [x coord, ratio, required]
+  - [y coord, nominal, required]
+
+visualEncoding:
+  - length
+
+variant:
+  - bar-chart
+  - grouped-bar-chart
+  - column-chart
+  - span-chart
+  - full-stacked-bar-chart
+  - marimekko-chart
+
+keyword:
+  en: N/A
+  zh:
+    - 比較
+    - 最大
+    - 最小
+    - 極值
+    - 精確
