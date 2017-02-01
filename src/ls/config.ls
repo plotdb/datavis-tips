@@ -462,7 +462,8 @@
     yAxisHandleOverlap: "none",
     yAxisShowDomain: true,
     yAxisStroke: "\#aaa",
-    labelShow: true
+    labelShow: true,
+    labelShowOverflow: false
   },{
     margin: 10, background: "\#444444", gridBackground: "\#555555",
     palette: {colors: [{hex: "\#fff"},{hex: "\#ffd"},{hex: "\#fdf"}]},
@@ -478,6 +479,7 @@
     textFill: "\#554",
     sort: "Ascending",
     xAxisTickSizeInner: 4
+    labelShowOverflow: false
   },{
     margin: 10, background: "\#f9f9f9", gridBackground: "\#f9f9f9",
     palette: {colors: [{hex: "\#e96"},{hex: "\#ae5"},{hex: "\#48d"},{hex: "\#999"}]},
@@ -494,6 +496,7 @@
     gridStrokeWidth: 1,
     gridStroke: "\#999",
     xAxisStroke: "\#999"
+    labelShowOverflow: false
   }]
 
   if module? => module.exports = config

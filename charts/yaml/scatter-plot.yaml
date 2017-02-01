@@ -50,10 +50,10 @@ visualEncoding:
   - color
 
 classicExample:
-  en: TBD
+  en: N/A
   zh: |
-    * Gapminder / Hans Rosling
-    * one of "seven basic tools of quality"
+    * Hans Rosling, "[Gapminder](https://www.gapminder.org/)"
+    * 品管七大手法之一
 
 mediaUsage:
   - author: Alicia Parlapiano
@@ -62,44 +62,15 @@ mediaUsage:
     year: 2014
     link: http://www.nytimes.com/interactive/2014/03/15/business/higher-income-longer-lives.html
 
+alternative:
+  en: N/A
+  zh: |
+    * 需要呈現額外的維度時，可改用?[bubble-chart]。
+    * 需要同時表現資料的順序時，可使用?[connected-scatter-plot]。
+    * 想要同時表現三組資料間的關係時，可使用?[ternary-plot]。
+
 variant:
   - connected-scatter-plot
   - paired-scatter-plot
   - animated-scatter-plot
   - ternary-plot
-
-bannerConfig:
-  [{
-    margin: 10, background: "#aaa", gridBackground: "#aaa",
-    palette: {colors: [{hex: "#444"},{hex: "#666"},{hex: "#999"}]},
-    legendShow: false,
-    bubbleSizeMax: 15,
-    bubbleStrokeWidth: 0,
-    fontSize: 12,
-    gridStrokeWidth: 1,
-    gridFrameStrokeWidth: 0,
-    textFill: "#eee"
-  },{
-    margin: 10, background: "#942", gridBackground: "#942",
-    palette: {colors: [{hex: "#fff"},{hex: "#ffd"},{hex: "#fdf"}]},
-    legendShow: false,
-    bubbleSizeMax: 18,
-    bubbleStroke: "#000",
-    bubbleStrokeWidth: 1,
-    fontSize: 14,
-    gridStrokeWidth: 1,
-    gridFrameStrokeWidth: 0,
-    textFill: "#ffe"
-  },{
-    margin: 10, background: "#eee", gridBackground: "#eee",
-    palette: {colors: [{hex: "#e96"},{hex: "#ae5"},{hex: "#48d"},{hex: "#999"}]},
-    legendShow: false,
-    bubbleSizeMax: 22,
-    fontSize: 14,
-    textFill: "#444",
-    bubbleStrokeWidth: 0,
-    xAxisTickSizeInner: 0,
-    yAxisTickSizeInner: 0,
-    gridStrokeWidth: 0,
-    gridFrameStrokeWidth: 0,
-  }]

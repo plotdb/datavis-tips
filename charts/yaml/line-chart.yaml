@@ -2,6 +2,8 @@ name: line-chart
 
 alias:
   - line graph
+  - stock chart
+  - fever chart
 
 plotdb: 953
 

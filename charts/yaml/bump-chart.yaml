@@ -1,0 +1,68 @@
+name: bump-chart
+
+plotdb: 2122
+
+category:
+  - trend
+
+description:
+  en: N/A
+  zh: |
+    有時，我們想知道的不是資料的精確數值、走勢，而是相對於其它資料組的排名，這時?[bump-chart]便派上用場了。?[bump-chart]為?[line-chart]的變形，同上使用連線表現數據，但資料點並不依照數據來決定位置，而是依照該點在資料組中的排名來決定。
+
+    由於改用排名來決定位置，資料點與線段較不容易重疊，甚至會分得很清楚，因此當資料相當複雜使得?[line-chart]很不容易閱讀時，使用?[bump-chart]可以很快的將資料的名次與相對趨勢表現出來。
+
+     然而，即便只表現名次，也有可能因為過於複雜的變化而使得圖表難以閱讀，這時可以進一步省略複雜的過程，使用只表現整體開始到結束間的變化的「?[slopegraph]」，亦或者搭配互動效果來使用，讓讀者可以點選特定資料組來強調該組資料的名次變化。
+
+commonPractice:
+  en: N/A
+  zh: |
+    * 欲表現相對趨勢或排名變化時，可使用?[bump-chart]
+    * 使用?[line-chart]表現過於複雜時，可考慮嘗試?[bump-chart]表現簡化資訊。
+
+pros:
+  en: N/A
+  zh: |
+    * 清楚表現資料排名與整體排名走勢。
+    * 比起?[line-chart]更容易閱讀。
+
+cons:
+  en: N/A
+  zh: |
+    * 無法看出實際數值的走勢。
+    * 無法表現數據間的差距大小。
+
+guideline:
+  en: N/A
+  zh: |
+    * 時序的變化方向如?[line-chart]為由左到右。
+    * 通常排名在前的資料組會被擺放在較高的位置。
+    * 資料變化複雜時，可搭配互動效果提升可讀性。
+
+alternative:
+  en: N/A
+  zh: |
+    * 資料過於複雜時，可進一步簡化成?[slopegraph]。
+    * 需要展示實際數值的走勢時，可使用?[line-chart]。
+    * 若需要同時表現排名與數量，可使用?[sankey-chart]。
+
+dimension:
+  - [x coord, ordinal, required]
+  - [y coord, ordinal, required]
+
+visualEncoding:
+  - position
+
+variant:
+  - line-chart
+  - slopegraph
+  - sankey-chart
+
+keyword:
+  en: N/A
+  zh:
+    - 比較
+    - 最大
+    - 最小
+    - 極值
+    - 精確

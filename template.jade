@@ -153,11 +153,10 @@ html(lang="en")
           if variant
             .text-center
               label= _["Variants"]
-              p
-                each item in variant
-                  a(href=tourl(item))
-                    .chartico.text.md(class=[
-                    item.toLowerCase().replace(/ /g,"-"),lang,(exists(item) ? "" : "disabled")].join(" "))
+              each item in variant
+                a(href=tourl(item))
+                  .chartico.text.md(class=[
+                  item.toLowerCase().replace(/ /g,"-"),lang,(exists(item) ? "" : "disabled")].join(" "))
 
     .footer
       a(href="http://plotdb.com",target="_blank")
