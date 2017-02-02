@@ -31,7 +31,7 @@
     ]>
 
     dimensions: <[
-      y-coord x-coord angle area color radius
+      y-coord x-coord angle area color radius length
     ]>
     taxonomies: <[
       nominal categorical ordinal interval ratio any

@@ -297,7 +297,13 @@ update-file = ->
     return input
 
   build-yaml = (src) ->
+    if build-yaml.{}handler[src] => clearTimeout build-yaml.handler[src]
+    build-yaml.handler[src] = ((src) ->
+      setTimeout (-> _build-yaml src), 500
+    ) src
+  _build-yaml = (src) ->
     langs = site-config.langs
+    langs = <[zh]> # TODO only do zh to speed up.  remove this afterward
     try
       cfg = js-yaml.safe-load fs.read-file-sync src, \utf8
       cfg.id = name = (cfg.name.en or cfg.name).to-lower-case!.replace(/ /g, '-')

@@ -1,0 +1,65 @@
+name: waffle-chart
+
+alias:
+  - square pie chart
+  - brick chart
+
+plotdb: 2039
+
+category:
+  - proportion
+
+description:
+  en: N/A
+  zh: |
+    利用規則排列的方塊數量來表現資料的一種圖表，方塊通常排列成矩形，並以顏色區分所代表的數字，再依不同顏色的色塊數來做資料間的比較。
+
+    ?[waffle-chart]比起?[bar-chart]更能直觀的看出數值間與整體的比例，也比起利用單一的?[stacked-bar-chart]更有視覺吸引力。相對於?[pie-chart]，?[waffle-chart]更強調透過面積來比較資料，很容易透過妥善的排版讓數據更容易相比，同時個別區塊還可以搭配動畫與互動做出版面的變化，可以說是個同時具有彈性與效率的圖表類型。
+
+
+commonPractice:
+  en: N/A
+  zh: |
+    * 要表現數字的比例時，都可以考慮使用?[waffle-chart]
+    * 表現比例、尤其是數量(比方說人數)的比例時，特別適合使用?[waffle-chart]。
+    * 欲透過互動讓讀者切換資料的不同面向時，很適合使用?[waffle-chart]。
+
+pros:
+  en: N/A
+  zh: |
+    * 方塊可以彈性組合成不同形狀，很適合運用在資訊圖表設計上。
+    * 比起?[pie-chart]或?[stacked-bar-chart]，更適合搭配互動與動畫來表現資料的各種面向。
+cons:
+  en: N/A
+  zh: |
+    * 不易放入文字標籤，尤其對方塊數很少的類別來說。
+    * 較適合用在計數型(如人口)的資料。
+
+guideline:
+  en: N/A
+  zh: |
+    * 相同顏色的方塊堆疊在一起。
+    * 在堆疊成矩形的情況下，建議不同色的方塊照數量多寡依序排列。
+    * 堆疊的長寬差距不宜過大。
+
+alternative:
+  en: N/A
+  zh: |
+    * 需要跨圖表比較時，可考慮使用?[stacked-bar-chart]。
+
+dimension:
+  - [area, ratio, required]
+
+visualEncoding:
+  - area
+
+variant:
+  - pie-chart
+  - full-stacked-bar-chart
+  - pictogram
+
+keyword:
+  en: N/A
+  zh:
+    - 比較
+    - 比例

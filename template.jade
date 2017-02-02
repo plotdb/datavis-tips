@@ -4,19 +4,19 @@ doctype html
 - var use = { cdn: false, og: false, favicon: true }
 - var lib = { jquery: true, d3js: true, angular: true, bootstrap: true, semantic: false, fontawesome: true, reactjs: false, revealjs: false }
 - var assets = "/assets"
-- var favicon = "/thumbnail.png"
-- var title = "template"
+- var favicon = "/img/favicon.png"
+- var title = name + " / datavis.tips"
 - var og = {}
 - og.title = title
 - og.twitter = {type: "summary_large_image", site: "@zbryikt", creator: "@zbryikt"}
-- og.domain = "zbryikt.github.io"
+- og.domain = "datavis.tips"
 - og.url = ""
 - og.thumbnail = {width: 200, height: 200, type: "image/png"}
 - og.thumbnail.url = "thumbnail.png"
-- og.author = "zbryikt"
+- og.author = "PlotDB"
 - og.section = "Taiwan"
-- og.keyword = "zbryikt,template"
-- og.description = ""
+- og.keyword = "chart,plot,data visualization,plotdb"
+- og.description = description.substring(0,100)
 mixin markdown(content)
   p!= md(content).toString()
 html(lang="en")

@@ -1157,6 +1157,15 @@
 .dimico.radius.text.zh:after {
   content: '半徑';
 }
+.dimico.length:before {
+  background-image: url(/icon/dim/length.svg);
+}
+.dimico.length.text:after {
+  content: 'length';
+}
+.dimico.length.text.zh:after {
+  content: '長度(異軸)';
+}
 .dimico .taxico.nominal {
   background-image: url(/icon/tax/nominal.svg);
 }
