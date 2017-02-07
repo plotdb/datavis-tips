@@ -33,10 +33,39 @@ html(lang="en")
     script(type="text/javascript",src="/lib/plotd3.js")
   body
     #root
-      .text-center: img(src="/img/logo-zh.png")
-      br
-      .text-center(style="margin:auto;width:640px;padding:20px;border-radius:5px;background:rgba(255,255,255,0.7);text-shadow:0 1px 0.5px rgba(0,0,0,0.3)")
-        span 圖表百百種，該用哪一種？施主，這個問題要先問你自己！「我想要了解價格走勢...」「我想要表現人口的巨大差異...」先了解了需求，再由不同面向來挑選吧！
-      br
-      .text-center: a(href="list.html") 我不管，直接給我所有的視覺化列表
+      .text-center: img(src="/img/logo-text-zh.png")
+      .text-center(style="width: 400px;margin:auto")
+        .input-group
+          input.form-control
+          .input-group-btn
+            .btn.btn-default #[i.fa.fa-search] 用找的
 
+      br
+      br
+
+      .text-center
+        h3 視覺化方式
+        br
+        div(style="background:#ec1e79;padding:20px;")
+          each item in config.charts
+            if exists(item)
+              a(href="/v/" + item +"/zh/")
+                .chartico.xs.raw.no-border.zh(style="margin:20px",class=[
+                item.toLowerCase().replace(/ /g,"-"),lang,(exists(item) ? "" : "disabled")].join(" "))
+          each item in config.charts
+            if !exists(item)
+              a(href="/v/" + item +"/zh/")
+                .chartico.xs.raw.no-border.zh(style="margin:20px",class=[
+                item.toLowerCase().replace(/ /g,"-"),lang,(exists(item) ? "" : "disabled")].join(" "))
+
+      br
+      .text-center
+        h3 敘事方向
+        each item in config.categories
+          .catico.text.md.no-border.zh(class=[item.toLowerCase().replace(/ /g,"-"),lang].join(" "))
+      br
+      br
+      .text-center
+        h3 視覺元素
+        each item in config.encodings
+          .encico.text.md.no-border.zh(class=[item.toLowerCase().replace(/ /g,"-"),lang].join(" "))

@@ -19,7 +19,7 @@
       venn-diagram vertical-dumbbell-chart violin-chart voronoi-treemap waffle-chart
       waterfall-chart wordcloud world-globe jigsaw-treemap convex-treemap network
       full-stacked-area-chart alluvial-diagram stacked-radar-chart lollipop-with-pie
-      chernoff-face
+      chernoff-face candlestick-chart
     ]>
 
     categories: <[
@@ -295,6 +295,9 @@
       "chernoff-face": do
         zh: "切爾諾夫臉型"
         en: "Chernoff Face"
+      "candlestick-chart": do
+        zh: "K線圖"
+        en: "candlestick-chart"
       "distribution": do
         zh: "分布"
         en: "distribution"

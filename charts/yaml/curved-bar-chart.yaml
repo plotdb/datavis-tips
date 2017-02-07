@@ -1,0 +1,71 @@
+name: curved-bar-chart
+
+alias:
+  - circular bar chart
+  - radial bar chart
+  - circular chart
+
+plotdb: 962
+
+description:
+  en: N/A
+  zh: |
+    極化的?[bar-chart]。各個長條形成一個圓弧，並以同心圓的形式繪製，使得原本長條的長度受到半徑的影響，因此並非用長度而是用角度來表現與比較資料。
+
+    通常使用?[curved-bar-chart]都僅是為了視覺效果上的設計，也許搭配其它圖表或插畫，效果通常都不錯；但由於彎曲的長條與本身就已經不容易比較長度，再加上同心圓的排列使得面積、長度與真實的資料相去過大，因此對資料判讀正確性有很大的影響，而成了 [wtf.viz](http://viz.wtf/tagged/Radial) 上的常客。
+
+    資料通常都依大小排序呈現以稍微提升可讀性，但若不是用在比較資料的例子(比方說用?[curved-bar-chart]來表現時間中的時、分、秒)，就沒有排序的必要。
+
+
+category:
+  - comparison
+
+pros:
+  en: N/A
+  zh: |
+    * 效果類似?[bar-chart]，但較能吸引目光。
+    * 相較於多個?[donut-chart]，更節省顯示空間。
+
+cons:
+  en: N/A
+  zh: |
+    * 很容易曲解資料，造成讀者誤判。
+
+commonPractice:
+  en: N/A
+  zh: |
+    * 通常是為了視覺效果上的設計而使用。
+    * 欲有多個百分比式的數據(比方說完成度)，想要同時觀時，可考慮使用?[curved-bar-chart]。
+    * 要表現「最大」、「最小」或比較數據間大小，又不想用無聊的?[bar-chart]時，若具備冒險犯難的精神，可嘗試?[curved-bar-chart]
+
+guideline:
+  en: N/A
+  zh: |
+    * 資料應排序後呈現，並將最長的長條置於最外圈。
+    * 對齊長條的起點。
+
+alternative:
+  en: N/A
+  zh: |
+    * 若想要更精確、正確的比較資料，應使用?[bar-chart]。
+    * 重點在表現各組資料的百分比時，也可使用多重?[donut-chart]。
+
+classicExample:
+  en: | 
+    * [App Watch](http://www.apple.com/apple-watch-series-2/)'s "Activity Rings"
+    * [Polar Clock](http://bl.ocks.org/mbostock/1096355) by Mike Bostock. (see also [Circular Band Clock](http://www.jqueryscript.net/time-clock/Circular-Band-Clock-with-jQuery-Canvas-bandClock.html)
+  zh: |
+    * [蘋果智慧型手錶 Apple Watch](http://www.apple.com/tw/apple-watch-series-2/) 的 「活動記錄圓圈」。
+    * Mike Bostock 所做的 [Polar Clock](http://bl.ocks.org/mbostock/1096355)。
+    * [Circular Band Clock](http://www.jqueryscript.net/time-clock/Circular-Band-Clock-with-jQuery-Canvas-bandClock.html)。
+
+dimension:
+  - [angle, ratio, required]
+
+visualEncoding:
+  - angle
+
+variant:
+  - bar-chart
+  - donut-chart
+

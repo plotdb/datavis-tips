@@ -1,0 +1,80 @@
+doctype html
+//- basic libraries: jquery(1.10.2), d3js(3.5.4), angularjs(1.3.15), bootstrap(3.0)/semantic-ui(0.9.3/0.9.5)
+//-                  fontawesome(4.4.0), reactjs(0.14.0)
+- var use = { cdn: false, og: false, favicon: true }
+- var lib = { jquery: true, d3js: true, angular: true, bootstrap: true, semantic: false, fontawesome: true, reactjs: false, revealjs: false }
+- var assets = "/assets"
+- var favicon = "/img/favicon.png"
+- var title = "template"
+- var og = {}
+- og.title = title
+- og.twitter = {type: "summary_large_image", site: "@zbryikt", creator: "@zbryikt"}
+- og.domain = "zbryikt.github.io"
+- og.url = ""
+- og.thumbnail = {width: 200, height: 200, type: "image/png"}
+- og.thumbnail.url = "thumbnail.png"
+- og.author = "zbryikt"
+- og.section = "Taiwan"
+- og.keyword = "zbryikt,template"
+- og.description = ""
+html(lang="en")
+  head(prefix="og: http://ogp.me/ns#")
+    meta(charset="utf-8")
+    meta(name='viewport', content='width=device-width, initial-scale=1.0')
+    title= title
+    // libraries
+    include /library.jade
+    // custom files
+    link(rel="stylesheet",type="text/css",href="/lib/plotdb.css")
+    link(rel="stylesheet",type="text/css",href="/static/css/dev.css")
+    link(rel="stylesheet",type="text/css",href="/static/css/index.css")
+    link(href="https://fonts.googleapis.com/earlyaccess/notosanstc.css",rel="stylesheet")
+    script(type="text/javascript",src="/lib/plotdb.js")
+    script(type="text/javascript",src="/lib/plotd3.js")
+  body
+    #root
+      .text-center: img(src="/img/logo-zh.png")
+      .text-center(style="margin:auto;width:640px;padding:20px;border-radius:5px;background:rgba(255,255,255,0.7);text-shadow:0 1px 0.5px rgba(0,0,0,0.3)")
+        span 圖表百百種，該用哪一種？施主，這個問題要先問你自己！「我想要了解價格走勢...」「我想要表現人口的巨大差異...」先了解了需求，再由不同面向來挑選吧！
+      br
+      .text-center
+        label(style="font-weight:300") 照哪種型式排序呢？
+        br
+        .btn.btn-group
+          .btn.btn-default.btn-lg 圖表型式
+          .btn.btn-default.btn-lg.active 想表現的概念
+          .btn.btn-default.btn-lg 使用的視覺元素
+          .btn.btn-default.btn-lg 推薦度
+          .btn.btn-default.btn-lg 心智圖
+      br
+      .text-center(style="margin-left:-20px;margin-right:-20px;padding:25px 20px 10px;background:rgba(0,0,0,0.1);color:#fff;border-top:1px solid #999;border-bottom:1px solid #999;box-shadow:inset 0 0 1px rgba(0,0,0,0.3)")
+        each item in config.categories
+          .catico.text.sm.no-border.zh(class=[item.toLowerCase().replace(/ /g,"-"),lang].join(" "))
+      br
+      br
+      .text-center
+        each j in [1,2,3]
+          .media(style="width:600px;margin:auto;text-align:left")
+            .media-left
+              a
+                .catico.md.no-border.trend
+            .media-body
+              h3.media-heading(style="margin-top:8px") 表現趨勢與變化
+              span 通常用於呈現隨著時間、空間等連續性維度有不同數值的資料，例如歷年股價走勢、全球年均溫變化、
+          br
+          each i in [1,2,3,4,5,6]
+            a(href="/v/line-chart/zh/"): .chartico.text.md.no-border.zh.line-chart
+          each i in [1,2,3,4,5,6]
+            br
+          .media(style="width:600px;margin:auto;text-align:left;")
+            .media-left
+              a
+                .catico.md.no-border.comparison
+            .media-body
+              h3.media-heading(style="margin-top:8px") 比較數值大小與極值
+              span 想要了解數值間的大小差異，或清楚表現最大值、最小值的概念，例如比較各城市人口數、各地區溫度。
+          br
+          each i in [1,2,3,4,5,6]
+            a(href="/v/bar-chart/zh/"): .chartico.text.md.no-border.zh.bar-chart
+          each i in [1,2,3,4,5,6]
+            br

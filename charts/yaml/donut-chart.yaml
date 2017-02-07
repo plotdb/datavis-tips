@@ -64,6 +64,7 @@ variant:
   - lollipop-with-pie
   - pie-chart
   - sun-burst-diagram
+  - curved-bar-chart
 
 keyword:
   en: N/A

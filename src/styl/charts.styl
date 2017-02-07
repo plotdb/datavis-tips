@@ -14,6 +14,15 @@
   &:before
     border: 0
 
+.chartico.xs, .catico.xs, .encico.xs, .dimico.xs
+  &:before
+    width: 48px
+    height: 48px
+    border-width: 4px
+  margin-left: 5px
+  margin-right: 5px
+  display: inline-block
+
 .chartico.sm, .catico.sm, .encico.sm, .dimico.sm
   &:before
     width: 64px
@@ -80,6 +89,16 @@ for chart in charts
   .chartico.{chart}.text.zh
     &:after
       content: i18n('zh',chart)
+
+.chartico
+  &.raw:before
+    border-radius: 0
+    background-color: rgba(0,0,0,0)
+    filter: grayscale(100%) brightness(900%) opacity(100%)
+
+for chart in charts
+  .chartico.raw.{chart}:before
+    background-image: unquote("url(/icon/chart-raw/" + chart + ".svg)")
 
 for category in categories
   .catico.{category}:before

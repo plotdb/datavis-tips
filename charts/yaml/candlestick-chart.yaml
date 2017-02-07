@@ -1,0 +1,55 @@
+name: candlestick-chart
+
+alias:
+  en:
+    - Japanese candlestick chart
+  zh:
+    - 陰陽燭
+    - 蠟燭圖
+    - 日本線
+    - 陰陽線
+    - 紅黑線
+
+plotdb: 1014
+
+description:
+  en: N/A
+  zh: N/A
+
+category:
+  - comparison
+
+pros:
+  en: N/A
+  zh: N/A
+
+cons:
+  en: N/A
+  zh: N/A
+
+commonPractice:
+  en: N/A
+  zh: N/A
+
+guideline:
+  en: N/A
+  zh: N/A
+
+alternative:
+  en: N/A
+  zh: N/A
+
+dimension:
+  - [length, interval, required]
+  - [length, interval, required]
+  - [length, interval, required]
+  - [color, any, required]
+
+visualEncoding:
+  - length
+  - color
+
+variant:
+  - bar-chart
+
+classicExample: N/A
