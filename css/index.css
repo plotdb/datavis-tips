@@ -57,6 +57,22 @@ nav.navbar-default {
 .dimico.no-border:before {
   border: 0;
 }
+.chartico.xs,
+.catico.xs,
+.encico.xs,
+.dimico.xs {
+  margin-left: 5px;
+  margin-right: 5px;
+  display: inline-block;
+}
+.chartico.xs:before,
+.catico.xs:before,
+.encico.xs:before,
+.dimico.xs:before {
+  width: 48px;
+  height: 48px;
+  border-width: 4px;
+}
 .chartico.sm,
 .catico.sm,
 .encico.sm,
@@ -919,6 +935,281 @@ nav.navbar-default {
 }
 .chartico.chernoff-face.text.zh:after {
   content: '切爾諾夫臉型';
+}
+.chartico.candlestick-chart:before {
+  background-image: url(/icon/chart/candlestick-chart.svg);
+}
+.chartico.candlestick-chart.text:after {
+  content: 'candlestick-chart';
+}
+.chartico.candlestick-chart.text.zh:after {
+  content: 'K線圖';
+}
+.chartico.raw:before {
+  border-radius: 0;
+  background-color: rgba(0,0,0,0);
+  filter: grayscale(100%) brightness(900%) opacity(100%);
+}
+.chartico.raw.animated-scatter-plot:before {
+  background-image: url(/icon/chart-raw/animated-scatter-plot.svg);
+}
+.chartico.raw.arc-diagram:before {
+  background-image: url(/icon/chart-raw/arc-diagram.svg);
+}
+.chartico.raw.area-chart:before {
+  background-image: url(/icon/chart-raw/area-chart.svg);
+}
+.chartico.raw.bar-chart:before {
+  background-image: url(/icon/chart-raw/bar-chart.svg);
+}
+.chartico.raw.bcg-matrix:before {
+  background-image: url(/icon/chart-raw/bcg-matrix.svg);
+}
+.chartico.raw.box-whisky-plot:before {
+  background-image: url(/icon/chart-raw/box-whisky-plot.svg);
+}
+.chartico.raw.bubble-array:before {
+  background-image: url(/icon/chart-raw/bubble-array.svg);
+}
+.chartico.raw.bubble-chart:before {
+  background-image: url(/icon/chart-raw/bubble-chart.svg);
+}
+.chartico.raw.bubble-map:before {
+  background-image: url(/icon/chart-raw/bubble-map.svg);
+}
+.chartico.raw.bullet-chart:before {
+  background-image: url(/icon/chart-raw/bullet-chart.svg);
+}
+.chartico.raw.bump-chart:before {
+  background-image: url(/icon/chart-raw/bump-chart.svg);
+}
+.chartico.raw.cherry-chart:before {
+  background-image: url(/icon/chart-raw/cherry-chart.svg);
+}
+.chartico.raw.chord-diagram:before {
+  background-image: url(/icon/chart-raw/chord-diagram.svg);
+}
+.chartico.raw.circular-treemap:before {
+  background-image: url(/icon/chart-raw/circular-treemap.svg);
+}
+.chartico.raw.column-chart:before {
+  background-image: url(/icon/chart-raw/column-chart.svg);
+}
+.chartico.raw.combo-chart:before {
+  background-image: url(/icon/chart-raw/combo-chart.svg);
+}
+.chartico.raw.connected-scatter-plot:before {
+  background-image: url(/icon/chart-raw/connected-scatter-plot.svg);
+}
+.chartico.raw.connected-ternary-plot:before {
+  background-image: url(/icon/chart-raw/connected-ternary-plot.svg);
+}
+.chartico.raw.continuous-error-bar-plot:before {
+  background-image: url(/icon/chart-raw/continuous-error-bar-plot.svg);
+}
+.chartico.raw.curved-bar-chart:before {
+  background-image: url(/icon/chart-raw/curved-bar-chart.svg);
+}
+.chartico.raw.cycle-plot:before {
+  background-image: url(/icon/chart-raw/cycle-plot.svg);
+}
+.chartico.raw.dashboard:before {
+  background-image: url(/icon/chart-raw/dashboard.svg);
+}
+.chartico.raw.difference-chart:before {
+  background-image: url(/icon/chart-raw/difference-chart.svg);
+}
+.chartico.raw.donut-chart:before {
+  background-image: url(/icon/chart-raw/donut-chart.svg);
+}
+.chartico.raw.layered-area-chart:before {
+  background-image: url(/icon/chart-raw/layered-area-chart.svg);
+}
+.chartico.raw.dorling-cartogram:before {
+  background-image: url(/icon/chart-raw/dorling-cartogram.svg);
+}
+.chartico.raw.dot-chart:before {
+  background-image: url(/icon/chart-raw/dot-chart.svg);
+}
+.chartico.raw.dumbbell-chart:before {
+  background-image: url(/icon/chart-raw/dumbbell-chart.svg);
+}
+.chartico.raw.fishbone:before {
+  background-image: url(/icon/chart-raw/fishbone.svg);
+}
+.chartico.raw.flow-chart:before {
+  background-image: url(/icon/chart-raw/flow-chart.svg);
+}
+.chartico.raw.cohort-chart:before {
+  background-image: url(/icon/chart-raw/cohort-chart.svg);
+}
+.chartico.raw.full-stacked-bar-chart:before {
+  background-image: url(/icon/chart-raw/full-stacked-bar-chart.svg);
+}
+.chartico.raw.funnel-chart:before {
+  background-image: url(/icon/chart-raw/funnel-chart.svg);
+}
+.chartico.raw.gantt-diagram:before {
+  background-image: url(/icon/chart-raw/gantt-diagram.svg);
+}
+.chartico.raw.gauge:before {
+  background-image: url(/icon/chart-raw/gauge.svg);
+}
+.chartico.raw.grouped-bar-chart:before {
+  background-image: url(/icon/chart-raw/grouped-bar-chart.svg);
+}
+.chartico.raw.infographics:before {
+  background-image: url(/icon/chart-raw/infographics.svg);
+}
+.chartico.raw.line-chart:before {
+  background-image: url(/icon/chart-raw/line-chart.svg);
+}
+.chartico.raw.lollipop-chart:before {
+  background-image: url(/icon/chart-raw/lollipop-chart.svg);
+}
+.chartico.raw.histogram:before {
+  background-image: url(/icon/chart-raw/histogram.svg);
+}
+.chartico.raw.heatmap:before {
+  background-image: url(/icon/chart-raw/heatmap.svg);
+}
+.chartico.raw.contour-map:before {
+  background-image: url(/icon/chart-raw/contour-map.svg);
+}
+.chartico.raw.map:before {
+  background-image: url(/icon/chart-raw/map.svg);
+}
+.chartico.raw.marimekko-chart:before {
+  background-image: url(/icon/chart-raw/marimekko-chart.svg);
+}
+.chartico.raw.paired-scatter-plot:before {
+  background-image: url(/icon/chart-raw/paired-scatter-plot.svg);
+}
+.chartico.raw.paired-slopegraph:before {
+  background-image: url(/icon/chart-raw/paired-slopegraph.svg);
+}
+.chartico.raw.spectrogram:before {
+  background-image: url(/icon/chart-raw/spectrogram.svg);
+}
+.chartico.raw.parallel-coordinates:before {
+  background-image: url(/icon/chart-raw/parallel-coordinates.svg);
+}
+.chartico.raw.pareto-diagram:before {
+  background-image: url(/icon/chart-raw/pareto-diagram.svg);
+}
+.chartico.raw.pie-bubble:before {
+  background-image: url(/icon/chart-raw/pie-bubble.svg);
+}
+.chartico.raw.pie-chart-3d:before {
+  background-image: url(/icon/chart-raw/pie-chart-3d.svg);
+}
+.chartico.raw.pie-chart:before {
+  background-image: url(/icon/chart-raw/pie-chart.svg);
+}
+.chartico.raw.polar-chart:before {
+  background-image: url(/icon/chart-raw/polar-chart.svg);
+}
+.chartico.raw.population-pyramid:before {
+  background-image: url(/icon/chart-raw/population-pyramid.svg);
+}
+.chartico.raw.pyramid-chart:before {
+  background-image: url(/icon/chart-raw/pyramid-chart.svg);
+}
+.chartico.raw.radar-chart:before {
+  background-image: url(/icon/chart-raw/radar-chart.svg);
+}
+.chartico.raw.recycle-chart:before {
+  background-image: url(/icon/chart-raw/recycle-chart.svg);
+}
+.chartico.raw.sankey-chart:before {
+  background-image: url(/icon/chart-raw/sankey-chart.svg);
+}
+.chartico.raw.sankey-chord:before {
+  background-image: url(/icon/chart-raw/sankey-chord.svg);
+}
+.chartico.raw.scatter-plot:before {
+  background-image: url(/icon/chart-raw/scatter-plot.svg);
+}
+.chartico.raw.slopegraph:before {
+  background-image: url(/icon/chart-raw/slopegraph.svg);
+}
+.chartico.raw.span-chart:before {
+  background-image: url(/icon/chart-raw/span-chart.svg);
+}
+.chartico.raw.stacked-area-chart:before {
+  background-image: url(/icon/chart-raw/stacked-area-chart.svg);
+}
+.chartico.raw.stacked-bar-chart:before {
+  background-image: url(/icon/chart-raw/stacked-bar-chart.svg);
+}
+.chartico.raw.step-chart:before {
+  background-image: url(/icon/chart-raw/step-chart.svg);
+}
+.chartico.raw.streamgraph:before {
+  background-image: url(/icon/chart-raw/streamgraph.svg);
+}
+.chartico.raw.sun-burst-diagram:before {
+  background-image: url(/icon/chart-raw/sun-burst-diagram.svg);
+}
+.chartico.raw.ternary-plot:before {
+  background-image: url(/icon/chart-raw/ternary-plot.svg);
+}
+.chartico.raw.timeline:before {
+  background-image: url(/icon/chart-raw/timeline.svg);
+}
+.chartico.raw.treemap:before {
+  background-image: url(/icon/chart-raw/treemap.svg);
+}
+.chartico.raw.venn-diagram:before {
+  background-image: url(/icon/chart-raw/venn-diagram.svg);
+}
+.chartico.raw.vertical-dumbbell-chart:before {
+  background-image: url(/icon/chart-raw/vertical-dumbbell-chart.svg);
+}
+.chartico.raw.violin-chart:before {
+  background-image: url(/icon/chart-raw/violin-chart.svg);
+}
+.chartico.raw.voronoi-treemap:before {
+  background-image: url(/icon/chart-raw/voronoi-treemap.svg);
+}
+.chartico.raw.waffle-chart:before {
+  background-image: url(/icon/chart-raw/waffle-chart.svg);
+}
+.chartico.raw.waterfall-chart:before {
+  background-image: url(/icon/chart-raw/waterfall-chart.svg);
+}
+.chartico.raw.wordcloud:before {
+  background-image: url(/icon/chart-raw/wordcloud.svg);
+}
+.chartico.raw.world-globe:before {
+  background-image: url(/icon/chart-raw/world-globe.svg);
+}
+.chartico.raw.jigsaw-treemap:before {
+  background-image: url(/icon/chart-raw/jigsaw-treemap.svg);
+}
+.chartico.raw.convex-treemap:before {
+  background-image: url(/icon/chart-raw/convex-treemap.svg);
+}
+.chartico.raw.network:before {
+  background-image: url(/icon/chart-raw/network.svg);
+}
+.chartico.raw.full-stacked-area-chart:before {
+  background-image: url(/icon/chart-raw/full-stacked-area-chart.svg);
+}
+.chartico.raw.alluvial-diagram:before {
+  background-image: url(/icon/chart-raw/alluvial-diagram.svg);
+}
+.chartico.raw.stacked-radar-chart:before {
+  background-image: url(/icon/chart-raw/stacked-radar-chart.svg);
+}
+.chartico.raw.lollipop-with-pie:before {
+  background-image: url(/icon/chart-raw/lollipop-with-pie.svg);
+}
+.chartico.raw.chernoff-face:before {
+  background-image: url(/icon/chart-raw/chernoff-face.svg);
+}
+.chartico.raw.candlestick-chart:before {
+  background-image: url(/icon/chart-raw/candlestick-chart.svg);
 }
 .catico.distribution:before {
   background-image: url(/icon/cat/distribution.svg);
