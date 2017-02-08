@@ -76,53 +76,56 @@
   width: 100%
   left: 0
 
-.chartico, .catico, .encico, .taxico, .dimico
+.chartico, .catico, .encico
    &.disabled
-     filter: grayscale(100%) brightness(200%) opacity(60%)
+     filter: grayscale(100%) brightness(900%) opacity(50%)
 
 for chart in charts
   .chartico.{chart}:before
-    background-image: unquote("url(/icon/chart/" + chart + ".svg)")
+    background-image: unquote("url(/icon/c/chart/" + chart + ".svg)")
   .chartico.{chart}.text
     &:after
       content: i18n('en',chart)
   .chartico.{chart}.text.zh
     &:after
       content: i18n('zh',chart)
+  .chartico.raw.{chart}:before
+    background-image: unquote("url(/icon/n/chart/" + chart + ".svg)")
 
-.chartico
+.chartico, .encico, .catico, .dimico
   &.raw:before
     border-radius: 0
     background-color: rgba(0,0,0,0)
-    filter: grayscale(100%) brightness(900%) opacity(100%)
+    filter: grayscale(100%) brightness(90%) opacity(100%)
 
-for chart in charts
-  .chartico.raw.{chart}:before
-    background-image: unquote("url(/icon/chart-raw/" + chart + ".svg)")
 
 for category in categories
   .catico.{category}:before
-    background-image: unquote("url(/icon/cat/" + category + ".svg)")
+    background-image: unquote("url(/icon/c/cat/" + category + ".svg)")
   .catico.{category}.text
     &:after
       content: i18n('en',category)
   .catico.{category}.text.zh
     &:after
       content: i18n('zh',category)
+  .catico.raw.{category}:before
+    background-image: unquote("url(/icon/n/cat/" + category + ".svg)")
 
 for encoding in encodings
   .encico.{encoding}:before
-    background-image: unquote("url(/icon/encoding/" + encoding + ".svg)")
+    background-image: unquote("url(/icon/c/enc/" + encoding + ".svg)")
   .encico.{encoding}.text
     &:after
       content: i18n('en',encoding)
   .encico.{encoding}.text.zh
     &:after
       content: i18n('zh',encoding)
+  .encico.raw.{encoding}:before
+    background-image: unquote("url(/icon/n/enc/" + encoding + ".svg)")
 
 for dimension in dimensions
   .dimico.{dimension}:before
-    background-image: unquote("url(/icon/dim/" + dimension + ".svg)")
+    background-image: unquote("url(/icon/c/dim/" + dimension + ".svg)")
   .dimico.{dimension}.text
     &:after
       content: i18n('en',dimension)
@@ -132,7 +135,7 @@ for dimension in dimensions
 
 for taxonomy in taxonomies
   .dimico .taxico.{taxonomy}
-    background-image: unquote("url(/icon/tax/" + taxonomy + ".svg)")
+    background-image: unquote("url(/icon/c/tax/" + taxonomy + ".svg)")
   .dimico.text .taxico.{taxonomy}:after
     content: i18n('en',taxonomy)
   .dimico.text.zh .taxico.{taxonomy}:after

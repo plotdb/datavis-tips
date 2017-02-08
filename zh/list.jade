@@ -43,29 +43,54 @@ html(lang="en")
       br
       br
 
-      .text-center
+      .text-center(style="max-width:1024px;margin:auto")
+        .chartico.lg.bar-chart
         h3 視覺化方式
+        span 視覺元素的組成與編排，前人智慧的結晶 - 視覺呈現手法與他們的使用方式
         br
-        div(style="background:#ec1e79;padding:20px;")
+        br
+        div(style="padding:20px;")
           each item in config.charts
             if exists(item)
               a(href="/v/" + item +"/zh/")
-                .chartico.xs.raw.no-border.zh(style="margin:20px",class=[
+                .chartico.xs.raw.no-border.zh(data-toggle="tooltip",data-placement="top",title=item,
+                style="margin:20px",class=[
                 item.toLowerCase().replace(/ /g,"-"),lang,(exists(item) ? "" : "disabled")].join(" "))
           each item in config.charts
             if !exists(item)
               a(href="/v/" + item +"/zh/")
-                .chartico.xs.raw.no-border.zh(style="margin:20px",class=[
+                .chartico.xs.raw.no-border.zh(
+                data-toggle="tooltip",data-placement="top",title="coming soon"
+                style="margin:20px",class=[
                 item.toLowerCase().replace(/ /g,"-"),lang,(exists(item) ? "" : "disabled")].join(" "))
-
+      br
+      br
+      br
+      br
       br
       .text-center
+        .catico.lg.comparison
         h3 敘事方向
+        span 從功能面來思考，想要表現的概念、想要呈現的資料是什麼？就用敘事方向來挑選吧。
+        br
+        br
+        br
         each item in config.categories
-          .catico.text.md.no-border.zh(class=[item.toLowerCase().replace(/ /g,"-"),lang].join(" "))
+          .catico.text.xs.raw.no-border.zh(class=[item.toLowerCase().replace(/ /g,"-"),lang].join(" "))
+      br
+      br
+      br
       br
       br
       .text-center
+        .encico.lg.area
         h3 視覺元素
+        span 不同元素也有不同的效果，而不同的效果影響了視覺化手法的效果。從元素下手，一開始就確認有我們要的效果！
+        br
+        br
+        br
         each item in config.encodings
-          .encico.text.md.no-border.zh(class=[item.toLowerCase().replace(/ /g,"-"),lang].join(" "))
+          .encico.text.xs.raw.no-border.zh(class=[item.toLowerCase().replace(/ /g,"-"),lang].join(" "))
+      #example(data-toggle="tooltip")
+  script(type="text/javascript").
+    $(document).ready(function() { $('[data-toggle="tooltip"]').tooltip(); });
