@@ -158,6 +158,11 @@ nav.navbar-default {
 .chartico.disabled,
 .catico.disabled,
 .encico.disabled {
+  filter: grayscale(100%) brightness(200%) opacity(50%);
+}
+.chartico.raw.disabled,
+.catico.raw.disabled,
+.encico.raw.disabled {
   filter: grayscale(100%) brightness(900%) opacity(50%);
 }
 .chartico.animated-scatter-plot:before {
