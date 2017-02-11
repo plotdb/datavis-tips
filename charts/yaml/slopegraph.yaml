@@ -1,0 +1,76 @@
+name: slopegraph
+
+plotdb: 2006
+
+category:
+  - comparison
+  - trend
+  - change
+
+description:
+  en: N/A
+  zh: |
+    一種特化的?[line-chart]，主要在強調變化或方向。相較於一般多個數據點的?[line-chart]，?[slopegraph]通常只有兩個端點，分別代表數據的開始與結束，或是代表兩個不同的資料以做比較。
+
+    由於方向很容易為人所辨識 ( 比方說，分辨朝上或朝下 )，因此 ?[slopegraph] 很適合用來做兩組數值間大小的比較，亦或者在兩個時間點之間來表現數值變化的方向。此外，它也可以說是簡化版(只留下頭尾)的?[line-chart]，所以在線段趨勢過於複雜時，可以考慮使用?[slopegraph]來簡化資訊。
+
+    為了識別各別的折線，通常我們會在圖表兩側加上標籤來表明線段代表的資料，亦或者直接用顏色來區分。不過，若是端點的線段有重疊的現象，標籤有可能也會因此變得不易閱讀。此時或可考慮配合些許的互動效果來彌補這個問題。此外，若是所有數值的方向都相同，?[slopegraph]所能發揮的效果通常也就不大了。
+
+    Bloomberg 於其圖表「Police Forces Skew White in Largest U.S. Cities」利用?[slopegraph]的方向來表現人種在公民與警察間的比例，即是一個很好的應用實例。
+
+commonPractice:
+  en: N/A
+  zh: |
+    * 欲同時表現多組數值的「變化」(尤其是前、後的變化)時，可使用?[slopegraph]。
+    * 嘗試?[line-chart]卻發現圖表過於複雜時，可嘗試使用?[slopegraph]。
+    * 兩組資料同時一對一比較多寡時，可嘗試使用?[slopegraph]。
+
+pros:
+  en: N/A
+  zh: |
+    * 清楚表現多組數據的變化或大小的比較。
+
+cons:
+  en: N/A
+  zh: |
+    * 使用在時序資料上時通常因為簡化了資料，會失去一些細節。
+
+guideline:
+  en: N/A
+  zh: |
+    * 兩端的數值應依照同一個軸線與比例描繪。
+    * 數據少時，可使用顏色識別各組資料。
+    * 數據多時，顏色建議僅用於分組為佳。
+
+alternative:
+  en: N/A
+  zh: |
+    * 可使用?[grouped-bar-chart]替代，但效果通常較差。
+    * 另有在二維空間中使用的?[paired-scatter-plot]。
+    * 可將多組線段分開呈現，即為?[paired-slopegraph]。
+    * 若將資料換個方向，則會變成?[dumbbell-chart]。
+
+dimension:
+  - [y-coord, interval, required]
+  - [y-coord, interval, required]
+
+visualEncoding:
+  - direction
+
+variant:
+  - line-chart
+  - paired-slopegraph
+  - paired-scatter-plot
+  - grouped-bar-chart
+  - dumbbell-chart
+
+mediaUsage:
+  - author: Chloe WhiteakeR, Esmé E. Deprez and James Nash
+    title: Police Forces Skew White in Largest U.S. Cities
+    media: Bloomberg
+    year: 2014
+    link: www.bloomberg.com/infographics/2014-08-20/police-forces-skew-white-in-largest-u-s-cities.html
+
+keyword:
+  en: N/A
+  zh: N/A

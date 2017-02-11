@@ -48,7 +48,7 @@ html(lang="en")
           .btn.btn-default.btn-lg 心智圖
       br
       .text-center(style="margin-left:-20px;margin-right:-20px;padding:25px 20px 10px;background:rgba(0,0,0,0.1);color:#fff;border-top:1px solid #999;border-bottom:1px solid #999;box-shadow:inset 0 0 1px rgba(0,0,0,0.3)")
-        each item in config.categories
+        each item in site.categories
           .catico.text.sm.no-border.zh(class=[item.toLowerCase().replace(/ /g,"-"),lang].join(" "))
       br
       br

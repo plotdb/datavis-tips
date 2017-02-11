@@ -267,6 +267,7 @@ update-file = ->
   jade-config = do
     md: markdown.toHTML
     tokey: -> it.to-lower-case!replace(' ', '-')
+    toName: (key,lang) -> site-config.translation[key][lang]
     exists: -> fs.exists-sync "charts/yaml/#it.yaml" 
 
   choose-lang = (cfg, lang) ->
@@ -420,7 +421,10 @@ update-file = ->
       fs.write-file-sync des,(
         jade.render(
           (fs.read-file-sync src .toString!),
-          {filename: src, basedir: path.join(cwd)} <<< jade-config <<< {config: site-config}
+          {
+            filename: src
+            basedir: path.join(cwd)
+          } <<< jade-config <<< {site: site-config}
         )
       )
       console.log "[BUILD] #src --> #des"
