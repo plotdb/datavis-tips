@@ -8,9 +8,17 @@ body {
   font-size: 1em;
   color: #444;
   background: #fff;
+  font-weight: 300;
 }
-html,
-body {
+h1,
+h2,
+h3,
+h4,
+h5,
+h6 {
+  font-weight: 400;
+}
+body.card {
   background: url("/img/bk.jpg") center center fixed;
 }
 .pdb-root {
@@ -18,6 +26,21 @@ body {
 }
 .grayed {
   color: #999;
+}
+.sep {
+  width: 100%;
+  height: 0;
+  border-bottom: 1px solid rgba(0,0,0,0.2);
+}
+.sep.gap {
+  margin: 20px 0;
+}
+.sep.gap.lg {
+  margin: 60px 0;
+}
+.anchor {
+  height: 0;
+  margin: 0;
 }
 nav.navbar-default {
   max-width: 800px;
@@ -30,6 +53,81 @@ nav.navbar-default {
 .navbar-default .navbar-nav > li > a {
   color: #444;
   text-shadow: 0 0 3px #fff;
+}
+nav.navbar-default.invert {
+  border-radius: 0;
+}
+nav.navbar-default.invert .navbar-brand,
+nav.navbar-default.invert .navbar-nav > li > a {
+  color: #fff;
+  text-shadow: none;
+  font-size: 0.85em;
+  font-weight: 200;
+}
+#landing {
+  background: url("/img/bk.png") center bottom no-repeat rgba(0,0,0,0.8);
+  opacity: 1;
+  color: #fff;
+}
+#landing .inner {
+  text-align: center;
+  margin: auto;
+  padding-bottom: 40px;
+  max-width: 1024px;
+}
+#landing .inner h1 {
+  font-size: 4em;
+  font-weight: 100;
+  text-shadow: 5px 5px 6px rgba(0,0,0,0.5), -5px 5px 6px rgba(0,0,0,0.5);
+}
+#landing .inner p {
+  font-weight: 100;
+  display: inline-block;
+  border-top: 1px solid rgba(255,255,255,0.2);
+  padding-top: 5px;
+}
+.headline.menu {
+  background: #fd3;
+}
+.headline.menu .inner {
+  max-width: 1024px;
+  margin: auto;
+  background: #fd3;
+  padding: 15px 20px 15px;
+}
+.headline.menu .inner a {
+  color: #444;
+  text-decoration: none;
+}
+.headline.menu .inner h4 {
+  font-weight: 300;
+}
+.headline .media,
+.section .media {
+  max-width: 1024px;
+  margin: auto;
+  padding: 40px 20px 0;
+}
+.section {
+  max-width: 1024px;
+  margin: auto;
+}
+.iconlist {
+  padding: 20px 0;
+  display: -webkit-flex;
+  display: flex;
+  -webkit-flex-wrap: wrap;
+  flex-wrap: wrap;
+  align-items: center;
+}
+.iconlist .icon {
+  -webkit-flex: 0 1 100px;
+  flex: 0 1 100px;
+  margin-bottom: 30px;
+}
+.iconlist .icon > div {
+  display: block;
+  margin: auto;
 }
 .chartico,
 .catico,
@@ -50,6 +148,12 @@ nav.navbar-default {
   border: 5px solid #fff;
   border-radius: 50%;
   margin: auto;
+}
+.chartico.fff:before,
+.catico.fff:before,
+.encico.fff:before,
+.dimico.fff:before {
+  background: #fff;
 }
 .chartico.no-border:before,
 .catico.no-border:before,
@@ -155,15 +259,11 @@ nav.navbar-default {
   width: 100%;
   left: 0;
 }
-.chartico.disabled,
-.catico.disabled,
-.encico.disabled {
-  filter: grayscale(100%) brightness(200%) opacity(50%);
-}
 .chartico.raw.disabled,
 .catico.raw.disabled,
 .encico.raw.disabled {
-  filter: grayscale(100%) brightness(900%) opacity(50%);
+  opacity: 0.2;
+/*filter: grayscale(100%) brightness(900%) opacity(50%)*/
 }
 .chartico.animated-scatter-plot:before {
   background-image: url(/icon/c/chart/animated-scatter-plot.svg);
@@ -1209,6 +1309,18 @@ nav.navbar-default {
 .chartico.raw.candlestick-chart:before {
   background-image: url(/icon/n/chart/candlestick-chart.svg);
 }
+.chartico.thermometer:before {
+  background-image: url(/icon/c/chart/thermometer.svg);
+}
+.chartico.thermometer.text:after {
+  content: 'Thermometer';
+}
+.chartico.thermometer.text.zh:after {
+  content: '溫度計';
+}
+.chartico.raw.thermometer:before {
+  background-image: url(/icon/n/chart/thermometer.svg);
+}
 .chartico.raw:before,
 .encico.raw:before,
 .catico.raw:before,
@@ -1360,6 +1472,18 @@ nav.navbar-default {
 }
 .catico.raw.diverging:before {
   background-image: url(/icon/n/cat/diverging.svg);
+}
+.catico.performance:before {
+  background-image: url(/icon/c/cat/performance.svg);
+}
+.catico.performance.text:after {
+  content: 'Performance';
+}
+.catico.performance.text.zh:after {
+  content: '指標式';
+}
+.catico.raw.performance:before {
+  background-image: url(/icon/n/cat/performance.svg);
 }
 .encico.saturation:before {
   background-image: url(/icon/c/enc/saturation.svg);
@@ -1695,4 +1819,21 @@ svg .label {
   font-size: 0.9em;
   color: #777;
   margin-bottom: 10px;
+}
+.topics {
+  display: -webkit-flex;
+  display: flex;
+  -webkit-flex-wrap: wrap;
+  flex-wrap: wrap;
+  align-items: center;
+  justify-content: center;
+}
+.topic {
+  -webkit-flex: 0 1 120px;
+  flex: 0 1 120px;
+  background: #fe2;
+  margin: 5px;
+  border-radius: 4px;
+  padding: 3px;
+  text-align: center;
 }

@@ -1,0 +1,17 @@
+.topics {
+  display: -webkit-flex;
+  display: flex;
+  -webkit-flex-wrap: wrap;
+  flex-wrap: wrap;
+  align-items: center;
+  justify-content: center;
+}
+.topic {
+  -webkit-flex: 0 1 120px;
+  flex: 0 1 120px;
+  background: #fe2;
+  margin: 5px;
+  border-radius: 4px;
+  padding: 3px;
+  text-align: center;
+}
