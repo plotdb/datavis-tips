@@ -304,7 +304,7 @@ update-file = ->
     ) src
   _build-yaml = (src) ->
     langs = site-config.langs
-    langs = <[zh]> # TODO only do zh to speed up.  remove this afterward
+    langs = <[zh en]> # TODO only do zh to speed up.  remove this afterward
     try
       cfg = js-yaml.safe-load fs.read-file-sync src, \utf8
       cfg.id = name = (cfg.name.en or cfg.name).to-lower-case!.replace(/ /g, '-')
@@ -329,17 +329,19 @@ update-file = ->
             filename: "template.jade"
             basedir: path.join(cwd)
             lang: lang
-            tourl: -> "/v/#it/#lang/"
+            tourl: -> "/#lang/v/#it/"
           } <<< jade-config <<< lang-cfg <<< {_:_i18n} <<< {site: site-config}
         )
-        des = "v/#name/#lang/index.html"
+        des = "#lang/v/#name/index.html"
         mkdir-recurse path.dirname(des)
         fs.write-file-sync des, ret
         console.log "[BUILD] #src --> #des"
+        /*
         if lang == "en" =>
           des = "v/#name/index.html"
           fs.write-file-sync des, ret
           console.log "[BUILD] #src --> #des"
+        */
     catch e
       console.log "[ERROR] #src faield:".red
       console.log e.toString!.grey
