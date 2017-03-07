@@ -17,6 +17,7 @@ doctype html
 - og.section = "Taiwan"
 - og.keyword = "chart,plot,data visualization,plotdb"
 - og.description = description.substring(0,100)
+- var navbar = {}
 mixin markdown(content)
   p!= md(content).toString()
 html(lang="en")
@@ -34,7 +35,7 @@ html(lang="en")
     script(type="text/javascript",src="/lib/plotdb.js")
     script(type="text/javascript",src="/lib/plotd3.js")
     script(type="text/javascript",src="/lib/voronoi.min.js")
-  body
+  body.card
     include navbar.jade
     #root(class=lang)
       .card.panel.panel-default(style="width:800px;margin:auto")

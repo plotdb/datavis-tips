@@ -10,6 +10,8 @@
     border: 5px solid #fff
     border-radius: 50%
     margin: auto
+  &.fff:before
+    background: #fff
 .chartico.no-border, .catico.no-border, .encico.no-border, .dimico.no-border
   &:before
     border: 0
@@ -76,12 +78,15 @@
   width: 100%
   left: 0
 
+/*
 .chartico, .catico, .encico
    &.disabled
      filter: grayscale(100%) brightness(200%) opacity(50%)
+*/
 .chartico, .catico, .encico
    &.raw.disabled
-     filter: grayscale(100%) brightness(900%) opacity(50%)
+     opacity: 0.2
+     /*filter: grayscale(100%) brightness(900%) opacity(50%)*/
 
 for chart in charts
   .chartico.{chart}:before

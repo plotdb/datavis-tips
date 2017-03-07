@@ -19,11 +19,11 @@
       venn-diagram vertical-dumbbell-chart violin-chart voronoi-treemap waffle-chart
       waterfall-chart wordcloud world-globe jigsaw-treemap convex-treemap network
       full-stacked-area-chart alluvial-diagram stacked-radar-chart lollipop-with-pie
-      chernoff-face candlestick-chart
+      chernoff-face candlestick-chart thermometer
     ]>
 
     categories: <[
-      distribution correlation trend change comparison proportion geography temporal hierarchy overview periodic diverging
+      distribution correlation trend change comparison proportion geography temporal hierarchy overview periodic diverging performance
     ]>
 
     encodings: <[
@@ -298,6 +298,9 @@
       "candlestick-chart": do
         zh: "K線圖"
         en: "candlestick-chart"
+      "thermometer": do
+        zh: "溫度計"
+        en: "Thermometer"
       "distribution": do
         zh: "分布"
         en: "distribution"
@@ -445,6 +448,9 @@
       "diverging": do
         zh: "分歧式"
         en: "Diverging"
+      "performance": do
+        zh: "指標式"
+        en: "Performance"
 
   config.banner-config = [{
     margin: 10, background: "\#eee", gridBackground: "none",

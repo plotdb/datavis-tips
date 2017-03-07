@@ -1,0 +1,9 @@
+.footer
+  a(href="http://plotdb.com",target="_blank")
+    span POWERED BY PLOTDB
+    img(src="/img/plotdb-mini-alt.png")
+  .pull-left
+    for lang in site.langs
+      a.label.label-default(href=["/v", key, lang].join("/"))= lang.toUpperCase()
+      span &nbsp;
+

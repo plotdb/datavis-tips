@@ -18,6 +18,12 @@
   border-radius: 50%;
   margin: auto;
 }
+.chartico.fff:before,
+.catico.fff:before,
+.encico.fff:before,
+.dimico.fff:before {
+  background: #fff;
+}
 .chartico.no-border:before,
 .catico.no-border:before,
 .encico.no-border:before,
@@ -122,15 +128,16 @@
   width: 100%;
   left: 0;
 }
-.chartico.disabled,
-.catico.disabled,
-.encico.disabled {
-  filter: grayscale(100%) brightness(200%) opacity(50%);
-}
+/*
+.chartico, .catico, .encico
+   &.disabled
+     filter: grayscale(100%) brightness(200%) opacity(50%)
+*/
 .chartico.raw.disabled,
 .catico.raw.disabled,
 .encico.raw.disabled {
-  filter: grayscale(100%) brightness(900%) opacity(50%);
+  opacity: 0.2;
+/*filter: grayscale(100%) brightness(900%) opacity(50%)*/
 }
 .chartico.animated-scatter-plot:before {
   background-image: url(/icon/c/chart/animated-scatter-plot.svg);
@@ -1176,6 +1183,18 @@
 .chartico.raw.candlestick-chart:before {
   background-image: url(/icon/n/chart/candlestick-chart.svg);
 }
+.chartico.thermometer:before {
+  background-image: url(/icon/c/chart/thermometer.svg);
+}
+.chartico.thermometer.text:after {
+  content: 'Thermometer';
+}
+.chartico.thermometer.text.zh:after {
+  content: '溫度計';
+}
+.chartico.raw.thermometer:before {
+  background-image: url(/icon/n/chart/thermometer.svg);
+}
 .chartico.raw:before,
 .encico.raw:before,
 .catico.raw:before,
@@ -1327,6 +1346,18 @@
 }
 .catico.raw.diverging:before {
   background-image: url(/icon/n/cat/diverging.svg);
+}
+.catico.performance:before {
+  background-image: url(/icon/c/cat/performance.svg);
+}
+.catico.performance.text:after {
+  content: 'Performance';
+}
+.catico.performance.text.zh:after {
+  content: '指標式';
+}
+.catico.raw.performance:before {
+  background-image: url(/icon/n/cat/performance.svg);
 }
 .encico.saturation:before {
   background-image: url(/icon/c/enc/saturation.svg);

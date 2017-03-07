@@ -10,3 +10,13 @@ nav.navbar-default {
   color: #444;
   text-shadow: 0 0 3px #fff;
 }
+nav.navbar-default.invert {
+  border-radius: 0;
+}
+nav.navbar-default.invert .navbar-brand,
+nav.navbar-default.invert .navbar-nav > li > a {
+  color: #fff;
+  text-shadow: none;
+  font-size: 0.85em;
+  font-weight: 200;
+}

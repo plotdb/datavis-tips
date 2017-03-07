@@ -1,0 +1,115 @@
+name: bullet-chart
+
+alias:
+  - bullet graph
+
+plotdb: 975
+
+description:
+  en: N/A
+  zh: |
+    於 2015 年由 [Perceptual Edge](https://www.perceptualedge.com/) 的創辦人 [Stephen Few](https://www.perceptualedge.com/about.php) 提出的一種?[bar-chart]的變型，型式類似於?[thermometer]，用以將數據同時做量化與質化的呈現，並用以取代?[gauge]之類的指標式圖表。
+
+    ?[bar-chart]原先的設計可以很有效率的比較不同數據的大小，但實際在運用?[bar-chart]時，若能對數據有進一步的詮釋，對讀者理解資料的含義會更有幫助。為此，?[bullet-chart]利用長條後方的色塊將數值區分為「劣」、「可」與「優」等質化的範圍，並在前方以線條標示出參考值的位置(比方說，去年的數值)。
+
+    實務上，若並列呈現，長條常會代表不同的單位與數值，因此每個長條都會需要一個自己的軸線。
+
+commonPractice:
+  en: N/A
+  zh: |
+    * 欲呈現進度、表現等指標性數值時，可使用?[bullet-chart]來呈現。
+
+pros:
+  en: N/A
+  zh: |
+    * 除了資料，亦帶給讀者背後的含義。
+    * 相較於儀表板中常見的?[gauge]來說，相當節省顯示空間。
+
+cons:
+  en: N/A
+  zh: |
+    * 並列的資料方向性若不同 ( 比方說，有的是越大越好、有的是越小越好 )，很容易造成讀者混亂。
+
+guideline:
+  en: N/A
+  zh: |
+    * 各個長條有獨立的軸線與標籤。
+    * 方向性不同時，可考慮逆向擺放。( 參考 「[Bullet Graphs for Not-to-Exceed Targets](https://www.perceptualedge.com/blog/?p=217)」)
+
+category:
+  - performance
+
+dimension:
+  - [x-coord, ratio, required]
+
+visualEncoding:
+  - aligned-length
+
+keyword:
+  en: N/A
+  zh:
+    - 比例
+    - 比值
+    - 部份
+
+alternative:
+  en: N/A
+  zh: |
+    * 考慮美觀時，可使用?[gauge]。
+
+variant:
+  - gauge
+
+bannerConfig:
+  [{
+    margin: 10, background: "#eee", gridBackground: "none",
+    padding: 12,
+    palette: {colors: [{hex: "#444"},{hex: "#666"},{hex: "#999"}]},
+    legendShow: false,
+    fill: "rgba(100%,63%,40%,0.7)",
+    fontSize: 11,
+    fontFamily: "arial",
+    gridStrokeWidth: 1,
+    gridDashArray: "1 0",
+    gridStroke: "#ddd",
+    gridFrameStrokeWidth: 0,
+    textFill: "#666",
+    sort: "Descending",
+    xAxisTickSizeInner: 0,
+    xAxisTickSizeOuter: 0,
+    yAxisHandleOverlap: "none",
+    yAxisShowDomain: true,
+    yAxisStroke: "#aaa",
+    labelShow: true
+  },{
+    margin: 10, background: "#eaeff5", gridBackground: "#eaeff5",
+    palette: {colors: [{hex: "#fff"},{hex: "#ffd"},{hex: "#fdf"}]},
+    fill: "rgba(14%,35%,50%,0.8)",
+    padding: 6,
+    fontSize: 13,
+    fontFamily: "tahoma",
+    labelShow: false,
+    gridStrokeWidth: 0,
+    gridDashArray: "1 0",
+    gridStroke: "rgba(0,0,0,0)",
+    gridFrameStrokeWidth: 0,
+    textFill: "#554",
+    sort: "Ascending",
+    xAxisTickSizeInner: 4
+  },{
+    margin: 10, background: "#f9f9f9", gridBackground: "#f9f9f9",
+    palette: {colors: [{hex: "#e96"},{hex: "#ae5"},{hex: "#48d"},{hex: "#999"}]},
+    padding: 2,
+    legendShow: true,
+    fontFamily: "lato",
+    fill: "rgba(25%,25%,25%,0.9)",
+    fontSize: 12,
+    textFill: "#444",
+    sort: "None",
+    xAxisTickSizeInner: 4,
+    yAxisTickSizeOuter: 4,
+    gridDashArray: "2 2",
+    gridStrokeWidth: 1,
+    gridStroke: "#999",
+    xAxisStroke: "#999"
+  }]
