@@ -2,22 +2,24 @@
   text-align: center
   margin-bottom: 10px
   &:before
+    background-size: 25600px 128px
     content: " "
     display: block
     width: 128px
     height: 128px
-    background: #eee
-    border: 5px solid #fff
+    background-color: #eee
+    /*border: 5px solid #fff*/
     border-radius: 50%
     margin: auto
   &.fff:before
-    background: #fff
+    background-color: #fff
 .chartico.no-border, .catico.no-border, .encico.no-border, .dimico.no-border
   &:before
     border: 0
 
 .chartico.xs, .catico.xs, .encico.xs, .dimico.xs
   &:before
+    background-size: 9600px 48px
     width: 48px
     height: 48px
     border-width: 4px
@@ -27,6 +29,7 @@
 
 .chartico.sm, .catico.sm, .encico.sm, .dimico.sm
   &:before
+    background-size: 12800px 64px
     width: 64px
     height: 64px
     border-width: 4px
@@ -36,6 +39,7 @@
 
 .chartico.md, .catico.md, .encico.md, .dimico.md
   &:before
+    background-size: 18000px 90px
     width: 90px
     height: 90px
     border-width: 4px
@@ -45,8 +49,7 @@
 
 .chartico.text, .catico.text, .encico.text, .dimico.text
   &:before
-    background: #fff
-    background-position: center center
+    background-color: #fff
     background-repeat: no-repeat
   margin-right: 10px
   margin-left: 10px
@@ -78,27 +81,48 @@
   width: 100%
   left: 0
 
-/*
-.chartico, .catico, .encico
-   &.disabled
-     filter: grayscale(100%) brightness(200%) opacity(50%)
-*/
+.chartico:before
+  background-image: url(/icon/c-chart.svg)
+.chartico.raw:before
+  background-image: url(/icon/n-chart.svg)
+
+.catico:before
+  background-image: url(/icon/c-cat.svg)
+.catico.raw:before
+  background-image: url(/icon/n-cat.svg)
+
+.encico:before
+  background-image: url(/icon/c-enc.svg)
+.encico.raw:before
+  background-image: url(/icon/n-enc.svg)
+
+.dimico:before
+  background-image: url(/icon/c-dim.svg)
+.dimico.raw:before
+  background-image: url(/icon/n-dim.svg)
+
+.taxico:before
+  background-image: url(/icon/c-tax.svg)
+.taxico.raw:before
+  background-image: url(/icon/n-tax.svg)
+
 .chartico, .catico, .encico
    &.raw.disabled
      opacity: 0.2
-     /*filter: grayscale(100%) brightness(900%) opacity(50%)*/
 
-for chart in charts
+for chart,index in charts
+  .chartico.xs.{chart}:before
+    background-position: index * -48px 0
+  .chartico.sm.{chart}:before
+    background-position: index * -64px 0
+  .chartico.md.{chart}:before
+    background-position: index * -90px 0
   .chartico.{chart}:before
-    background-image: unquote("url(/icon/c/chart/" + chart + ".svg)")
-  .chartico.{chart}.text
-    &:after
-      content: i18n('en',chart)
-  .chartico.{chart}.text.zh
-    &:after
-      content: i18n('zh',chart)
-  .chartico.raw.{chart}:before
-    background-image: unquote("url(/icon/n/chart/" + chart + ".svg)")
+    background-position: index * -128px 0
+  .chartico.{chart}.text:after
+    content: i18n('en',chart)
+  .chartico.{chart}.text.zh:after
+    content: i18n('zh',chart)
 
 .chartico, .encico, .catico, .dimico
   &.raw:before
@@ -107,43 +131,57 @@ for chart in charts
     filter: grayscale(100%) brightness(90%) opacity(100%)
 
 
-for category in categories
+for category,index in categories
+  .catico.xs.{category}:before
+    background-position: index * -48px 0
+  .catico.sm.{category}:before
+    background-position: index * -64px 0
+  .catico.md.{category}:before
+    background-position: index * -90px 0
   .catico.{category}:before
-    background-image: unquote("url(/icon/c/cat/" + category + ".svg)")
-  .catico.{category}.text
-    &:after
-      content: i18n('en',category)
-  .catico.{category}.text.zh
-    &:after
-      content: i18n('zh',category)
-  .catico.raw.{category}:before
-    background-image: unquote("url(/icon/n/cat/" + category + ".svg)")
+    background-position: index * -128px 0
+  .catico.{category}.text:after
+    content: i18n('en',category)
+  .catico.{category}.text.zh:after
+    content: i18n('zh',category)
 
-for encoding in encodings
+for encoding,index in encodings
+  .encico.xs.{encoding}:before
+    background-position: index * -48px 0
+  .encico.sm.{encoding}:before
+    background-position: index * -64px 0
+  .encico.md.{encoding}:before
+    background-position: index * -90px 0
   .encico.{encoding}:before
-    background-image: unquote("url(/icon/c/enc/" + encoding + ".svg)")
-  .encico.{encoding}.text
-    &:after
-      content: i18n('en',encoding)
-  .encico.{encoding}.text.zh
-    &:after
-      content: i18n('zh',encoding)
-  .encico.raw.{encoding}:before
-    background-image: unquote("url(/icon/n/enc/" + encoding + ".svg)")
+    background-position: index * -128px 0
+  .encico.{encoding}.text:after
+    content: i18n('en',encoding)
+  .encico.{encoding}.text.zh:after
+    content: i18n('zh',encoding)
 
-for dimension in dimensions
+for dimension,index in dimensions
+  .dimico.xs.{dimension}:before
+    background-position: index * -48px 0
+  .dimico.sm.{dimension}:before
+    background-position: index * -64px 0
+  .dimico.md.{dimension}:before
+    background-position: index * -90px 0
   .dimico.{dimension}:before
-    background-image: unquote("url(/icon/c/dim/" + dimension + ".svg)")
-  .dimico.{dimension}.text
-    &:after
-      content: i18n('en',dimension)
-  .dimico.{dimension}.text.zh
-    &:after
-      content: i18n('zh',dimension)
+    background-position: index * -128px 0
+  .dimico.{dimension}.text:after
+    content: i18n('en',dimension)
+  .dimico.{dimension}.text.zh:after
+    content: i18n('zh',dimension)
 
-for taxonomy in taxonomies
+for taxonomy,index in taxonomies
   .dimico .taxico.{taxonomy}
-    background-image: unquote("url(/icon/c/tax/" + taxonomy + ".svg)")
+    background-position: index * -48px 0
+  .dimico .taxico.{taxonomy}
+    background-position: index * -64px 0
+  .dimico .taxico.{taxonomy}
+    background-position: index * -90px 0
+  .dimico .taxico.{taxonomy}
+    background-position: index * -128px 0
   .dimico.text .taxico.{taxonomy}:after
     content: i18n('en',taxonomy)
   .dimico.text.zh .taxico.{taxonomy}:after

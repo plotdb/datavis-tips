@@ -15,6 +15,11 @@ now = -> new Date! |> ->
   "[#{pad(it.getMonth! + 1)}/#{pad(it.getDate!)}" +
   " #{pad(it.getHours!)}:#{pad(it.getMinutes!)}:#{pad(it.getSeconds!)}]"
 
+newer = (f1, f2) ->
+  if !fs.exists-sync(f1) => return false
+  if !fs.exists-sync(f2) => return true
+  (fs.stat-sync(f1).mtime - fs.stat-sync(f2).mtime) > 0
+
 _log = console.log
 console.log = (...arg) -> _log.apply null, [now!] ++ arg
 ignore-list = [/^server.ls$/, /^library.jade$/, /^\.[^/]+/, /^node_modules\//,/^assets\//]
@@ -165,12 +170,55 @@ type-table =
 
 watch-path = \.
 
+src-tree = (matcher, morpher) ->
+  ret = {} <<< do
+    down-hash: {}
+    up-hash: {}
+    matcher: -> false
+    morpher: -> it
+    parse: (filename) ->
+      dir = path.dirname(filename)
+      ret = fs.read-file-sync filename .toString!split \\n .map @matcher .filter(->it)
+      if @morpher => ret = ret.map ~> path.join(dir, @morpher(it, dir))
+      else ret = ret.map -> path.join(dir, it)
+      @down-hash[filename] = ret
+      for it in ret => if not (filename in @up-hash.[][it]) => @up-hash.[][it].push filename
+    find-root: (filename) ->
+      work = [filename]
+      ret = []
+      hash = {}
+      while work.length > 0
+        f = work.pop!
+        if f and !hash[f] and (!@up-hash[f] or @up-hash[f].length == 0) =>
+          hash[f] = 1
+          ret.push f
+        else if @up-hash[f] => work ++= @up-hash[f]
+      ret
+  ret <<< {matcher, morpher}
+
+jade-tree = src-tree(
+  (-> if /^ *include (.+)| *extends (.+)/.exec(it) => (that.1 or that.2) else null),
+  ((it, dir) ->
+    if /^\//.exec it =>
+      rpath = dir.split(/src\/jade\/?/)[* - 1]
+      if rpath => it = path.join(("../" * rpath.split(\/).length), it)
+      it
+    it
+  )
+)
+
+styl-tree = src-tree(
+  (-> if /^ *@import ('?)(.+)\1/.exec(it) => that.2 else null ),
+  (-> it.replace(/(.styl)?$/, ".styl"))
+)
+
 mkdir-recurse = (f) ->
   if fs.exists-sync f => return
   parent = path.dirname(f)
   if !fs.exists-sync parent => mkdir-recurse parent
   fs.mkdir-sync f
 
+/*
 styl-tree = do
   down-hash: {}
   up-hash: {}
@@ -188,7 +236,7 @@ styl-tree = do
       if @up-hash.[][f].length == 0 => ret.push f
       else work ++= @up-hash[f]
     ret
-
+*/
 ctype = (name=null) ->
   if useMarkdown and /\.md$/.exec(name) => return \text/html
   ret = /\.([^.]+)$/.exec name
@@ -211,7 +259,7 @@ route-table = {"/sample-cgi": sample-cgi}
 
 server = (req, res) ->
   req.url = req.url - /[?#].*$/
-  file-path = path.resolve cwd, ".#{req.url}"
+  file-path = path.resolve cwd, "static/.#{req.url}"
   if file-path.indexOf(cwd) < 0 =>
     res.writeHead 403, ctype!
     return res.end "#{req.url} forbidden"
@@ -309,6 +357,8 @@ update-file = ->
       cfg = js-yaml.safe-load fs.read-file-sync src, \utf8
       cfg.id = name = (cfg.name.en or cfg.name).to-lower-case!.replace(/ /g, '-')
       for lang in langs =>
+        des = "static/#lang/v/#name/index.html"
+        if newer(des, src) and newer(des, "src/jade/template.jade") => continue
         _i18n = {}
         for k,v of site-config.translation => _i18n[k] = v[lang] or k
         lang-cfg = choose-lang cfg, lang
@@ -323,29 +373,23 @@ update-file = ->
           for i from lang-cfg.banner-config.length til site-config.[]banner-config.length =>
             lang-cfg.banner-config.push site-config.[]banner-config[i]
 
-        template = fs.read-file-sync \template.jade .toString!
+        template = fs.read-file-sync \src\/jade\/template.jade .toString!
         ret = jade.render(
           template, {
-            filename: "template.jade"
-            basedir: path.join(cwd)
+            filename: path.join(cwd, "src", "jade", "template.jade")
+            basedir: path.join(cwd,"src","jade/")
             lang: lang
-            tourl: -> "/#lang/v/#it/"
+            tourl: -> "/static/#lang/v/#it/"
           } <<< jade-config <<< lang-cfg <<< {_:_i18n} <<< {site: site-config}
         )
-        des = "#lang/v/#name/index.html"
         mkdir-recurse path.dirname(des)
         fs.write-file-sync des, ret
         console.log "[BUILD] #src --> #des"
-        /*
-        if lang == "en" =>
-          des = "v/#name/index.html"
-          fs.write-file-sync des, ret
-          console.log "[BUILD] #src --> #des"
-        */
+
     catch e
       console.log "[ERROR] #src faield:".red
       console.log e.toString!.grey
-  if type == \jade and /template.jade/.exec src =>
+  if type == \jade and /src\/jade\/template.jade$/.exec src =>
     files = fs.readdir-sync \charts/yaml/ .filter(->/.yaml$/.exec(it)).map -> "charts/yaml/#it"
     files.map -> build-yaml it
     return
@@ -379,6 +423,53 @@ update-file = ->
         console.log "[BUILD] #src failed: "
         console.log e.message
       return
+
+
+  if type == \styl =>
+    try
+      styl-tree.parse src
+      srcs = styl-tree.find-root src
+    catch
+      console.log "[BUILD] #src failed: "
+      console.log e.message
+    logs = []
+    _src = src
+    if srcs => for src in srcs
+      if !/src\/styl/.exec(src) => continue
+      try
+        des = src.replace(/src\/styl/, "static/css").replace(/\.styl$/, ".css")
+        if newer(des, _src) => continue
+        stylus fs.read-file-sync(src)toString!
+          .set \filename, src
+          # since stylus seems not provide access into nested object..
+          .use (s) ->
+            for k,v of site-config =>
+              if Array.isArray(v) => v.sort!
+              s.define k, v
+          .define 'i18n', (lang,text) -> 
+            return new stylus.nodes.String(site-config.translation[text.val][lang.val])
+          .define 'index', (a,b) ->
+            a = (a.string or a.val).split(' ')
+            return new stylus.nodes.Unit(a.indexOf b.val)
+          .render (e, css) ~>
+            if e =>
+              logs ++= [
+                "[BUILD]   #src failed: "
+                "  >>> #{e.name}"
+                "  >>> #{e.message}"
+              ]
+            else =>
+              mkdir-recurse path.dirname(des)
+              fs.write-file-sync des, css
+              logs.push "[BUILD]   #src --> #des"
+      catch
+        logs.push "[BUILD]   #src failed: "
+        logs.push e.message
+      if logs.length =>
+        logs = ["[BUILD] recursive from #src:"] ++ logs
+        console.log logs.join(\\n)
+
+  /*
   if type == \styl =>
     if /(basic|vars)\.styl/.exec it => return
     try
@@ -414,26 +505,45 @@ update-file = ->
       catch
         console.log "[BUILD]   #src failed: "
         console.log e.message
+  */
 
-  if type == \jade => 
-    des = src.replace /\.jade$/, ".html"
-    try 
-      desdir = path.dirname(des)
-      if !fs.exists-sync(desdir) or !fs.stat-sync(desdir).is-directory! => mkdir-recurse desdir
-      fs.write-file-sync des,(
-        jade.render(
-          (fs.read-file-sync src .toString!),
-          {
-            filename: src
-            basedir: path.join(cwd)
-          } <<< jade-config <<< {site: site-config}
-        )
-      )
-      console.log "[BUILD] #src --> #des"
+  if type == \jade =>
+    if !/src\/jade/.exec(src) => return
+    if /^\/\/- module ?/.exec(fs.read-file-sync src .toString!) => return
+    lang = /src\/jade\/(..)\//.exec src
+    lang = if lang => lang = lang.1 else \en
+    try
+      if type == \jade => jade-tree.parse src
+      srcs = jade-tree.find-root src
     catch
       console.log "[BUILD] #src failed: "
       console.log e.message
-    return 
+    _src = src
+    if srcs.indexOf(_src) < 0 and type == \jade => srcs ++= _src
+    if type == \other => srcs = srcs.filter(->it != _src)
+    logs = []
+    if srcs => for src in srcs
+      if !/src\/jade/.exec(src) => continue
+      try
+        des = src.replace(/src\/jade/, "static").replace(/\.jade/, ".html")
+        if newer(des, _src) => continue
+        desdir = path.dirname(des)
+        if !fs.exists-sync(desdir) or !fs.stat-sync(desdir).is-directory! => mkdir-recurse desdir
+        try
+          fs.write-file-sync(des, jade.render(
+            (fs.read-file-sync src .toString!),
+            {filename: src, basedir: path.join(cwd,\src/jade/), lang: lang} <<< jade-config <<< {site: site-config}
+          ))
+          logs.push "[BUILD]   #src --> #des"
+        catch
+          logs.push "[BUILD]   #src failed: "
+          logs.push e.message
+      catch
+        logs.push "[BUILD]   #src failed: "
+        logs.push e.message
+    if logs.length =>
+      logs = ["[BUILD] recursive from #_src:"] ++ logs
+      console.log logs.join(\\n)
 
 watcher = chokidar.watch watch-path, ignored: ignore-func, persistent: true
   .on \add, update-file

@@ -1,0 +1,37 @@
+doctype html
+- var use = { cdn: false, og: true, favicon: true }
+- var lib = { jquery: true, d3js: true, angular: true, bootstrap: true, fontawesome: true }
+- var assets = "/assets"
+- var favicon = "/img/favicon.png"
+- var title = "Datavis.tips / Data Visualization Reference"
+- var og = {}
+- var body = {}
+- og.title = title
+- og.twitter = {type: "summary_large_image", site: "@plotdb", creator: "@plotdb"}
+- og.domain = "datavis.tips"
+- og.url = "http://datavis.tips/"
+- og.thumbnail = {width: 1200, height: 630, type: "image/jpg"}
+- og.thumbnail.url = "http://datavis.tips/img/thumbnail.jpg"
+- og.author = "plotdb"
+- og.section = "Taiwan"
+- og.keyword = "data visualization,chart,storytelling"
+- og.description = "Data Visualization / Chart / Storytelling Guide and Reference"
+- var navbar = {}
+block vars
+html(lang="en")
+  head(prefix="og: http://ogp.me/ns#")
+    meta(charset="utf-8")
+    meta(name='viewport', content='width=device-width, initial-scale=1.0')
+    title= title
+    include /library.jade
+    link(rel="stylesheet",type="text/css",href="/assets/plotdb/0.1.0/plotdb.css")
+    link(rel="stylesheet",type="text/css",href="/css/dev.css")
+    link(rel="stylesheet",type="text/css",href="/css/index.css")
+    link(href="https://fonts.googleapis.com/earlyaccess/notosanstc.css",rel="stylesheet")
+    script(type="text/javascript",src="/assets/smooth-scroll/10.2.1/smooth-scroll.min.js")
+    script(type="text/javascript",src="/assets/plotdb/0.1.0/plotdb.js")
+    script(type="text/javascript",src="/assets/plotd3/0.1.0/plotd3.js")
+    block head
+  body(class=body.className)
+    block body
+

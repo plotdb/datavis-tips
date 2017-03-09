@@ -1,0 +1,14 @@
+//- module
+- if(!navbar) navbar = {}
+nav.navbar.navbar-default(class=navbar.className)
+  .container-fluid
+    if !navbar.nobrand
+      .navbar-head
+        a.navbar-brand(href="/" + lang + "/") Datavis.tips
+    ul.nav.navbar-nav
+      if !navbar.nohome
+        li: a(href="/" + lang + "/") HOME
+      li: a(href="/" + lang + "/about/") ABOUT
+      li: a(href="/" + lang + "/suggest/") SUGGEST
+    ul.nav.navbar-nav.navbar-right
+      li: a(href="https://plotdb.com/",target="_blank") #[small.grayed POWERED BY] PLOTDB

@@ -1,0 +1,57 @@
+extends /base.jade
+block vars
+  - var navbar = {}
+  - navbar.nobrand = true
+  - navbar.nohome = false
+block head
+block body
+  #about(style="background:url(/img/bubble.svg) center -50px no-repeat;color:#000;background-size:42%;height:250px")
+    include /navbar.jade
+    svg(style="height:0")
+      filter#outline(x="-.5",y="-.5",width="2",height="2")
+        feMorphology(operator="dilate",radius="0.9",in="SourceGraphic",result="body")
+        feGaussianBlur(stdDeviation="4",result="blur")
+        feColorMatrix(type="matrix",values="0 0 0 0 1  0 0 0 0 1  0 0 0 0 1  0 0 0 50 -5",result="color")
+        feMerge
+          feMergeNode(in="color")
+          feMergeNode(in="SourceGraphic")
+    .text-center
+      h1(style="font-weight:100;font-size:4em;text-shadow:0 0 10px rgba(255,255,255,1);filter:url(#outline);color:#444") Datavis.tips
+      p(style="color:#000;font-weight:300;background:rgba(255,255,255,0.4);padding:2px;border-top:1px solid rgba(0,0,0,0.3);max-width:150px;margin:auto") 關於此網站
+
+  #root(style="margin:0;")
+    .section
+      h3 資料視覺化的方法與秘訣
+      p 資料視覺化是個很強大的技巧，然而要做得好，需要長時間的學習與練習。此外，學術派與設計派的紛爭讓資料視覺化本身成為一個矛盾的概念，一方面許多人認為華而取巧是無用的功夫，另一派人則認為學術理論不切實際。
+
+      p 這個網站的初衷在於提供廣大的中文社群一個學習資料視覺化的參考與入門指引，因此我們陸續收錄了各種圖表的設計理念，並持續規劃其它與視覺化相關的章節，預計未來會包括以下議題：
+      br
+
+      .topics
+        .topic 資料截取
+        .topic 資料梳理
+        .topic 資料分析
+        .topic 資料分類
+        .topic 視覺元素
+        .topic 圖表運用
+        .topic 互動設計
+        .topic 敘事手法
+        .topic 顏色運用
+        .topic 地圖製作
+        .topic 程式設計
+        .topic 工具運用
+
+      br
+      br
+      p 除了內容，Datavis.tips 也與我們提供的線上視覺化服務 #[a(href="https://plotdb.com/",target="_blank") PlotDB] 連動，讓讀者可以即時在閱讀內容後，直接在 #[a(href="https://plotdb.com/",target="_blank") PlotDB] 上嘗試相關視覺化。我們期許這個網站不光只是一個提供資料視覺化的完整資源，也能夠提升整個資料視覺化社群的技術力與加深視覺化於各個領域的深入運用。
+      p 若您想對我們有進一步的了解，不妨也到我們的臉書專頁 「#[a(href="https://facebook.com/data.visualize",target="_blank") 資料視覺化]」、「#[a(href="https://facebook.com/plotdb",target="_blank") PlotDB]」，或者中文的視覺化教學網站「#[a(href="http://infographics.tw",target="_blank") infographics.tw]」拜訪一下，相信一定會給您帶來一些收獲與啟發。
+
+      br
+      hr
+      br
+      div(style="float:left;background:url(/img/author.jpg) center center no-repeat;width:120px;height:120px;background-size:130px;margin-right:20px;margin-top:9px;border-radius:5px")
+      h3 關於作者
+      p PlotDB 創辦人 #[a(href="https://facebook.com/zbryikt",target="_blank") 吳泰輝 (Kirby Wu)] 於 2012 年共同發起 #[a(href="http://g0v.tw",target="_blank") 台灣零時政府] ，從此開始關注新媒體改革等相關專案，並與友人共同籌辦 #[a(href="http://hackshackers.taipei",target="_blank") Hacks/Hackers Taipei] 與 #[a(href="http://dbootcamp.taipei",target="_blank") 資料新聞實戰營 ( dBootcamp Taipei )]，亦受邀至文化、政大、輔大與世新等大學之新聞傳播課程講授資料視覺化與資料新聞。以#[a(href="https://twreporter.org",target="_blank") 報導者] ft. #[a(href="http://0media.tw",target="_blank") 零傳媒]專案「#[a(href="http://0media.tw/p/ergame",target="_blank") 急診人生]」新聞遊戲獲選入圍第15屆卓越新聞獎。
+    br
+    hr
+    include /footer.jade

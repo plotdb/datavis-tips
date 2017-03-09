@@ -1,0 +1,12 @@
+extends base.jade
+block vars
+block head
+block body
+  script.
+    var supportLangs = !{JSON.stringify(site.langs)};
+    var currentLang = navigator.language || navigator.userLanguage || navigator.languages;
+    for(var i=0;i<supportLangs.length;i++) {
+      if(currentLang.indexOf(supportLangs[i])>=0) {
+        window.location.href = "/" + supportLangs[i] + "/";
+      }
+    }

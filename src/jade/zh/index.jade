@@ -1,0 +1,125 @@
+extends /base.jade
+block vars
+  - navbar.nobrand = true
+  - navbar.nohome = true
+  - navbar.className = "invert"
+block head
+block body
+  #landing
+    include /navbar.jade
+    .inner
+      br
+      h1 Datavis.tips
+      //-p(style="font-weight:100;display:inline-block;border-top:1px solid rgba(255,255,255,0.2);padding-top:5px;") Quick Reference of Data Visualization Methodology
+      p 資料視覺化的方法與祕訣
+      //-
+        .chartico.sm.bar-chart.no-border
+        .catico.sm.comparison.no-border
+        .encico.sm.area.no-border
+        br
+        br
+        br
+  #root(style="margin:0;")
+    //-
+      .text-center: img(src="/img/logo-text-zh.png")
+      .text-center(style="width: 400px;margin:auto")
+        .input-group
+          input.form-control(placeholder="例如：圓餅、面積、或人口")
+          .input-group-btn
+            .btn.btn-default #[i.fa.fa-search] 用找的
+    .headline.menu
+      .inner
+        .row.text-center
+          .col-sm-offset-1.col-sm-2
+            h4: a(href="#method",data-scroll) 視覺化手法
+          .col-sm-2
+            h4: a(href="#category",data-scroll) 概念分類
+          .col-sm-2
+            h4: a(href="#encoding",data-scroll) 視覺元素
+          .col-sm-2
+            h4: a(href="#taxonomy",data-scroll) 資料分類
+          .col-sm-2
+            h4: a(href="#storytelling",data-scroll) 敘事手法
+
+    br
+    #method.anchor
+    .headline
+      .media
+        .media-left
+          a: .chartico.md.bar-chart.fff
+        .media-body.text-left
+          h3 視覺化手法
+          span 視覺元素的組成與編排，前人智慧的結晶 - 視覺呈現手法與他們的使用方式。
+    .section
+      .iconlist
+        each item in site.charts
+          if exists(item)
+            a.icon(href="/zh/v/" + item)
+              .chartico.text.xs.raw.no-border.zh(
+              data-toggle="tooltip",data-placement="top",title=toName(item,"zh"),
+              class=[item.toLowerCase().replace(/ /g,"-"),lang].join(" "))
+        each item in site.charts
+          if !exists(item)
+            a.icon
+              .chartico.xs.raw.no-border.zh(
+              data-toggle="tooltip",data-placement="top",title="coming soon"
+              class=[item.toLowerCase().replace(/ /g,"-"),lang,"disabled"].join(" "))
+      .sep.gap.lg
+    #category.anchor
+    .headline
+      .media
+        .media-left: a: .catico.md.comparison.fff
+        .media-body.text-left
+          h3 概念分類
+          span 從功能面來思考，想要表現的概念、想要呈現的資料是什麼？就用敘事方向來挑選吧。
+    .section
+      .iconlist
+        each item in site.categories
+          a.icon
+            .catico.text.xs.raw.no-border.zh(
+            data-toggle="tooltip",data-placement="top",title="coming soon",
+            class=[item.toLowerCase().replace(/ /g,"-"),lang,"disabled"].join(" "))
+        a.icon: .catico.raw.xs.no-border.zh
+      .sep.gap.lg
+    #encoding.anchor
+    .headline
+      .media
+        .media-left
+          a: .encico.md.area.fff
+        .media-body.text-left
+          h3 視覺元素
+          span 不同元素也有不同的效果，而不同的效果影響了視覺化手法的效果。從元素下手，一開始就確認有我們要的效果！
+    .section
+      .iconlist
+        each item in site.encodings
+          a.icon
+            .encico.text.xs.raw.no-border.zh(
+            data-toggle="tooltip",data-placement="top",title="coming soon",
+            class=[item.toLowerCase().replace(/ /g,"-"),lang,"disabled"].join(" "))
+  br
+  br
+  br
+  //-
+    .headline
+      .media
+        .media-left: a: .encico.md.area.fff
+        .media-body
+          h3 敘事手法
+          span 用不同的方法講不同的故事。 
+    .section
+      ul
+        li Scrolltelling
+        li Parallex Scrolling
+        li Story Map
+        li Diversive Storyline
+        li Examination
+
+  .sep.gap
+  include /footer.jade
+  script(type="text/javascript")= "var chartid=" + plotdb + ";"
+  script(type="text/javascript").
+    $(document).ready(function() {
+      $('[data-toggle="tooltip"]').tooltip();
+      smoothScroll.init();
+    });
+
