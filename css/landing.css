@@ -54,6 +54,9 @@
   flex-wrap: wrap;
   align-items: center;
 }
+.iconlist a.icon {
+  text-decoration: none;
+}
 .iconlist .icon {
   -webkit-flex: 0 1 100px;
   flex: 0 1 100px;

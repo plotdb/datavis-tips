@@ -40,7 +40,7 @@
   width: 128px;
   height: 128px;
   background: #eee;
-  border: 5px solid #fff;
+/*border: 5px solid #fff*/
   border-radius: 50%;
   margin: -64px 0 0 20px;
 }
@@ -140,8 +140,8 @@ label small {
 }
 .footer {
   width: 800px;
-  margin: 0 auto 10px;
-  padding-right: 5px;
+  margin: 0 auto;
+  padding: 0 5px 10px;
   text-align: right;
 }
 .footer .label {
