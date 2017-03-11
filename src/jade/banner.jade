@@ -1,0 +1,13 @@
+#banner(style="background:url(/img/bubble.svg) center -50px no-repeat;color:#000;background-size:42%;height:250px")
+  include /navbar.jade
+  svg(style="height:0")
+    filter#outline(x="-.5",y="-.5",width="2",height="2")
+      feMorphology(operator="dilate",radius="0.9",in="SourceGraphic",result="body")
+      feGaussianBlur(stdDeviation="4",result="blur")
+      feColorMatrix(type="matrix",values="0 0 0 0 1  0 0 0 0 1  0 0 0 0 1  0 0 0 50 -5",result="color")
+      feMerge
+        feMergeNode(in="color")
+        feMergeNode(in="SourceGraphic")
+  .text-center
+    h1(style="font-weight:100;font-size:4em;text-shadow:0 0 10px rgba(255,255,255,1);filter:url(#outline);color:#444") Datavis.tips
+    p(style="color:#000;font-weight:300;background:rgba(255,255,255,0.4);padding:2px;border-top:1px solid rgba(0,0,0,0.3);max-width:150px;margin:auto")= banner.subtitle
