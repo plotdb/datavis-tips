@@ -56,8 +56,8 @@ alternative:
     * 有牽扯到週期性的概念時，使用?[radar-chart]或?[stacked-radar-chart]。
 
 dimension:
-  - [x coord, ratio, required]
-  - [y coord, nominal, required]
+  - [x coord, ordinal, required]
+  - [y coord, ratio, required]
 
 visualEncoding:
   - length

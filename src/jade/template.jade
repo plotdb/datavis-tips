@@ -143,7 +143,7 @@ block body
         img(src="/img/plotdb-mini-alt.png")
       .pull-left
         for lang in site.langs
-          a.label.label-default(href=["/v", key, lang].join("/"))= lang.toUpperCase()
+          a.label.label-default(href="/" + [lang, "v", key].join("/"))= lang.toUpperCase()
           span &nbsp;
   script(type="text/javascript")= "var chartid=" + plotdb + ";"
   if bannerConfig
@@ -172,10 +172,16 @@ block body
       curChart.bind();
       curChart.render();
     });
-    setInterval(function() {
-      curChart.data(curChart._.chart.sample);
-      curChart.parse();
-      curChart.resize();
-      curChart.bind();
-      curChart.render();
-    }, 2000);
+
+    var start = 0;
+    requestAnimationFrame(function loop(time) {
+      if(curChart && time - start > 1000) {
+        curChart.data(curChart._.chart.sample);
+        curChart.parse();
+        curChart.resize();
+        curChart.bind();
+        curChart.render();
+        start = time;
+      }
+      requestAnimationFrame(loop);
+    });

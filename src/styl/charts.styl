@@ -17,7 +17,14 @@
   &:before
     border: 0
 
-.chartico.xs, .catico.xs, .encico.xs, .dimico.xs
+.taxico:before
+  background-size: 25600px 128px
+  content: " "
+  display: block
+  width: 128px
+  height: 128px
+
+.chartico.xs, .catico.xs, .encico.xs, .dimico.xs, .dimico.xs .taxico
   &:before
     background-size: 9600px 48px
     width: 48px
@@ -27,7 +34,7 @@
   margin-right: 5px
   display: inline-block
 
-.chartico.sm, .catico.sm, .encico.sm, .dimico.sm
+.chartico.sm, .catico.sm, .encico.sm, .dimico.sm, .dimico.sm .taxico
   &:before
     background-size: 12800px 64px
     width: 64px
@@ -37,7 +44,7 @@
   margin-right: 5px
   display: inline-block
 
-.chartico.md, .catico.md, .encico.md, .dimico.md
+.chartico.md, .catico.md, .encico.md, .dimico.md, .dimico.md .taxico
   &:before
     background-size: 18000px 90px
     width: 90px
@@ -46,6 +53,8 @@
   margin-left: 5px
   margin-right: 5px
   display: inline-block
+.dimico.md .taxico
+  margin: 0
 
 .chartico.text, .catico.text, .encico.text, .dimico.text
   &:before
@@ -174,13 +183,13 @@ for dimension,index in dimensions
     content: i18n('zh',dimension)
 
 for taxonomy,index in taxonomies
-  .dimico .taxico.{taxonomy}
+  .dimico.xs .taxico.{taxonomy}:before
     background-position: index * -48px 0
-  .dimico .taxico.{taxonomy}
+  .dimico.sm .taxico.{taxonomy}:before
     background-position: index * -64px 0
-  .dimico .taxico.{taxonomy}
+  .dimico.md .taxico.{taxonomy}:before
     background-position: index * -90px 0
-  .dimico .taxico.{taxonomy}
+  .dimico .taxico.{taxonomy}:before
     background-position: index * -128px 0
   .dimico.text .taxico.{taxonomy}:after
     content: i18n('en',taxonomy)

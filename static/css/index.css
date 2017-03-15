@@ -55,15 +55,18 @@ nav.navbar-default {
   color: #444;
   text-shadow: 0 0 3px #fff;
 }
-nav.navbar-default.invert {
+nav.navbar-default {
   border-radius: 0;
+}
+nav.navbar-default .navbar-brand,
+nav.navbar-default .navbar-nav > li > a {
+  text-shadow: none;
+  font-size: 0.85em;
+  font-weight: 200;
 }
 nav.navbar-default.invert .navbar-brand,
 nav.navbar-default.invert .navbar-nav > li > a {
   color: #fff;
-  text-shadow: none;
-  font-size: 0.85em;
-  font-weight: 200;
 }
 #landing {
   background: url("/img/bk.png") center bottom no-repeat rgba(0,0,0,0.8);
@@ -166,10 +169,18 @@ nav.navbar-default.invert .navbar-nav > li > a {
 .dimico.no-border:before {
   border: 0;
 }
+.taxico:before {
+  background-size: 25600px 128px;
+  content: " ";
+  display: block;
+  width: 128px;
+  height: 128px;
+}
 .chartico.xs,
 .catico.xs,
 .encico.xs,
-.dimico.xs {
+.dimico.xs,
+.dimico.xs .taxico {
   margin-left: 5px;
   margin-right: 5px;
   display: inline-block;
@@ -177,7 +188,8 @@ nav.navbar-default.invert .navbar-nav > li > a {
 .chartico.xs:before,
 .catico.xs:before,
 .encico.xs:before,
-.dimico.xs:before {
+.dimico.xs:before,
+.dimico.xs .taxico:before {
   background-size: 9600px 48px;
   width: 48px;
   height: 48px;
@@ -186,7 +198,8 @@ nav.navbar-default.invert .navbar-nav > li > a {
 .chartico.sm,
 .catico.sm,
 .encico.sm,
-.dimico.sm {
+.dimico.sm,
+.dimico.sm .taxico {
   margin-left: 5px;
   margin-right: 5px;
   display: inline-block;
@@ -194,7 +207,8 @@ nav.navbar-default.invert .navbar-nav > li > a {
 .chartico.sm:before,
 .catico.sm:before,
 .encico.sm:before,
-.dimico.sm:before {
+.dimico.sm:before,
+.dimico.sm .taxico:before {
   background-size: 12800px 64px;
   width: 64px;
   height: 64px;
@@ -203,7 +217,8 @@ nav.navbar-default.invert .navbar-nav > li > a {
 .chartico.md,
 .catico.md,
 .encico.md,
-.dimico.md {
+.dimico.md,
+.dimico.md .taxico {
   margin-left: 5px;
   margin-right: 5px;
   display: inline-block;
@@ -211,11 +226,15 @@ nav.navbar-default.invert .navbar-nav > li > a {
 .chartico.md:before,
 .catico.md:before,
 .encico.md:before,
-.dimico.md:before {
+.dimico.md:before,
+.dimico.md .taxico:before {
   background-size: 18000px 90px;
   width: 90px;
   height: 90px;
   border-width: 4px;
+}
+.dimico.md .taxico {
+  margin: 0;
 }
 .chartico.text,
 .catico.text,
@@ -2469,16 +2488,16 @@ nav.navbar-default.invert .navbar-nav > li > a {
 .dimico.y-coord.text.zh:after {
   content: 'Y 軸';
 }
-.dimico .taxico.any {
+.dimico.xs .taxico.any:before {
   background-position: 0px 0;
 }
-.dimico .taxico.any {
+.dimico.sm .taxico.any:before {
   background-position: 0px 0;
 }
-.dimico .taxico.any {
+.dimico.md .taxico.any:before {
   background-position: 0px 0;
 }
-.dimico .taxico.any {
+.dimico .taxico.any:before {
   background-position: 0px 0;
 }
 .dimico.text .taxico.any:after {
@@ -2487,16 +2506,16 @@ nav.navbar-default.invert .navbar-nav > li > a {
 .dimico.text.zh .taxico.any:after {
   content: '任意資料';
 }
-.dimico .taxico.categorical {
+.dimico.xs .taxico.categorical:before {
   background-position: -48px 0;
 }
-.dimico .taxico.categorical {
+.dimico.sm .taxico.categorical:before {
   background-position: -64px 0;
 }
-.dimico .taxico.categorical {
+.dimico.md .taxico.categorical:before {
   background-position: -90px 0;
 }
-.dimico .taxico.categorical {
+.dimico .taxico.categorical:before {
   background-position: -128px 0;
 }
 .dimico.text .taxico.categorical:after {
@@ -2505,16 +2524,16 @@ nav.navbar-default.invert .navbar-nav > li > a {
 .dimico.text.zh .taxico.categorical:after {
   content: '類別';
 }
-.dimico .taxico.interval {
+.dimico.xs .taxico.interval:before {
   background-position: -96px 0;
 }
-.dimico .taxico.interval {
+.dimico.sm .taxico.interval:before {
   background-position: -128px 0;
 }
-.dimico .taxico.interval {
+.dimico.md .taxico.interval:before {
   background-position: -180px 0;
 }
-.dimico .taxico.interval {
+.dimico .taxico.interval:before {
   background-position: -256px 0;
 }
 .dimico.text .taxico.interval:after {
@@ -2523,16 +2542,16 @@ nav.navbar-default.invert .navbar-nav > li > a {
 .dimico.text.zh .taxico.interval:after {
   content: '相對數值';
 }
-.dimico .taxico.nominal {
+.dimico.xs .taxico.nominal:before {
   background-position: -144px 0;
 }
-.dimico .taxico.nominal {
+.dimico.sm .taxico.nominal:before {
   background-position: -192px 0;
 }
-.dimico .taxico.nominal {
+.dimico.md .taxico.nominal:before {
   background-position: -270px 0;
 }
-.dimico .taxico.nominal {
+.dimico .taxico.nominal:before {
   background-position: -384px 0;
 }
 .dimico.text .taxico.nominal:after {
@@ -2541,16 +2560,16 @@ nav.navbar-default.invert .navbar-nav > li > a {
 .dimico.text.zh .taxico.nominal:after {
   content: '文字';
 }
-.dimico .taxico.ordinal {
+.dimico.xs .taxico.ordinal:before {
   background-position: -192px 0;
 }
-.dimico .taxico.ordinal {
+.dimico.sm .taxico.ordinal:before {
   background-position: -256px 0;
 }
-.dimico .taxico.ordinal {
+.dimico.md .taxico.ordinal:before {
   background-position: -360px 0;
 }
-.dimico .taxico.ordinal {
+.dimico .taxico.ordinal:before {
   background-position: -512px 0;
 }
 .dimico.text .taxico.ordinal:after {
@@ -2559,16 +2578,16 @@ nav.navbar-default.invert .navbar-nav > li > a {
 .dimico.text.zh .taxico.ordinal:after {
   content: '序值';
 }
-.dimico .taxico.ratio {
+.dimico.xs .taxico.ratio:before {
   background-position: -240px 0;
 }
-.dimico .taxico.ratio {
+.dimico.sm .taxico.ratio:before {
   background-position: -320px 0;
 }
-.dimico .taxico.ratio {
+.dimico.md .taxico.ratio:before {
   background-position: -450px 0;
 }
-.dimico .taxico.ratio {
+.dimico .taxico.ratio:before {
   background-position: -640px 0;
 }
 .dimico.text .taxico.ratio:after {
@@ -2596,7 +2615,7 @@ svg .label {
   position: absolute;
   top: 0;
   right: 0;
-  width: 80px;
+  width: 90px;
 }
 .card .panel-body {
   padding: 0;
