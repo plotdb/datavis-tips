@@ -19,7 +19,7 @@
       venn-diagram vertical-dumbbell-chart violin-chart voronoi-treemap waffle-chart
       waterfall-chart wordcloud world-globe jigsaw-treemap convex-treemap network
       full-stacked-area-chart alluvial-diagram stacked-radar-chart lollipop-with-pie
-      chernoff-face candlestick-chart thermometer
+      chernoff-face candlestick-chart thermometer beeswarm-plot
     ]>
 
     categories: <[
@@ -301,6 +301,9 @@
       "thermometer": do
         zh: "溫度計"
         en: "Thermometer"
+      "beeswarm-plot": do
+        zh: "蜂群散布圖"
+        en: "Beeswarm Plot"
       "distribution": do
         zh: "分布"
         en: "distribution"
