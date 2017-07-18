@@ -5,6 +5,6 @@
     img(src="/img/plotdb-mini-alt.png")
   .pull-left
     for lang in site.langs
-      a.label.label-default(href="/" + [key, lang].filter(function(d,i) { return d; }).join("/"))= lang.toUpperCase()
+      a.label.label-default(href="/" + [lang, relpath].filter(function(d,i) { return d; }).join("/"))= lang.toUpperCase()
       span &nbsp;
 

@@ -10,7 +10,7 @@ category:
 
 description:
   en: |
-    Bar chart uses length of colored rectangle in the horizontal direction to visualize data, which is usually used to compare one dimensional data. Generally speaking bars in bar chart are aligned to the left and sorted descendingly from top to bottom; it can also align to bottom and sorted from left to right, in this case it is called Column Chart.
+    Bar chart uses of colored bar's length in horizontal direction to visualize data. It's usually used for comparing one dimensional data. Generally speaking, bars in bar chart are aligned to the left and sorted descendingly from top to bottom; it can also align to bottom and sorted from left to right, in this case it is called Column Chart.
 
     Best used with small dataset to precisely compare data along the axis, yet comparing to line chart there is no connection between bars so data can be sorted to give readers better information about the ranks.
 

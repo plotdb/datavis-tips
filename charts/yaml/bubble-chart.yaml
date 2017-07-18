@@ -85,3 +85,23 @@ cons:
   zh: |
     * 較不易看出資料間的正確比例。
     * 不適合有序性的資料。
+
+bannerConfig:
+  - sort: "color"
+    aggregateShow: false
+    aggregateThreshold: 0
+    bubblePadding: 3
+    bubbleStrokeWidth: 1
+    labelShowValue: false
+  - sort: "color"
+    aggregateShow: false
+    aggregateThreshold: 50
+    bubblePadding: 0
+    bubbleStrokeWidth: 0
+    labelShowValue: true
+  - sort: "value"
+    aggregateShow: true
+    aggregateThreshold: 15
+    bubblePadding: 6
+    bubbleStrokeWidth: 2
+    labelShowValue: false

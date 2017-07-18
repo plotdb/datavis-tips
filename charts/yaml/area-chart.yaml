@@ -3,14 +3,20 @@ name: area-chart
 alias:
   - area graph
 
-plotdb: 2091
+plotdb: 2089
 
 category:
   - comparison
   - trend
 
 description:
-  en: N/A
+  en: |
+    Invented by data visualization pioneer [William Playfair](https://en.wikipedia.org/wiki/William_Playfair), ?[area-chart] a variation of line chart by filling area between axis and line, and thus called ?[area-chart]. ?[area-chart] can be used to visualize multiple set of data by stacking them one by one; but there is also usages like ?[layered-area-chart] with overlapping, translucent areas.
+
+    Sometimes area chart is filled between two lines with two different colors to determine which one is above the other. In this case we can also highlight the difference and direction between these two line; in this case, the variation is also called ?[difference-chart]. The most famous use case of this variation is the 'Exports and Imports to and from DENMARK and NORWAY from 1700 to 1890' ?[difference-chart] made by William Playfair.
+
+    The 'fill' property of ?[area-chart] makes it more like a ?[bar-chart] than a ?[line-chart], and thus it can be used to visualize a subtotal of values with stacked areas. On the other hand, multiple lines in a ?[line-chart] tend to be treated independently, so it is hard for a ?[line-chart] to achieve similar effect of a ?[stacked-area-chart].
+
   zh: |
     最早由統計圖表之父 [William Playfair](https://en.wikipedia.org/wiki/William_Playfair) 開始使用、基於?[line-chart]的一種圖表，將折線至座標軸的範圍以色塊填滿，形成一整塊區域，故稱?[area-chart]。在同時呈現多組數據的時候，通常會將面積堆疊起來 ( ?[stacked-area-chart] )，以避免互相覆蓋以至於無法看到資料與走勢，但也有利用透明效果製作?[layered-area-chart]的例子。
 
@@ -21,37 +27,47 @@ description:
     雖說有不一樣的名字，?[area-chart]通常也泛指將折線下方面積填色的各種圖表，例如?[stacked-area-chart]、?[full-stacked-area-chart]或者?[layered-area-chart]。
 
 commonPractice:
-  en: N/A
+  en: |
+    * use ?[stacked-area-chart] when we want to visualize both __trend__ and __subtotal__.
+    * use ?[full-stacked-area-chart] when we also want to visualize __proportion__ of data.
   zh: |
     * 希望如長條般__堆疊__的同時又表現__趨勢__時，可嘗試使用?[stacked-area-chart]
     * 在__堆疊__的同時想表現__趨勢__與__比例__時，可嘗試使用?[full-stacked-area-chart]
 
-
 pros:
-  en: N/A
+  en: |
+    * Can be stacked while visualizing trend.
   zh: |
     * 同時發揮堆疊與表現趨勢的優勢。
-    * 比起?[line-chart]，可以同時表線更多組數據。
 
 cons:
-  en: N/A
+  en: |
+    * counterintuitive with unordered data.
+    * works bad on observing periodical data
+    * ?[stacked-area-chart] tends to be misleading when data variation is large.
   zh: |
     * 用在無序資料上相當反直覺。
     * 不容易用來觀察周期性資料。
     * ?[stacked-area-chart]在數值變化大時很容易因人的閱讀習慣而誤判資料。
 
 guideline:
-  en: N/A
+  en: |
+    * consider a aspect ratio of chart to have a slope that is best for reading. 
+    * use of ?[layered-area-chart] is discouraged unless you cannot use ?[line-chart].
+    * axis origin should start from zero.
   zh: |
     * 製作時可考慮調整圖表的長寬比讓折線的走勢能有一定的斜度 ( 接近 45 度為佳 )，然而仍應以版面配置考量為主。
     * 通常不考慮使用?[layered-area-chart]，除非你有夠好的理由不直接使用?[line-chart]。
     * 圖表的座標原點需由零開始
 
 alternative:
-  en: TBD
+  en: |
+    * use ?[line-chart] when data is not suitable for stacking, such as temperature.
+    * use ?[bar-chart] when visualizing unordered data.
+    * use ?[radar-chart] to visualize periodical data.
   zh: |
     * 需要將多組資料併列顯示時，可搭配「small multiple」技巧。
-    * 資料不需/無法堆疊時(如表現年紀的走勢)，可直接使用?[line-chart]
+    * 資料不需/無法堆疊時(如表現溫度的走勢)，可直接使用?[line-chart]
     * 表現無序資料時，使用?[bar-chart]或其系列變化型。
     * 有牽扯到週期性的概念時，使用?[radar-chart]或?[stacked-radar-chart]。
 

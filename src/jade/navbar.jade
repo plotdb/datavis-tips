@@ -4,11 +4,21 @@ nav.navbar.navbar-default(class=navbar.className)
   .container-fluid
     if !navbar.nobrand
       .navbar-head
-        a.navbar-brand(href="/" + lang + "/") Datavis.tips
+        a.navbar-brand(href="/" + lang + "/") DATAVIS.TIPS
     ul.nav.navbar-nav
       if !navbar.nohome
         li: a(href="/" + lang + "/") HOME
       li: a(href="/" + lang + "/about/") ABOUT
       li: a(href="/" + lang + "/suggest/") SUGGEST
     ul.nav.navbar-nav.navbar-right
+      - var langmap = {'en': 'English', 'zh': '中文'};
+      li.dropdown
+        a.dropdown-toggle(href="#",data-toggle="dropdown")
+          i.fa.fa-globe
+          span &nbsp;
+          span.name= langmap[lang]
+          span.caret
+        ul.dropdown-menu
+          for lang in site.langs
+            li: a(href="/" + [lang, relpath.replace(/\/$/,''), (key?"v":null), key].filter(function(d,i) { return d; }).join("/") + "/")= langmap[lang]
       li: a(href="https://plotdb.com/",target="_blank") #[small.grayed POWERED BY] PLOTDB

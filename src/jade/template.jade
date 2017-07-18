@@ -143,45 +143,13 @@ block body
         img(src="/img/plotdb-mini-alt.png")
       .pull-left
         for lang in site.langs
-          a.label.label-default(href="/" + [lang, "v", key].join("/"))= lang.toUpperCase()
+          a.label.label-default(href="/" + [lang, relpath].join("/"))= lang.toUpperCase()
           span &nbsp;
   script(type="text/javascript")= "var chartid=" + plotdb + ";"
   if bannerConfig
     script(type="text/javascript").
       var chartconfig = !{JSON.stringify(bannerConfig)};
+  script(src="/js/build.min.js")
   script.
-    var curChart = null;
-    plotdb.load(chartid,function(chart) {
-      var root = document.getElementById("chart-sample");
-      setTimeout(function() {
-        if(typeof(chartconfig)!="undefined") chart.config(chartconfig[0]);
-        chart.attach(root);
-        curChart = chart;
-      }, 1000);
-    });
-    document.getElementById("choices").addEventListener("click",function(it) {
-      idx = +it.target.getAttribute("data-idx");
-      if(!idx) return;
-      Array.from(document.getElementById("choices").querySelectorAll(".choice"))
-        .map(function(d) { d.className = "choice";});
-      document.getElementById("choices").querySelector(".choice:nth-of-type(" + idx + ")" )
-        .className = "choice active";
-      curChart.config(chartconfig[idx - 1]);
-      curChart.parse();
-      curChart.resize();
-      curChart.bind();
-      curChart.render();
-    });
+    init(chartid);
 
-    var start = 0;
-    requestAnimationFrame(function loop(time) {
-      if(curChart && time - start > 1000) {
-        curChart.data(curChart._.chart.sample);
-        curChart.parse();
-        curChart.resize();
-        curChart.bind();
-        curChart.render();
-        start = time;
-      }
-      requestAnimationFrame(loop);
-    });

@@ -18,6 +18,28 @@ h5,
 h6 {
   font-weight: 400;
 }
+h1.disabled,
+h2.disabled,
+h3.disabled,
+h4.disabled,
+h5.disabled,
+h6.disabled {
+  opacity: 0.3;
+}
+h1.disabled,
+h2.disabled,
+h3.disabled,
+h4.disabled,
+h5.disabled,
+h6.disabled,
+h1.disabled a,
+h2.disabled a,
+h3.disabled a,
+h4.disabled a,
+h5.disabled a,
+h6.disabled a {
+  cursor: not-allowed;
+}
 body.card {
   background: url("/img/bk.jpg") center center fixed;
   height: auto;

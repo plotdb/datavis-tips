@@ -456,58 +456,76 @@
         en: "Performance"
 
   config.banner-config = [{
-    margin: 10, background: "\#eee", gridBackground: "none",
-    padding: 12,
-    palette: {colors: [{hex: "\#444"},{hex: "\#666"},{hex: "\#999"}]},
+    margin: 20, background: "\#f9f9f9", gridBackground: "none"
+    padding: 2
+    animationDuration: 1000
+    animationTiming: \bounce
+    palette: {colors: [{hex: "\#e32"},{hex: "\#f96"},{hex: "\#c65"}]},
     legendShow: false,
-    fill: "rgba(100%,63%,40%,0.7)",
-    fontSize: 11,
+    fill: "rgba(100%,70%,60%,0.5)",
+    stroke: \#f21
+    fontSize: 14,
     fontFamily: "arial",
     gridStrokeWidth: 1,
     gridDashArray: "1 0",
     gridStroke: "\#ddd",
     gridFrameStrokeWidth: 0,
-    textFill: "\#666",
+    textFill: "\#777",
     sort: "Descending",
+    xAxisStroke: \#444
     xAxisTickSizeInner: 0,
     xAxisTickSizeOuter: 0,
+    xAxisTickPadding: 6,
     yAxisHandleOverlap: "none",
     yAxisShowDomain: true,
-    yAxisStroke: "\#aaa",
+    yAxisStroke: "\#444",
+    yAxisShow: true
+    yAxisTickCount: 6
     labelShow: true,
     labelShowOverflow: false
+    labelShadowSize: 0
+    labelShowValue: false
   },{
-    margin: 10, background: "\#444444", gridBackground: "\#555555",
-    palette: {colors: [{hex: "\#fff"},{hex: "\#ffd"},{hex: "\#fdf"}]},
-    fill: "rgba(14%,35%,50%,0.8)",
-    padding: 6,
-    fontSize: 13,
-    fontFamily: "tahoma",
-    labelShow: false,
-    gridStrokeWidth: 0,
-    gridDashArray: "1 0",
-    gridStroke: "rgba(0,0,0,0)",
-    gridFrameStrokeWidth: 0,
-    textFill: "\#554",
-    sort: "Ascending",
+    margin: 20, background: "\#444444", gridBackground: "rgba(0%,0%,0%,0)"
+    palette: {colors: [{hex: '#7cf'},{hex: '#ddd'},{hex: '#99a'}]}
+    fill: "rgba(13%,32%,51%,0.7)"
+    stroke: \#09f
+    padding: 1
+    fontSize: 13
+    fontFamily: "Century Gothic"
+    animationTiming: \elastic
+    labelShow: false
+    gridStrokeWidth: 1
+    gridDashArray: "1 5"
+    gridStroke: "rgba(100%,100%,100%,0.2)"
+    gridFrameStrokeWidth: 0
+    textFill: "\#fff"
+    sort: "Ascending"
+    xAxisStroke: \#ace
     xAxisTickSizeInner: 4
+    yAxisTickCount: 3
+    yAxisShow: true
     labelShowOverflow: false
   },{
-    margin: 10, background: "\#f9f9f9", gridBackground: "\#f9f9f9",
+    margin: 20, background: "\#eeeccc", gridBackground: "rgba(0%,0%,0%,0)"
     palette: {colors: [{hex: "\#e96"},{hex: "\#ae5"},{hex: "\#48d"},{hex: "\#999"}]},
-    padding: 2,
-    legendShow: true,
-    fontFamily: "lato",
-    fill: "rgba(25%,25%,25%,0.9)",
-    fontSize: 12,
-    textFill: "\#444",
-    sort: "None",
-    xAxisTickSizeInner: 4,
-    yAxisTickSizeOuter: 4,
-    gridDashArray: "2 2",
-    gridStrokeWidth: 1,
-    gridStroke: "\#999",
-    xAxisStroke: "\#999"
+    fill: "rgba(53%,72%,31%,0.5)"
+    stroke: \#392
+    padding: 6
+    animationTiming: \linear
+    fontSize: 13
+    fontFamily: "Century Gothic"
+    labelShow: false
+    gridStrokeWidth: 0
+    gridDashArray: "1 0"
+    gridStroke: "rgba(0,0,0,0)"
+    gridFrameStrokeWidth: 0
+    textFill: "\#000"
+    sort: "Ascending"
+    xAxisStroke: \#222
+    xAxisTickSizeInner: 4
+    yAxisTickCount: 1
+    yAxisShow: false
     labelShowOverflow: false
   }]
 
