@@ -379,8 +379,8 @@ update-file = ->
             filename: path.join(cwd, "src", "jade", "template.jade")
             basedir: path.join(cwd,"src","jade/")
             lang: lang
-            tourl: -> "/static/#lang/v/#it/"
-          } <<< jade-config <<< lang-cfg <<< {_:_i18n} <<< {site: site-config}
+            tourl: -> "/#lang/v/#it/"
+          } <<< jade-config <<< lang-cfg <<< {_:_i18n} <<< {site: site-config, relpath: "v/#{lang-cfg.key}" }
         )
         mkdir-recurse path.dirname(des)
         fs.write-file-sync des, ret
@@ -403,7 +403,9 @@ update-file = ->
         files = fs.readdir-sync \src/ls/ .map -> "src/ls/#it"
         files = files.filter -> (/\/\./.exec it) == null
         result = [uglify.minify(lsc.compile(fs.read-file-sync(file)toString!,{bare:true}),{fromString:true}).code for file in files].join("")
-        fs.write-file-sync "build.min.js", result
+        des = "static/js/build.min.js"
+        mkdir-recurse path.dirname(des)
+        fs.write-file-sync "static/js/build.min.js", result
         console.log "[BUILD] #src --> build.min.js"
       catch
         console.log "[BUILD] #src failed: "
@@ -469,49 +471,12 @@ update-file = ->
         logs = ["[BUILD] recursive from #src:"] ++ logs
         console.log logs.join(\\n)
 
-  /*
-  if type == \styl =>
-    if /(basic|vars)\.styl/.exec it => return
-    try
-      styl-tree.parse src
-      srcs = styl-tree.find-root src
-    catch
-      console.log "[BUILD] #src failed: "
-      console.log e.message
-
-    console.log "[BUILD] recursive from #src:"
-    for src in srcs
-      try
-        des = src.replace(/src\/styl/, "static/css").replace(/\.styl$/, ".css")
-        stylus fs.read-file-sync(src)toString!
-          .set \filename, src
-          # since stylus seems not provide access into nested object..
-          .use (s) ->
-            for k,v of site-config => s.define k, v
-          .define 'i18n', (lang,text) -> 
-            return new stylus.nodes.String(site-config.translation[text.val][lang.val])
-          .define 'index', (a,b) ->
-            a = (a.string or a.val).split(' ')
-            return new stylus.nodes.Unit(a.indexOf b.val)
-          .render (e, css) ->
-            if e =>
-              console.log "[BUILD]   #src failed: "
-              console.log "  >>>", e.name
-              console.log "  >>>", e.message
-            else => 
-              mkdir-recurse path.dirname(des)
-              fs.write-file-sync des, css
-              console.log "[BUILD]   #src --> #des"
-      catch
-        console.log "[BUILD]   #src failed: "
-        console.log e.message
-  */
-
   if type == \jade =>
     if !/src\/jade/.exec(src) => return
     if /^\/\/- module ?/.exec(fs.read-file-sync src .toString!) => return
     lang = /src\/jade\/(..)\//.exec src
     lang = if lang => lang = lang.1 else \en
+    console.log ">", src, lang
     try
       if type == \jade => jade-tree.parse src
       srcs = jade-tree.find-root src
@@ -525,6 +490,7 @@ update-file = ->
     if srcs => for src in srcs
       if !/src\/jade/.exec(src) => continue
       try
+        relpath = src.replace(/src\/jade(\/(en|zh))?\/?/, '').replace(/\.jade/, '.html').replace(/index\.html/,'')
         des = src.replace(/src\/jade/, "static").replace(/\.jade/, ".html")
         if newer(des, _src) => continue
         desdir = path.dirname(des)
@@ -532,7 +498,8 @@ update-file = ->
         try
           fs.write-file-sync(des, jade.render(
             (fs.read-file-sync src .toString!),
-            {filename: src, basedir: path.join(cwd,\src/jade/), lang: lang} <<< jade-config <<< {site: site-config}
+            {filename: src, basedir: path.join(cwd,\src/jade/), lang: lang}
+              <<< jade-config <<< {site: site-config, relpath: relpath}
           ))
           logs.push "[BUILD]   #src --> #des"
         catch
