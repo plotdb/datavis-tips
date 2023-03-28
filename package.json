@@ -1,28 +1,44 @@
 {
-  "author": "Kirby Wu",
-  "name": "template",
-  "description": "simple, quick template for bootstrap a page",
+  "author": "zbryikt",
+  "name": "datavis-tips",
+  "description": "datavis tips",
   "version": "0.0.1",
-  "homepage": "https://github.com/zbryikt/template",
+  "homepage": "https://github.com/plotdb/datavis-tips",
   "repository": {
     "type": "git",
-    "url": "https://github.com/zbryikt/template"
+    "url": "https://github.com/plotdb/datavis-tips"
   },
   "engines": {
-    "node": ">=0.12.6",
-    "npm": ">=1.2.2"
+    "node": ">=10.14.1",
+    "npm": ">=6.4.1"
   },
   "scripts": {
-    "start": "node_modules/.bin/lsc server.ls",
-    "restart": "node_modules\\.bin\\lsc server.ls",
-    "prepare": "npm install chokidar@0.8.0"
+    "start": "npx server -r web -o true"
   },
   "dependencies": {
-    "LiveScript": ">=1.2.0",
-    "jade": "=1.11.0",
-    "chokidar": "=1.0.3",
-    "stylus": "=0.50.0",
-    "uglify-js": "=2.4.16",
-    "markdown": "=0.5.0"
+    "@loadingio/bootstrap.ext": "^0.0.9",
+    "@loadingio/debounce.js": "^1.0.1",
+    "@loadingio/ldquery": "^3.0.4",
+    "@zbryikt/template": "^2.3.45",
+    "bootstrap": "^5.2.3",
+    "fedep": "^1.1.11",
+    "ldcover": "^3.5.1",
+    "ldiconfont": "^0.2.4",
+    "ldview": "^1.4.0",
+    "livescript": "^1.6.0",
+    "proxise": "^1.0.1"
+  },
+  "frontendDependencies": {
+    "root": "web/static/assets/lib",
+    "modules": [
+      "@loadingio/bootstrap.ext",
+      "@loadingio/debounce.js",
+      "@loadingio/ldquery",
+      "bootstrap",
+      "ldcover",
+      "ldiconfont",
+      "ldview",
+      "proxise"
+    ]
   }
 }

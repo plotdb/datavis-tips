@@ -1,0 +1,31 @@
+extends /base.pug
+block vars
+  - var navbar = {};
+  - var banner = {};
+  - navbar.nobrand = true;
+  - navbar.nohome = false;
+  - banner.subtitle = "提供您的意見";
+block head
+block body
+  include /banner.pug
+  #root(style="margin:0;")
+    .section
+      h3 對我們的內容有任何建議嗎？
+      p 我們花了相當多時間在整理與編撰 Datavis.tips 的內容，然而，仍然可能會有所遺漏、甚至是錯誤。因此若你有發現錯誤、遺漏，或者對內容有更好的建議，歡迎將您的想法與意見留在下方的討論區，讓我們一起把 Datavis.tips 變成更棒的資料視覺化學習資源。
+      hr
+      #disqus_thread
+      script.
+        var disqus_config = function () {
+        this.page.url = "http://datavis.tips/suggestion/";
+        this.page.identifier = "suggestion";
+        };
+        (function() { /* DON'T EDIT BELOW THIS LINE */
+        var d = document, s = d.createElement('script');
+        s.src = 'https://datavis-tips.disqus.com/embed.js';
+        s.setAttribute('data-timestamp', +new Date());
+        (d.head || d.body).appendChild(s);
+        })();
+    br
+    hr
+    include /footer.pug
+

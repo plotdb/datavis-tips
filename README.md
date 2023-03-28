@@ -1,18 +1,15 @@
-datavis.tips
-=================
+# datavis.tips
 
 Collection of common data visualization types
 
 
-TODO
------------------
+## TODO
 
  * add following visualization types:
     - heatmap ( used by histogram )
 
 
-LICENSE
------------------
+## LICENSE
 
 content material: CC-BY-NC 4.0
 website code: MIT License
